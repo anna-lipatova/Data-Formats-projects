@@ -273,6 +273,20 @@ The classes mentioned above are defined in this section along with their attribu
 - Store branch where the employee works at
 
 
+#### 2.5.4 Relationship: Leads
+**Relationship**<br>
+- leads
+
+**Type**<br>
+- [Cash Register](#2.6-Class:-Cash-Register)
+
+**Name**<br>
+- Leads
+
+**Description**<br>
+- Cash register that the employee is responsible for
+
+
 
 ### 2.6 Class: Cash register
 
@@ -305,3 +319,17 @@ The classes mentioned above are defined in this section along with their attribu
 
 **Description**<br>
 - Store branch where the cash register is at
+
+
+#### 2.6.3 Relationship: Led By Employee
+**Relationship**<br>
+- led_by
+
+**Type**<br>
+- [Employee](#2.5-Class:-Employee)
+
+**Name**<br>
+- Led By Employee
+
+**Description**<br>
+- Employee responsible for the cash register
