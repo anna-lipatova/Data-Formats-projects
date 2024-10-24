@@ -32,21 +32,21 @@ The classes mentioned above are defined in this section along with their attribu
 		    Example
 				- Albert Liberec, Žižkova
 
-        2.1.2 Has warehouse
-            Attribute
-                - has_warehouse
+		2.1.2 Has warehouse
+				Attribute
+						- has_warehouse
 
-            Type
-                - bool
+				Type
+						- bool
 
-            Name
-                - Has warehouse
+				Name
+						- Has warehouse
 
-            Description
-                - Whether the store branch has a warehouse in place.
+				Description
+						- Whether the store branch has a warehouse in place.
 
-            Example
-                - True
+				Example
+						- True
 
 		2.1.3 Relationship: Located at
 			Relationship
@@ -329,21 +329,21 @@ The classes mentioned above are defined in this section along with their attribu
 				- 1
 
 
-        2.6.2 Is self checkout
-            Attribute
-                - is_self_checkout
+		2.6.2 Is self checkout
+				Attribute
+						- is_self_checkout
 
-            Type
-                - bool
+				Type
+						- bool
 
-            Name
-                - Is self checkout
+				Name
+						- Is self checkout
 
-            Description
-                - Whether the cash register can be used as a self checkout
+				Description
+						- Whether the cash register can be used as a self checkout
 
-            Example
-                - False
+				Example
+						- False
 
 
 		2.6.3 Relationship: Located at
