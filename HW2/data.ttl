@@ -1,0 +1,169 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix tro: <https://w3id.org/TRO#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://purl.org/net/ns/ex#> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix cpmeta: <http://meta.icos-cp.eu/ontologies/cpmeta/> .
+@prefix juso: <http://rdfs.co/juso/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+
+
+# RDFS Vocabulary
+# --- Employee ---
+tro:Employee a rdfs:Class .
+
+foaf:givenName a rdf:Property ;
+               rdfs:range tro:Employee .
+
+foaf:familyName a rdf:Property ;
+                rdfs:range tro:Employee .
+
+sealit:works_at a rdf:Property ;
+                rdfs:domain tro:Employee ;
+                rdfs:range ex:StoreBranch .
+
+
+# --- Cash Register ---
+ex:CashRegister a rdfs:Class ;
+                rdfs:label "Cash Register"@en ;
+                rdfs:comment "A device used to process customer payments"@en .
+
+schema:identifier a rdf:Property ;
+                  rdfs:range ex:CashRegister .
+
+ex:isSelfCheckout a rdf:Property ;
+                  rdfs:label "Is self checkout"@en ;
+                  rdfs:comment "Indicates that a cash register can be used as a self checkout."@en ;
+                  rdfs:domain schema:Boolean ;
+                  rdfs:range ex:CashRegister .
+
+cpmeta:locatedAt a rdf:Property ;
+                 rdfs:domain ex:CashRegister ;
+                 rdfs:range ex:StoreBranch .
+
+ex:operated_by a rdf:Property ;
+    rdfs:label "Operated by"@en ;
+    rdfs:comment "Indicates who is resposible for the cash register"@en ;
+    rdfs:domain ex:CashRegister ;
+    rdfs:range tro:Employee .
+
+
+# --- Store Branch ---
+ex:StoreBranch a rdfs:Class ;
+               rdfs:label "Store branch"@en ;
+               rdfs:comment "A branch of a store chain."@en .
+
+juso:name a rdf:Property ;
+    rdfs:range ex:StoreBranch .
+
+ex:has_warehouse a rdf:Property ;
+    rdfs:label "Has warehouse"@en ;
+    rdfs:comment "Indicates that a store branch has also a warehouse locally."@en ;
+    rdfs:domain schema:Boolean ;
+    rdfs:range ex:StoreBranch .
+
+cpmeta:locatedAt a rdf:Property ;
+    rdfs:domain ex:StoreBranch ;
+    rdfs:range juso:Address .
+
+
+# --- Address ---
+juso:Address a rdfs:Class .
+
+schema:addressLocality a rdf:Property ;
+    rdfs:range juso:Address .
+
+schema:streetAddress a rdf:Property ;
+    rdfs:range juso:Address .
+
+juso:postal_code a rdf:Property ;
+    rdfs:range juso:Address .
+
+
+# --- Customer ---
+dpv:Customer a rdfs:Class .
+
+foaf:givenName a rdf:Property ;
+    rdfs:range dpv:Customer .
+
+foaf:familyName a rdf:Property ;
+    rdfs:range dpv:Customer .
+
+mads:birthDate a rdf:Property ;
+    rdfs:range dpv:Customer .
+
+foaf:phone a rdf:Property ;
+    rdfs:domain dpv:Customer ;
+    rdfs:range dpv:Customer .
+
+ex:shopsAt a rdf:Property ;
+    rdfs:label "Shops at"@en ;
+    rdfs:comment "Indicates that the customer shops at the store branch"@en ;
+    rdfs:domain ex:StoreBranch ;
+    rdfs:range dpv:Customer .
+
+
+# --- LoyaltyCard ---
+schema:ProgramMembership a rdfs:Class .
+
+schema:membershipPointsEarned a rdf:Property ;
+    rdfs:range schema:ProgramMembership .
+
+schema:identifier a rdf:Property ;
+    rdfs:range schema:ProgramMembership .
+
+ex:hasLoyaltyCard a rdf:Property ;
+    rdfs:label "Has loyalty card"@en ;
+    rdfs:comment "Indicates that the customer has a membership"@en ;
+    rdfs:domain dpv:Customer ;
+    rdfs:range schema:ProgramMembership .
+
+
+# Instances
+
+# Instance of an Employee
+_:employee1 a tro:Employee ;
+    foaf:givenName "John" ;
+    foaf:familyName "Doe" ;
+    sealit:works_at _:StoreBranch1 .
+
+
+# Instance of Cash Register
+_:register1 a ex:CashRegister ;
+    schema:identifier "1" ;
+    ex:isSelfCheckout true ;
+    cpmeta:locatedAt _:StoreBranch1 ;
+    ex:operated_by _:employee1 .
+
+
+# Instance of a Store Branch
+_:StoreBranch1 a ex:StoreBranch ;
+    juso:name "Albert Liberec, Žižkova " ;
+    ex:has_warehouse false ;
+    cpmeta:locatedAt _:address1 .
+
+
+# Instance of an Address
+_:address1 a juso:Address ;
+    schema:addressLocality "Liberec" ;
+    schema:streetAddress "Prokopova, 261" ;
+    juso:postal_code "104 00" .
+
+
+# Instance of a Customer
+_:customer1 a dpv:Customer ;
+    foaf:givenName "Jane" ;
+    foaf:familyName "Doe" ;
+    mads:birthDate "01-01-2001" ;
+    foaf:phone "777 777 777" ;
+    ex:shopsAt _:StoreBranch1 ;
+    ex:hasLoyaltyCard _:card1 .
+
+
+# Instance of a Loyalty Card
+_:card1 a schema:ProgramMembership ;
+    schema:membershipPointsEarned "123";
+    schema:identifier "0001" .
