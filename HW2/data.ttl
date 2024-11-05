@@ -1,5 +1,5 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix tro: <https://w3id.org/TRO#>.
+@prefix tro: <https://w3id.org/TRO#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ex: <http://purl.org/net/ns/ex#> .
@@ -9,7 +9,6 @@
 @prefix juso: <http://rdfs.co/juso/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
-
 
 # RDFS Vocabulary
 # --- Employee ---
@@ -24,7 +23,6 @@ foaf:familyName a rdf:Property ;
 sealit:works_at a rdf:Property ;
                 rdfs:domain tro:Employee ;
                 rdfs:range ex:StoreBranch .
-
 
 # --- Cash Register ---
 ex:CashRegister a rdfs:Class ;
@@ -46,10 +44,9 @@ cpmeta:locatedAt a rdf:Property ;
 
 ex:operated_by a rdf:Property ;
     rdfs:label "Operated by"@en ;
-    rdfs:comment "Indicates who is resposible for the cash register"@en ;
+    rdfs:comment "Indicates who is responsible for the cash register"@en ;
     rdfs:domain ex:CashRegister ;
     rdfs:range tro:Employee .
-
 
 # --- Store Branch ---
 ex:StoreBranch a rdfs:Class ;
@@ -69,7 +66,6 @@ cpmeta:locatedAt a rdf:Property ;
     rdfs:domain ex:StoreBranch ;
     rdfs:range juso:Address .
 
-
 # --- Address ---
 juso:Address a rdfs:Class .
 
@@ -81,7 +77,6 @@ schema:streetAddress a rdf:Property ;
 
 juso:postal_code a rdf:Property ;
     rdfs:range juso:Address .
-
 
 # --- Customer ---
 dpv:Customer a rdfs:Class .
@@ -105,7 +100,6 @@ ex:shopsAt a rdf:Property ;
     rdfs:domain ex:StoreBranch ;
     rdfs:range dpv:Customer .
 
-
 # --- LoyaltyCard ---
 schema:ProgramMembership a rdfs:Class .
 
@@ -121,49 +115,109 @@ ex:hasLoyaltyCard a rdf:Property ;
     rdfs:domain dpv:Customer ;
     rdfs:range schema:ProgramMembership .
 
-
 # Instances
 
-# Instance of an Employee
+# Employees
 _:employee1 a tro:Employee ;
     foaf:givenName "John" ;
     foaf:familyName "Doe" ;
     sealit:works_at _:StoreBranch1 .
 
+_:employee2 a tro:Employee ;
+    foaf:givenName "Janko" ;
+    foaf:familyName "Mrkvicka" ;
+    sealit:works_at _:StoreBranch2 .
 
-# Instance of Cash Register
+_:employee3 a tro:Employee ;
+    foaf:givenName "Peter" ;
+    foaf:familyName "Cibulka" ;
+    sealit:works_at _:StoreBranch1 .
+
+# Cash Registers
 _:register1 a ex:CashRegister ;
     schema:identifier "1" ;
-    ex:isSelfCheckout true ;
+    ex:isSelfCheckout "true" ;
     cpmeta:locatedAt _:StoreBranch1 ;
     ex:operated_by _:employee1 .
 
+_:register2 a ex:CashRegister ;
+    schema:identifier "2" ;
+    ex:isSelfCheckout "false" ;
+    cpmeta:locatedAt _:StoreBranch2 ;
+    ex:operated_by _:employee2 .
 
-# Instance of a Store Branch
+_:register3 a ex:CashRegister ;
+    schema:identifier "3" ;
+    ex:isSelfCheckout "true" ;
+    cpmeta:locatedAt _:StoreBranch1 ;
+    ex:operated_by _:employee3 .
+
+# Store Branches
 _:StoreBranch1 a ex:StoreBranch ;
-    juso:name "Albert Liberec, Žižkova " ;
-    ex:has_warehouse false ;
+    juso:name "Albert Liberec, Žižkova" ;
+    ex:has_warehouse "false" ;
     cpmeta:locatedAt _:address1 .
 
+_:StoreBranch2 a ex:StoreBranch ;
+    juso:name "Albert Olomouc" ;
+    ex:has_warehouse "false" ;
+    cpmeta:locatedAt _:address2 .
 
-# Instance of an Address
+_:StoreBranch3 a ex:StoreBranch ;
+    juso:name "Albert Brno" ;
+    ex:has_warehouse "true" ;
+    cpmeta:locatedAt _:address3 .
+
+# Addresses
 _:address1 a juso:Address ;
     schema:addressLocality "Liberec" ;
     schema:streetAddress "Prokopova, 261" ;
     juso:postal_code "104 00" .
 
+_:address2 a juso:Address ;
+    schema:addressLocality "Olomouc" ;
+    schema:streetAddress "Polska, 1" ;
+    juso:postal_code "779 00" .
 
-# Instance of a Customer
+_:address3 a juso:Address ;
+    schema:addressLocality "Brno" ;
+    schema:streetAddress "Nádražní, 2" ;
+    juso:postal_code "602 00" .
+
+# Customers
 _:customer1 a dpv:Customer ;
     foaf:givenName "Jane" ;
     foaf:familyName "Doe" ;
-    mads:birthDate "01-01-2001" ;
+    mads:birthDate "2001-01-01" ;
     foaf:phone "777 777 777" ;
-    ex:shopsAt _:StoreBranch1 ;
+    ex:shopsAt _:StoreBranch2 ;
     ex:hasLoyaltyCard _:card1 .
 
+_:customer2 a dpv:Customer ;
+    foaf:givenName "Petra" ;
+    foaf:familyName "Mrkvickova" ;
+    mads:birthDate "2002-02-02" ;
+    foaf:phone "123 321 231" ;
+    ex:shopsAt _:StoreBranch1 ;
+    ex:hasLoyaltyCard _:card2 .
 
-# Instance of a Loyalty Card
+_:customer3 a dpv:Customer ;
+    foaf:givenName "Janka" ;
+    foaf:familyName "Cibulkova" ;
+    mads:birthDate "2003-03-03" ;
+    foaf:phone "666 666 666" ;
+    ex:shopsAt _:StoreBranch3 ;
+    ex:hasLoyaltyCard _:card3 .
+
+# Loyalty Cards
 _:card1 a schema:ProgramMembership ;
-    schema:membershipPointsEarned "123";
+    schema:membershipPointsEarned "147";
     schema:identifier "0001" .
+
+_:card2 a schema:ProgramMembership ;
+    schema:membershipPointsEarned "258";
+    schema:identifier "0002" .
+
+_:card3 a schema:ProgramMembership ;
+    schema:membershipPointsEarned "369";
+    schema:identifier "0003" .
