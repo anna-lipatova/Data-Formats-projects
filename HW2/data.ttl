@@ -36,8 +36,8 @@ schema:identifier a rdf:Property ;
 ex:isSelfCheckout a rdf:Property ;
                   rdfs:label "Is self checkout"@en ;
                   rdfs:comment "Indicates that a cash register can be used as a self checkout."@en ;
-                  rdfs:domain schema:Boolean ;
-                  rdfs:range ex:CashRegister .
+                  rdfs:domain ex:CashRegister ;
+                  rdfs:range xsd:boolean .
 
 cpmeta:locatedAt a rdf:Property ;
                  rdfs:domain ex:CashRegister ;
@@ -60,8 +60,8 @@ juso:name a rdf:Property ;
 ex:has_warehouse a rdf:Property ;
     rdfs:label "Has warehouse"@en ;
     rdfs:comment "Indicates that a store branch has also a warehouse locally."@en ;
-    rdfs:domain schema:Boolean ;
-    rdfs:range ex:StoreBranch .
+    rdfs:domain ex:StoreBranch ;
+    rdfs:range xsd:boolean .
 
 cpmeta:locatedAt a rdf:Property ;
     rdfs:domain ex:StoreBranch ;
@@ -156,17 +156,17 @@ _:register3 a ex:CashRegister ;
 # Store Branches
 _:StoreBranch1 a ex:StoreBranch ;
     juso:name "Albert Liberec, Žižkova"^^xsd:string ;
-    ex:has_warehouse "false" ;
+    ex:has_warehouse false ;
     cpmeta:locatedAt _:address1 .
 
 _:StoreBranch2 a ex:StoreBranch ;
     juso:name "Albert Olomouc"^^xsd:string ;
-    ex:has_warehouse "false" ;
+    ex:has_warehouse false ;
     cpmeta:locatedAt _:address2 .
 
 _:StoreBranch3 a ex:StoreBranch ;
     juso:name "Albert Brno"^^xsd:string ;
-    ex:has_warehouse "true" ;
+    ex:has_warehouse true ;
     cpmeta:locatedAt _:address3 .
 
 # Addresses
