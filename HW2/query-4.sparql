@@ -1,0 +1,29 @@
+# list branches where customers have at least 200 loyalty points, 
+# along with customer and employee names, grouped by branch
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX ex: <http://purl.org/net/ns/ex#>
+PREFIX schema: <http://schema.org/>
+PREFIX juso: <http://rdfs.co/juso/>
+PREFIX tro: <https://w3id.org/TRO#>
+PREFIX sealit: <http://www.sealitproject.eu/ontology/>
+
+SELECT ?branchName ?customerGivenName ?customerFamilyName ?employeeGivenName ?employeeFamilyName
+WHERE {
+    ?customer a dpv:Customer ;
+              foaf:givenName ?customerGivenName ;
+              foaf:familyName ?customerFamilyName ;
+              ex:shopsAt ?branch ;
+              ex:hasLoyaltyCard ?card .
+    ?card schema:membershipPointsEarned ?points .
+    FILTER(?points >= 200)
+
+    ?branch juso:name ?branchName .
+
+    ?employee a tro:Employee ;
+              foaf:givenName ?employeeGivenName ;
+              foaf:familyName ?employeeFamilyName ;
+              sealit:works_at ?branch .
+}
+ORDER BY ?branchName
