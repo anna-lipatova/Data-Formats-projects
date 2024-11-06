@@ -1,0 +1,15 @@
+# retrieve a list of customers' names and their loyalty card numbers, with card numbers converted to string format and ordered by card number
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?givenName ?familyName (STR(?cardNumber) AS ?cardNumberStr)
+WHERE {
+    ?customer a dpv:Customer ;
+              foaf:givenName ?givenName ;
+              foaf:familyName ?familyName ;
+              <http://purl.org/net/ns/ex#hasLoyaltyCard> ?card .
+    ?card schema:identifier ?cardNumber .
+}
+ORDER BY ?cardNumber
