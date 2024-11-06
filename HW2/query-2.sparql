@@ -1,0 +1,17 @@
+# list the customers' names, birth dates, and loyalty points, with birth dates and points converted to string format
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mads: <http://www.loc.gov/mads/rdf/v1#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX schema: <http://schema.org/>
+PREFIX ex: <http://purl.org/net/ns/ex#>
+
+SELECT ?givenName ?familyName (STR(?birthDate) AS ?birthDateStr) (STR(?points) AS ?pointsStr)
+WHERE {
+    ?customer a dpv:Customer ;
+              foaf:givenName ?givenName ;
+              foaf:familyName ?familyName ;
+              mads:birthDate ?birthDate ;
+              ex:hasLoyaltyCard ?card .
+    ?card schema:membershipPointsEarned ?points .
+}
