@@ -1,0 +1,17 @@
+# count the number of customers with at least 100 points on their loyalty card for each branch
+
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX ex: <http://purl.org/net/ns/ex#>
+PREFIX schema: <http://schema.org/>
+PREFIX juso: <http://rdfs.co/juso/>
+
+SELECT ?branchName (STR(COUNT(?customer)) AS ?customerCountStr)
+WHERE {
+    ?customer a dpv:Customer ;
+              ex:shopsAt ?branch ;
+              ex:hasLoyaltyCard ?card .
+    ?branch juso:name ?branchName .
+    ?card schema:membershipPointsEarned ?points .
+    FILTER(?points >= 100)
+}
+GROUP BY ?branchName
