@@ -112,7 +112,7 @@ CREATE (Employee6)-[:WORKS_AT]->(StoreBranch3)
 
 
 //---Cash Register---
-CREATE (Regster1:CashRegister
+CREATE (Register1:CashRegister
 {identifier:1}
 )
 CREATE (Register1)-[:LOCATED_AT]->(StoreBranch1),
@@ -120,7 +120,7 @@ CREATE (Register1)-[:LOCATED_AT]->(StoreBranch1),
         isSelfChecked:false
     }]->(Employee1)
 
-CREATE (Regster2:CashRegister
+CREATE (Register2:CashRegister
 {identifier:2}
 )
 CREATE (Register2)-[:LOCATED_AT]->(StoreBranch1),
@@ -128,7 +128,7 @@ CREATE (Register2)-[:LOCATED_AT]->(StoreBranch1),
         isSelfChecked:true
     }]->(Employee2)
 
-CREATE (Regster3:CashRegister
+CREATE (Register3:CashRegister
 {identifier:3}
 )
 CREATE (Register3)-[:LOCATED_AT]->(StoreBranch1),
@@ -136,7 +136,7 @@ CREATE (Register3)-[:LOCATED_AT]->(StoreBranch1),
         isSelfChecked:true
     }]->(Employee2)  
 
-CREATE (Regster4:CashRegister
+CREATE (Register4:CashRegister
 {identifier:4}
 )
 CREATE (Register4)-[:LOCATED_AT]->(StoreBranch2),
@@ -144,7 +144,7 @@ CREATE (Register4)-[:LOCATED_AT]->(StoreBranch2),
         isSelfChecked:false
     }]->(Employee3)
 
-CREATE (Regster5:CashRegister
+CREATE (Register5:CashRegister
 {identifier:5}
 )
 CREATE (Register5)-[:LOCATED_AT]->(StoreBranch3),
@@ -152,7 +152,7 @@ CREATE (Register5)-[:LOCATED_AT]->(StoreBranch3),
         isSelfChecked:false
     }]->(Employee4)
 
-CREATE (Regster6:CashRegister
+CREATE (Register6:CashRegister
 {identifier:6}
 )
 CREATE (Register6)-[:LOCATED_AT]->(StoreBranch3),
@@ -160,7 +160,7 @@ CREATE (Register6)-[:LOCATED_AT]->(StoreBranch3),
         isSelfChecked:false
     }]->(Employee5)
 
-CREATE (Regster7:CashRegister
+CREATE (Register7:CashRegister
 {identifier:7}
 )
 CREATE (Register7)-[:LOCATED_AT]->(StoreBranch3),
