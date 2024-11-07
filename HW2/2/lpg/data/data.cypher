@@ -126,7 +126,7 @@ CREATE (Register2:CashRegister
 CREATE (Register2)-[:LOCATED_AT]->(StoreBranch1),
     (Register2)-[:OPERATED_BY{
         isSelfChecked:true
-    }]->(Employee2)
+    }]->(Employee4)
 
 CREATE (Register3:CashRegister
 {identifier:3}
@@ -134,7 +134,7 @@ CREATE (Register3:CashRegister
 CREATE (Register3)-[:LOCATED_AT]->(StoreBranch1),
     (Register3)-[:OPERATED_BY{
         isSelfChecked:true
-    }]->(Employee2)  
+    }]->(Employee4)  
 
 CREATE (Register4:CashRegister
 {identifier:4}
@@ -142,7 +142,7 @@ CREATE (Register4:CashRegister
 CREATE (Register4)-[:LOCATED_AT]->(StoreBranch2),
     (Register4)-[:OPERATED_BY{
         isSelfChecked:false
-    }]->(Employee3)
+    }]->(Employee2)
 
 CREATE (Register5:CashRegister
 {identifier:5}
@@ -150,7 +150,7 @@ CREATE (Register5:CashRegister
 CREATE (Register5)-[:LOCATED_AT]->(StoreBranch3),
     (Register5)-[:OPERATED_BY{
         isSelfChecked:false
-    }]->(Employee4)
+    }]->(Employee3)
 
 CREATE (Register6:CashRegister
 {identifier:6}
@@ -197,7 +197,7 @@ CREATE (Customer3:Customer
     phone:'+420666666666'
 })
 CREATE (Customer3)-[:SHOPS_AT]->(StoreBranch2),
-(Customer1)-[:HAS_LOYALTY_CARD]->(Card2)
+(Customer3)-[:HAS_LOYALTY_CARD]->(Card2)
 
 CREATE (Customer4:Customer
 {
