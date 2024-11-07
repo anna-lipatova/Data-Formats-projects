@@ -110,12 +110,6 @@ CREATE (Employee6:Employee
 })
 CREATE (Employee6)-[:WORKS_AT]->(StoreBranch3)
 
-CREATE (Employee7:Employee{
-    givenName:"Marie",
-    FamilyName:"Uzasna"
-})
-CREATE (Employee7)-[:WORKS_AT]->(StoreBranch1)
-
 
 //---Cash Register---
 CREATE (Regster1:CashRegister
