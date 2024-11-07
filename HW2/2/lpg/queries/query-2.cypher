@@ -1,10 +1,10 @@
 //query-2
-//branches that have warehouses and 
+//branches that does not have warehouses and 
 //are staffed only by employees with
-//names beginning with "P" 
+//names beginning with "J" 
 //
-MATCH (branch:StoreBranch {hasWarehouse: true})<-[:WORKS_AT]-(employee:Employee)
-WHERE employee.givenName STARTS WITH "P"
+MATCH (branch:StoreBranch {hasWarehouse: false})<-[:WORKS_AT]-(employee:Employee)
+WHERE employee.givenName STARTS WITH "J"
 WITH branch, COLLECT(DISTINCT employee.givenName) AS employeeNames, COUNT(employee) AS employeeCount
 
 MATCH (branch)<-[:WORKS_AT]-(e:Employee)
