@@ -22,19 +22,19 @@ identifier:0o003
 
 
 //---Address---
-CREATE (Adress1:Address
+CREATE (Address1:Address
 {
     addressLocality:"Liberec",
     streerAddress:"Prokopova, 261",
     postalCode:"104 00"
 })
-CREATE (Adress2:Address
+CREATE (Address2:Address
 {
     addressLocality:"Olomouc",
     streerAddress:"Polska, 1",
     postalCode:"779 00"
 })
-CREATE (Adress3:Address
+CREATE (Address3:Address
 {
     addressLocality:"Brno",
     streerAddress:"Nadrazni, 2",
