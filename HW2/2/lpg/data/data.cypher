@@ -186,7 +186,7 @@ CREATE (Customer1:Customer
 {
     givenName:"Marek",
     familyName:"Velky",
-    birthDate:"2001-01-01",
+    birthDate:date("2001-01-01"),
     phone:'+420123321231'
 })
 CREATE (Customer1)-[:SHOPS_AT]->(StoreBranch1),
@@ -196,7 +196,7 @@ CREATE (Customer2:Customer
 {
     givenName:"Petra",
     familyName:"Mrkvickova",
-    birthDate:"2002-02-02",
+    birthDate:date("2002-02-02"),
     phone:'+420123321231'
 })
 CREATE (Customer2)-[:SHOPS_AT]->(StoreBranch1)
@@ -205,7 +205,7 @@ CREATE (Customer3:Customer
 {
     givenName:"Janka",
     familyName:"Cibulkova",
-    birthDate:"2003-03-03",
+    birthDate:date("2003-03-03"),
     phone:'+420666666666'
 })
 CREATE (Customer3)-[:SHOPS_AT]->(StoreBranch2),
@@ -215,7 +215,7 @@ CREATE (Customer4:Customer
 {
     givenName:"Lukas",
     familyName:"Mrkvickovy",
-    birthDate:"2002-02-02",
+    birthDate:date("2002-02-02"),
     phone:'+420123321234'
 })
 CREATE (Customer4)-[:SHOPS_AT]->(StoreBranch2)
@@ -224,7 +224,7 @@ CREATE (Customer5:Customer
 {
     givenName:"Luka",
     familyName:"Nebe",
-    birthDate:"2004-04-04",
+    birthDate:date("2004-04-04"),
     phone:'+420123321238'
 })
 CREATE (Customer5)-[:SHOPS_AT]->(StoreBranch2)
@@ -233,7 +233,7 @@ CREATE (Customer6:Customer
 {
     givenName:"Zdenka",
     familyName:"Mala",
-    birthDate:"2001-01-01",
+    birthDate:date("2001-01-01"),
     phone:'+420123321901'
 })
 CREATE (Customer6)-[:SHOPS_AT]->(StoreBranch3),
