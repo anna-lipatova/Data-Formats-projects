@@ -190,7 +190,9 @@ CREATE (Customer1:Customer
     phone:'+420123321231'
 })
 CREATE (Customer1)-[:SHOPS_AT]->(StoreBranch1),
-(Customer1)-[:HAS_LOYALTY_CARD]->(Card1)
+(Customer1)-[:HAS_LOYALTY_CARD{
+    since:date("2023-01-19")
+}]->(Card1)
 
 CREATE (Customer2:Customer
 {
@@ -209,7 +211,9 @@ CREATE (Customer3:Customer
     phone:'+420666666666'
 })
 CREATE (Customer3)-[:SHOPS_AT]->(StoreBranch2),
-(Customer3)-[:HAS_LOYALTY_CARD]->(Card2)
+(Customer3)-[:HAS_LOYALTY_CARD{
+    since:date("2022-11-11")
+}]->(Card2)
 
 CREATE (Customer4:Customer
 {
@@ -237,4 +241,6 @@ CREATE (Customer6:Customer
     phone:'+420123321901'
 })
 CREATE (Customer6)-[:SHOPS_AT]->(StoreBranch3),
-(Customer6)-[:HAS_LOYALTY_CARD]->(Card3)
+(Customer6)-[:HAS_LOYALTY_CARD{
+    since:date("2024-10-01")
+}]->(Card3)
