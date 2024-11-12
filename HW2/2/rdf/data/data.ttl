@@ -15,11 +15,8 @@
 # --- Employee ---
 tro:Employee a rdfs:Class .
 
-foaf:givenName a rdf:Property ;
-               rdfs:range tro:Employee .
-
-foaf:familyName a rdf:Property ;
-                rdfs:range tro:Employee .
+foaf:givenName a rdf:Property .
+foaf:familyName a rdf:Property .
 
 sealit:works_at a rdf:Property ;
                 rdfs:domain tro:Employee ;
@@ -30,8 +27,7 @@ ex:CashRegister a rdfs:Class ;
                 rdfs:label "Cash Register"@en ;
                 rdfs:comment "A device used to process customer payments"@en .
 
-schema:identifier a rdf:Property ;
-                  rdfs:range ex:CashRegister .
+schema:identifier a rdf:Property .
 
 ex:isSelfCheckout a rdf:Property ;
                   rdfs:label "Is self checkout"@en ;
@@ -54,8 +50,7 @@ ex:StoreBranch a rdfs:Class ;
                rdfs:label "Store branch"@en ;
                rdfs:comment "A branch of a store chain."@en .
 
-juso:name a rdf:Property ;
-    rdfs:range ex:StoreBranch .
+juso:name a rdf:Property .
 
 ex:has_warehouse a rdf:Property ;
     rdfs:label "Has warehouse"@en ;
@@ -70,30 +65,17 @@ cpmeta:locatedAt a rdf:Property ;
 # --- Address ---
 juso:Address a rdfs:Class .
 
-schema:addressLocality a rdf:Property ;
-    rdfs:range juso:Address .
-
-schema:streetAddress a rdf:Property ;
-    rdfs:range juso:Address .
-
-juso:postal_code a rdf:Property ;
-    rdfs:range juso:Address .
+schema:addressLocality a rdf:Property .
+schema:streetAddress a rdf:Property .
+juso:postal_code a rdf:Property .
 
 # --- Customer ---
 dpv:Customer a rdfs:Class .
 
-foaf:givenName a rdf:Property ;
-    rdfs:range dpv:Customer .
-
-foaf:familyName a rdf:Property ;
-    rdfs:range dpv:Customer .
-
-mads:birthDate a rdf:Property ;
-    rdfs:range dpv:Customer .
+mads:birthDate a rdf:Property .
 
 foaf:phone a rdf:Property ;
-    rdfs:domain dpv:Customer ;
-    rdfs:range dpv:Customer .
+    rdfs:domain dpv:Customer .
 
 ex:shopsAt a rdf:Property ;
     rdfs:label "Shops at"@en ;
@@ -104,11 +86,8 @@ ex:shopsAt a rdf:Property ;
 # --- LoyaltyCard ---
 schema:ProgramMembership a rdfs:Class .
 
-schema:membershipPointsEarned a rdf:Property ;
-    rdfs:range schema:ProgramMembership .
-
-schema:identifier a rdf:Property ;
-    rdfs:range schema:ProgramMembership .
+schema:membershipPointsEarned a rdf:Property .
+schema:identifier a rdf:Property .
 
 ex:hasLoyaltyCard a rdf:Property ;
     rdfs:label "Has loyalty card"@en ;
@@ -119,106 +98,106 @@ ex:hasLoyaltyCard a rdf:Property ;
 # Instances
 
 # Employees
-_:employee1 a tro:Employee ;
-    foaf:givenName "Marie"^^xsd:string;
-    foaf:familyName "Krásná"^^xsd:string;
-    sealit:works_at _:StoreBranch1 .
+<http://example.org/person/Marie-Krasna> a tro:Employee ;
+    foaf:givenName "Marie"@cs ;
+    foaf:familyName "Krásná"@cs ;
+    sealit:works_at <http://example.org/store/StoreBranch1> .
 
-_:employee2 a tro:Employee ;
-    foaf:givenName "Janko"^^xsd:string ;
-    foaf:familyName "Mrkvicka"^^xsd:string ;
-    sealit:works_at _:StoreBranch2 .
+<http://example.org/person/Janko-Mrkvicka> a tro:Employee ;
+    foaf:givenName "Janko"@cs ;
+    foaf:familyName "Mrkvicka"@cs ;
+    sealit:works_at <http://example.org/store/StoreBranch2> .
 
-_:employee3 a tro:Employee ;
-    foaf:givenName "Peter"^^xsd:string ;
-    foaf:familyName "Cibulka"^^xsd:string ;
-    sealit:works_at _:StoreBranch1 .
+<http://example.org/person/Peter-Cibulka> a tro:Employee ;
+    foaf:givenName "Peter"@cs ;
+    foaf:familyName "Cibulka"@cs ;
+    sealit:works_at <http://example.org/store/StoreBranch1> .
 
 # Cash Registers
-_:register1 a ex:CashRegister ;
-    schema:identifier "1"^^xsd:integer ;
-    ex:isSelfCheckout "true" ;
-    cpmeta:locatedAt _:StoreBranch1 ;
-    ex:operated_by _:employee1 .
+<http://example.org/register/1> a ex:CashRegister ;
+    schema:identifier 1 ;
+    ex:isSelfCheckout true ;
+    cpmeta:locatedAt <http://example.org/store/StoreBranch1> ;
+    ex:operated_by <http://example.org/person/Marie-Krasna> .
 
-_:register2 a ex:CashRegister ;
-    schema:identifier "2"^^xsd:integer ;
-    ex:isSelfCheckout "false" ;
-    cpmeta:locatedAt _:StoreBranch2 ;
-    ex:operated_by _:employee2 .
+<http://example.org/register/2> a ex:CashRegister ;
+    schema:identifier 2 ;
+    ex:isSelfCheckout false ;
+    cpmeta:locatedAt <http://example.org/store/StoreBranch2> ;
+    ex:operated_by <http://example.org/person/Janko-Mrkvicka> .
 
-_:register3 a ex:CashRegister ;
-    schema:identifier "3"^^xsd:integer ;
-    ex:isSelfCheckout "true" ;
-    cpmeta:locatedAt _:StoreBranch1 ;
-    ex:operated_by _:employee3 .
+<http://example.org/register/3> a ex:CashRegister ;
+    schema:identifier 3 ;
+    ex:isSelfCheckout true ;
+    cpmeta:locatedAt <http://example.org/store/StoreBranch1> ;
+    ex:operated_by <http://example.org/person/Peter-Cibulka> .
 
 # Store Branches
-_:StoreBranch1 a ex:StoreBranch ;
-    juso:name "Albert Liberec, Žižkova"^^xsd:string ;
+<http://example.org/store/StoreBranch1> a ex:StoreBranch ;
+    juso:name "Albert Liberec, Žižkova"@cs ;
     ex:has_warehouse false ;
-    cpmeta:locatedAt _:address1 .
+    cpmeta:locatedAt <http://example.org/address/Liberec> .
 
-_:StoreBranch2 a ex:StoreBranch ;
-    juso:name "Albert Olomouc"^^xsd:string ;
+<http://example.org/store/StoreBranch2> a ex:StoreBranch ;
+    juso:name "Albert Olomouc"@cs ;
     ex:has_warehouse false ;
-    cpmeta:locatedAt _:address2 .
+    cpmeta:locatedAt <http://example.org/address/Olomouc> .
 
-_:StoreBranch3 a ex:StoreBranch ;
-    juso:name "Albert Brno"^^xsd:string ;
+<http://example.org/store/StoreBranch3> a ex:StoreBranch ;
+    juso:name "Albert Brno"@cs ;
     ex:has_warehouse true ;
-    cpmeta:locatedAt _:address3 .
+    cpmeta:locatedAt <http://example.org/address/Brno> .
 
 # Addresses
-_:address1 a juso:Address ;
-    schema:addressLocality "Liberec"^^xsd:string ;
-    schema:streetAddress "Prokopova, 261"^^xsd:string ;
-    juso:postal_code "104 00"^^xsd:string .
+<http://example.org/address/Liberec> a juso:Address ;
+    schema:addressLocality "Liberec"@cs ;
+    schema:streetAddress "Prokopova, 261"@cs ;
+    juso:postal_code "104 00" .
 
-_:address2 a juso:Address ;
-    schema:addressLocality "Olomouc"^^xsd:string ;
-    schema:streetAddress "Polska, 1"^^xsd:string ;
-    juso:postal_code "779 00"^^xsd:string .
+<http://example.org/address/Olomouc> a juso:Address ;
+    schema:addressLocality "Olomouc"@cs ;
+    schema:streetAddress "Polska, 1"@cs ;
+    juso:postal_code "779 00" .
 
-_:address3 a juso:Address ;
-    schema:addressLocality "Brno"^^xsd:string ;
-    schema:streetAddress "Nádražní, 2"^^xsd:string ;
-    juso:postal_code "602 00"^^xsd:string .
+<http://example.org/address/Brno> a juso:Address ;
+    schema:addressLocality "Brno"@cs ;
+    schema:streetAddress "Nádražní, 2"@cs ;
+    juso:postal_code "602 00" .
 
 # Customers
-_:customer1 a dpv:Customer ;
-    foaf:givenName "Marek"^^xsd:string ;
-    foaf:familyName "Velký"^^xsd:string ;
+<http://example.org/customer/Marek-Velky> a dpv:Customer ;
+    foaf:givenName "Marek"@cs ;
+    foaf:familyName "Velký"@cs ;
     mads:birthDate "2001-01-01"^^xsd:date ;
     foaf:phone <tel:+420777777777> ;
-    ex:shopsAt _:StoreBranch2 ;
-    ex:hasLoyaltyCard _:card1 .
+    ex:shopsAt <http://example.org/store/StoreBranch2> ;
+    ex:hasLoyaltyCard <http://example.org/loyaltycard/1> .
 
-_:customer2 a dpv:Customer ;
-    foaf:givenName "Petra"^^xsd:string ;
-    foaf:familyName "Mrkvickova"^^xsd:string ;
+<http://example.org/customer/Petra-Mrkvickova> a dpv:Customer ;
+    foaf:givenName "Petra"@cs ;
+    foaf:familyName "Mrkvickova"@cs ;
     mads:birthDate "2002-02-02"^^xsd:date ;
     foaf:phone <tel:+420123321231> ;
-    ex:shopsAt _:StoreBranch1 ;
-    ex:hasLoyaltyCard _:card2 .
+    ex:shopsAt <http://example.org/store/StoreBranch1> ;
+    ex:hasLoyaltyCard <http://example.org/loyaltycard/2> .
 
-_:customer3 a dpv:Customer ;
-    foaf:givenName "Janka"^^xsd:string ;
-    foaf:familyName "Cibulkova"^^xsd:string ;
+<http://example.org/customer/Janka-Cibulkova> a dpv:Customer ;
+    foaf:givenName "Janka"@cs ;
+    foaf:familyName "Cibulkova"@cs ;
     mads:birthDate "2003-03-03"^^xsd:date ;
     foaf:phone <tel:+420666666666> ;
-    ex:shopsAt _:StoreBranch3 ;
-    ex:hasLoyaltyCard _:card3 .
+    ex:shopsAt <http://example.org/store/StoreBranch3> ;
+    ex:hasLoyaltyCard <http://example.org/loyaltycard/3> .
 
 # Loyalty Cards
-_:card1 a schema:ProgramMembership ;
-    schema:membershipPointsEarned "147"^^xsd:integer;
-    schema:identifier "0001"^^xsd:integer .
+<http://example.org/loyaltycard/1> a schema:ProgramMembership ;
+    schema:membershipPointsEarned 147 ;
+    schema:identifier 1 .
 
-_:card2 a schema:ProgramMembership ;
-    schema:membershipPointsEarned "258"^^xsd:integer;
-    schema:identifier "0002"^^xsd:integer .
+<http://example.org/loyaltycard/2> a schema:ProgramMembership ;
+    schema:membershipPointsEarned 258 ;
+    schema:identifier 2 .
 
-_:card3 a schema:ProgramMembership ;
-    schema:membershipPointsEarned "369"^^xsd:integer;
-    schema:identifier "0003"^^xsd:integer .
+<http://example.org/loyaltycard/3> a schema:ProgramMembership ;
+    schema:membershipPointsEarned 369 ;
+    schema:identifier 3 .
