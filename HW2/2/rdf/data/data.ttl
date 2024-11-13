@@ -12,32 +12,16 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # RDFS Vocabulary
-# --- Employee ---
-tro:Employee a rdfs:Class .
-
-foaf:givenName a rdf:Property .
-foaf:familyName a rdf:Property .
-
-sealit:works_at a rdf:Property ;
-                rdfs:domain tro:Employee ;
-                rdfs:range ex:StoreBranch .
-
 # --- Cash Register ---
 ex:CashRegister a rdfs:Class ;
                 rdfs:label "Cash Register"@en ;
                 rdfs:comment "A device used to process customer payments"@en .
-
-schema:identifier a rdf:Property .
 
 ex:isSelfCheckout a rdf:Property ;
                   rdfs:label "Is self checkout"@en ;
                   rdfs:comment "Indicates that a cash register can be used as a self checkout."@en ;
                   rdfs:domain ex:CashRegister ;
                   rdfs:range xsd:boolean .
-
-cpmeta:locatedAt a rdf:Property ;
-                 rdfs:domain ex:CashRegister ;
-                 rdfs:range ex:StoreBranch .
 
 ex:operated_by a rdf:Property ;
     rdfs:label "Operated by"@en ;
@@ -50,33 +34,13 @@ ex:StoreBranch a rdfs:Class ;
                rdfs:label "Store branch"@en ;
                rdfs:comment "A branch of a store chain."@en .
 
-juso:name a rdf:Property .
-
 ex:has_warehouse a rdf:Property ;
     rdfs:label "Has warehouse"@en ;
     rdfs:comment "Indicates that a store branch has also a warehouse locally."@en ;
     rdfs:domain ex:StoreBranch ;
     rdfs:range xsd:boolean .
 
-cpmeta:locatedAt a rdf:Property ;
-    rdfs:domain ex:StoreBranch ;
-    rdfs:range juso:Address .
-
-# --- Address ---
-juso:Address a rdfs:Class .
-
-schema:addressLocality a rdf:Property .
-schema:streetAddress a rdf:Property .
-juso:postal_code a rdf:Property .
-
 # --- Customer ---
-dpv:Customer a rdfs:Class .
-
-mads:birthDate a rdf:Property .
-
-foaf:phone a rdf:Property ;
-    rdfs:domain dpv:Customer .
-
 ex:shopsAt a rdf:Property ;
     rdfs:label "Shops at"@en ;
     rdfs:comment "Indicates that the customer shops at the store branch"@en ;
@@ -84,11 +48,6 @@ ex:shopsAt a rdf:Property ;
     rdfs:range dpv:Customer .
 
 # --- LoyaltyCard ---
-schema:ProgramMembership a rdfs:Class .
-
-schema:membershipPointsEarned a rdf:Property .
-schema:identifier a rdf:Property .
-
 ex:hasLoyaltyCard a rdf:Property ;
     rdfs:label "Has loyalty card"@en ;
     rdfs:comment "Indicates that the customer has a membership"@en ;
