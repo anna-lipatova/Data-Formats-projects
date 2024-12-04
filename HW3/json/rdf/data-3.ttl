@@ -1,0 +1,49 @@
+@prefix tro:   <https://w3id.org/TRO#> .
+@prefix schema: <http://schema.org/> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix ex:    <http://purl.org/net/ns/ex#> .
+@prefix juso:  <http://rdfs.co/juso/> .
+
+<http://example.org/register/1>
+        ex:isSelfCheckout  true ;
+        schema:identifier  1 .
+
+<http://example.org/store/StoreBranch2>
+        ex:has_warehouse  false ;
+        juso:name         "Albert Olomouc" .
+
+<http://example.org/register/2>
+        ex:isSelfCheckout  false ;
+        schema:identifier  2 .
+
+<http://example.org/store/StoreBranch3>
+        ex:has_warehouse  true ;
+        juso:name         "Albert Brno" .
+
+<http://example.org/person/Janko-Mrkvicka>
+        <foaf:familyName>  "Mrkvicka" ;
+        <foaf:givenName>   "Janko" ;
+        ex:operated_by     <http://example.org/register/2> ;
+        sealit:works_at    <http://example.org/store/StoreBranch2> .
+
+<http://example.org/person/Marie-Krasna>
+        <foaf:familyName>  "Krásná" ;
+        <foaf:givenName>   "Marie" ;
+        ex:operated_by     <http://example.org/register/1> ;
+        sealit:works_at    <http://example.org/store/StoreBranch1> .
+
+<http://example.org/register/3>
+        ex:isSelfCheckout  true ;
+        schema:identifier  3 .
+
+<http://example.org/store/StoreBranch1>
+        ex:has_warehouse  false ;
+        juso:name         "Albert Liberec, Žižkova" .
+
+<http://example.org/person/Peter-Cibulka>
+        <foaf:familyName>  "Cibulka" ;
+        <foaf:givenName>   "Peter" ;
+        ex:operated_by     <http://example.org/register/3> ;
+        sealit:works_at    <http://example.org/store/StoreBranch3> .
+
+[ tro:Employee  <http://example.org/person/Peter-Cibulka> , <http://example.org/person/Janko-Mrkvicka> , <http://example.org/person/Marie-Krasna> ] .
