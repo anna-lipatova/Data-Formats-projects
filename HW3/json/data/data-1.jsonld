@@ -24,7 +24,10 @@
     "city": "schema:addressLocality",
     "street": "schema:streetAddress",
     "zip_code": "juso:postal_code",
-    "operated_by": "ex:operated_by"
+    "operated_by": {
+      "@id": "ex:operated_by",
+      "@type": "@id"
+    }
   },
   "store_branches": [
     {
