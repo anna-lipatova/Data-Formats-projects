@@ -1,0 +1,74 @@
+{
+  "@context": {
+    "type": "@type",
+    "id": "@id",
+    "ex": "http://purl.org/net/ns/ex#",
+    "schema": "http://schema.org/",
+    "tro": "https://w3id.org/TRO#",
+    "juso": "http://rdfs.co/juso/",
+    "employees": "tro:Employee",
+    "cash_registers": "ex:CashRegister",
+    "store_branch": "ex:StoreBranch",
+    "name": "juso:name",
+    "given_name": "foaf:givenName",
+    "family_name": "foaf:familyName",
+    "works_at": "sealit:works_at",
+    "leads": "ex:operated_by",
+    "has_warehouse": "ex:has_warehouse",
+    "number": "schema:identifier",
+    "is_self_checkout": "ex:isSelfCheckout"
+  },
+  "employees": [
+    {
+      "id": "http://example.org/person/Marie-Krasna",
+      "given_name": "Marie",
+      "family_name": "Krásná",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch1",
+        "name": "Albert Liberec, Žižkova",
+        "has_warehouse": false
+      },
+      "leads": [
+        {
+          "id": "http://example.org/register/1",
+          "number": 1,
+          "is_self_checkout": true
+        }
+      ]
+    },
+    {
+      "id": "http://example.org/person/Janko-Mrkvicka",
+      "given_name": "Janko",
+      "family_name": "Mrkvicka",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch2",
+        "name": "Albert Olomouc",
+        "has_warehouse": false
+      },
+      "leads": [
+        {
+          "id": "http://example.org/register/2",
+          "number": 2,
+          "is_self_checkout": false
+        }
+      ]
+    },
+    {
+      "id": "http://example.org/person/Peter-Cibulka",
+      "given_name": "Peter",
+      "family_name": "Cibulka",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch3",
+        "name": "Albert Brno",
+        "has_warehouse": true
+      },
+      "leads": [
+        {
+          "id": "http://example.org/register/3",
+          "number": 3,
+          "is_self_checkout": true
+        }
+      ]
+    }
+  ]
+}
