@@ -24,8 +24,8 @@
     <xs:complexType name="TypeEmployee">
         <xs:sequence>
             <!-- Properties -->
-            <xs:element name="GivenName" type="LangString"/>
-            <xs:element name="FamilyName" type="LangString"/>
+            <xs:element name="Given_name" type="LangString"/>
+            <xs:element name="Family_name" type="LangString"/>
             <!-- Relations direct -->
             <xs:element name="CashRegisters" type="TypeCashRegisters"></xs:element>
             <!-- Relations reference -->
@@ -52,7 +52,7 @@
         <xs:sequence>
             <!-- Properties -->
             <xs:element name="Number" type="xs:integer"></xs:element>
-            <xs:element name="IsSelfCheckout" type="xs:boolean"/>
+            <xs:element name="Is_self_checkout" type="xs:boolean"/>
         </xs:sequence>
         <xs:attribute name="CashRegisterId" type="TypeCashRegisterId" use="required"/>
     </xs:complexType>
@@ -70,7 +70,7 @@
         <xs:sequence>
             <!-- Properties-->
             <xs:element name="Name" type="LangString"/>
-            <xs:element name="HasWarehouse" type="xs:boolean"/>
+            <xs:element name="has_warehouse" type="xs:boolean"/>
         </xs:sequence>
         <xs:attribute name="StoreBranchId" type="TypeStoreBranchId" use="required"/>
     </xs:complexType>
