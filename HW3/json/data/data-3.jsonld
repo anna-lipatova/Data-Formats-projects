@@ -6,6 +6,7 @@
     "schema": "http://schema.org/",
     "tro": "https://w3id.org/TRO#",
     "juso": "http://rdfs.co/juso/",
+    "sealit": "http://www.sealitproject.eu/ontology/",
     "employees": "tro:Employee",
     "cash_registers": "ex:CashRegister",
     "store_branch": "ex:StoreBranch",
