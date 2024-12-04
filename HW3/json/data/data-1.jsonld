@@ -1,0 +1,57 @@
+<http://example.org/customer/Janka-Cibulkova> <foaf:familyName> "Cibulkova" .
+<http://example.org/customer/Janka-Cibulkova> <foaf:givenName> "Janka" .
+<http://example.org/customer/Janka-Cibulkova> <foaf:phone> "tel:+420666666666" .
+<http://example.org/customer/Janka-Cibulkova> <http://purl.org/net/ns/ex#shopsAt> "http://example.org/store/StoreBranch3" .
+<http://example.org/customer/Janka-Cibulkova> <http://schema.org/birthDate> "2003-03-03" .
+<http://example.org/customer/Marek-Velky> <foaf:familyName> "Velký" .
+<http://example.org/customer/Marek-Velky> <foaf:givenName> "Marek" .
+<http://example.org/customer/Marek-Velky> <foaf:phone> "tel:+420777777777" .
+<http://example.org/customer/Marek-Velky> <http://purl.org/net/ns/ex#shopsAt> "http://example.org/store/StoreBranch2" .
+<http://example.org/customer/Marek-Velky> <http://schema.org/birthDate> "2001-01-01" .
+<http://example.org/customer/Petra-Mrkvickova> <foaf:familyName> "Mrkvickova" .
+<http://example.org/customer/Petra-Mrkvickova> <foaf:givenName> "Petra" .
+<http://example.org/customer/Petra-Mrkvickova> <foaf:phone> "tel:+420123321231" .
+<http://example.org/customer/Petra-Mrkvickova> <http://purl.org/net/ns/ex#shopsAt> "http://example.org/store/StoreBranch1" .
+<http://example.org/customer/Petra-Mrkvickova> <http://schema.org/birthDate> "2002-02-02" .
+<http://example.org/person/Janko-Mrkvicka> <foaf:familyName> "Mrkvicka" .
+<http://example.org/person/Janko-Mrkvicka> <foaf:givenName> "Janko" .
+<http://example.org/person/Marie-Krasna> <foaf:familyName> "Krásná" .
+<http://example.org/person/Marie-Krasna> <foaf:givenName> "Marie" .
+<http://example.org/person/Peter-Cibulka> <foaf:familyName> "Cibulka" .
+<http://example.org/person/Peter-Cibulka> <foaf:givenName> "Peter" .
+<http://example.org/register/1> <http://purl.org/net/ns/ex#isSelfCheckout> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/register/1> <http://schema.org/identifier> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/register/2> <http://purl.org/net/ns/ex#isSelfCheckout> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/register/2> <http://schema.org/identifier> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/register/3> <http://purl.org/net/ns/ex#isSelfCheckout> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/register/3> <http://schema.org/identifier> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/store/StoreBranch1> <http://purl.org/net/ns/ex#CashRegister> <http://example.org/register/1> .
+<http://example.org/store/StoreBranch1> <http://purl.org/net/ns/ex#has_warehouse> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/store/StoreBranch1> <http://rdfs.co/juso/Address> _:b1 .
+<http://example.org/store/StoreBranch1> <http://rdfs.co/juso/name> "Albert Liberec, Žižkova" .
+<http://example.org/store/StoreBranch1> <https://w3id.org/TRO#Employee> <http://example.org/person/Marie-Krasna> .
+<http://example.org/store/StoreBranch1> <https://w3id.org/dpv#Customer> <http://example.org/customer/Petra-Mrkvickova> .
+<http://example.org/store/StoreBranch2> <http://purl.org/net/ns/ex#CashRegister> <http://example.org/register/2> .
+<http://example.org/store/StoreBranch2> <http://purl.org/net/ns/ex#has_warehouse> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/store/StoreBranch2> <http://rdfs.co/juso/Address> _:b2 .
+<http://example.org/store/StoreBranch2> <http://rdfs.co/juso/name> "Albert Olomouc" .
+<http://example.org/store/StoreBranch2> <https://w3id.org/TRO#Employee> <http://example.org/person/Janko-Mrkvicka> .
+<http://example.org/store/StoreBranch2> <https://w3id.org/dpv#Customer> <http://example.org/customer/Marek-Velky> .
+<http://example.org/store/StoreBranch3> <http://purl.org/net/ns/ex#CashRegister> <http://example.org/register/3> .
+<http://example.org/store/StoreBranch3> <http://purl.org/net/ns/ex#has_warehouse> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/store/StoreBranch3> <http://rdfs.co/juso/Address> _:b3 .
+<http://example.org/store/StoreBranch3> <http://rdfs.co/juso/name> "Albert Brno" .
+<http://example.org/store/StoreBranch3> <https://w3id.org/TRO#Employee> <http://example.org/person/Peter-Cibulka> .
+<http://example.org/store/StoreBranch3> <https://w3id.org/dpv#Customer> <http://example.org/customer/Janka-Cibulkova> .
+_:b0 <http://purl.org/net/ns/ex#StoreBranch> <http://example.org/store/StoreBranch1> .
+_:b0 <http://purl.org/net/ns/ex#StoreBranch> <http://example.org/store/StoreBranch2> .
+_:b0 <http://purl.org/net/ns/ex#StoreBranch> <http://example.org/store/StoreBranch3> .
+_:b1 <http://rdfs.co/juso/postal_code> "10400" .
+_:b1 <http://schema.org/addressLocality> "Liberec" .
+_:b1 <http://schema.org/streetAddress> "Prokopova, 261" .
+_:b2 <http://rdfs.co/juso/postal_code> "77900" .
+_:b2 <http://schema.org/addressLocality> "Olomouc" .
+_:b2 <http://schema.org/streetAddress> "Polska, 1" .
+_:b3 <http://rdfs.co/juso/postal_code> "60200" .
+_:b3 <http://schema.org/addressLocality> "Brno" .
+_:b3 <http://schema.org/streetAddress> "Nádražní, 2" .
