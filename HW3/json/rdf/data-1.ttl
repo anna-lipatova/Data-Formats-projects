@@ -1,0 +1,88 @@
+@prefix tro:   <https://w3id.org/TRO#> .
+@prefix schema: <http://schema.org/> .
+@prefix ex:    <http://purl.org/net/ns/ex#> .
+@prefix juso:  <http://rdfs.co/juso/> .
+@prefix dpv:   <https://w3id.org/dpv#> .
+
+<http://example.org/register/1>
+        ex:isSelfCheckout  true ;
+        ex:operated_by     <http://example.org/person/Marie-Krasna> ;
+        schema:identifier  1 .
+
+<http://example.org/store/StoreBranch2>
+        ex:CashRegister   <http://example.org/register/2> ;
+        ex:has_warehouse  false ;
+        juso:Address      [ juso:postal_code        "77900" ;
+                            schema:addressLocality  "Olomouc" ;
+                            schema:streetAddress    "Polska, 1"
+                          ] ;
+        juso:name         "Albert Olomouc" ;
+        tro:Employee      <http://example.org/person/Janko-Mrkvicka> ;
+        dpv:Customer      <http://example.org/customer/Marek-Velky> .
+
+<http://example.org/customer/Marek-Velky>
+        <foaf:familyName>  "Velký" ;
+        <foaf:givenName>   "Marek" ;
+        <foaf:phone>       "tel:+420777777777" ;
+        ex:shopsAt         "http://example.org/store/StoreBranch2" ;
+        schema:birthDate   "2001-01-01" .
+
+<http://example.org/register/2>
+        ex:isSelfCheckout  false ;
+        ex:operated_by     <http://example.org/person/Janko-Mrkvicka> ;
+        schema:identifier  2 .
+
+<http://example.org/customer/Janka-Cibulkova>
+        <foaf:familyName>  "Cibulkova" ;
+        <foaf:givenName>   "Janka" ;
+        <foaf:phone>       "tel:+420666666666" ;
+        ex:shopsAt         "http://example.org/store/StoreBranch3" ;
+        schema:birthDate   "2003-03-03" .
+
+<http://example.org/store/StoreBranch3>
+        ex:CashRegister   <http://example.org/register/3> ;
+        ex:has_warehouse  true ;
+        juso:Address      [ juso:postal_code        "60200" ;
+                            schema:addressLocality  "Brno" ;
+                            schema:streetAddress    "Nádražní, 2"
+                          ] ;
+        juso:name         "Albert Brno" ;
+        tro:Employee      <http://example.org/person/Peter-Cibulka> ;
+        dpv:Customer      <http://example.org/customer/Janka-Cibulkova> .
+
+<http://example.org/register/3>
+        ex:isSelfCheckout  true ;
+        ex:operated_by     <http://example.org/person/Peter-Cibulka> ;
+        schema:identifier  3 .
+
+<http://example.org/person/Janko-Mrkvicka>
+        <foaf:familyName>  "Mrkvicka" ;
+        <foaf:givenName>   "Janko" .
+
+<http://example.org/customer/Petra-Mrkvickova>
+        <foaf:familyName>  "Mrkvickova" ;
+        <foaf:givenName>   "Petra" ;
+        <foaf:phone>       "tel:+420123321231" ;
+        ex:shopsAt         "http://example.org/store/StoreBranch1" ;
+        schema:birthDate   "2002-02-02" .
+
+<http://example.org/person/Marie-Krasna>
+        <foaf:familyName>  "Krásná" ;
+        <foaf:givenName>   "Marie" .
+
+[ ex:StoreBranch  <http://example.org/store/StoreBranch3> , <http://example.org/store/StoreBranch2> , <http://example.org/store/StoreBranch1> ] .
+
+<http://example.org/store/StoreBranch1>
+        ex:CashRegister   <http://example.org/register/1> ;
+        ex:has_warehouse  false ;
+        juso:Address      [ juso:postal_code        "10400" ;
+                            schema:addressLocality  "Liberec" ;
+                            schema:streetAddress    "Prokopova, 261"
+                          ] ;
+        juso:name         "Albert Liberec, Žižkova" ;
+        tro:Employee      <http://example.org/person/Marie-Krasna> ;
+        dpv:Customer      <http://example.org/customer/Petra-Mrkvickova> .
+
+<http://example.org/person/Peter-Cibulka>
+        <foaf:familyName>  "Cibulka" ;
+        <foaf:givenName>   "Peter" .
