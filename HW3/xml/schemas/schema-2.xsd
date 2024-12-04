@@ -21,7 +21,7 @@
             <!-- Properties -->
             <xs:element name="City" type="LangString" />
             <xs:element name="Street" type="LangString" />
-            <xs:element name="ZipCode" type="LangString" />
+            <xs:element name="Zip_code" type="LangString" />
             <!-- Relations direct -->
             <xs:element name="StoreBranch" type="TypeStoreBranch" minOccurs="0" maxOccurs="1"></xs:element>            
         </xs:sequence>
@@ -41,7 +41,7 @@
         <xs:sequence>
             <!-- Properties-->
             <xs:element name="Name" type="LangString"/>
-            <xs:element name="HasWarehouse" type="xs:boolean"/>
+            <xs:element name="has_warehouse" type="xs:boolean"/>
         </xs:sequence>
         <xs:attribute name="StoreBranchId" type="TypeStoreBranchId" use="required"/>
     </xs:complexType>
