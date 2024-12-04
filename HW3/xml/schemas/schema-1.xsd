@@ -24,8 +24,8 @@
     <xs:complexType name="TypeEmployee">
         <xs:sequence>
             <!-- Properties -->
-            <xs:element name="GivenName" type="LangString"/>
-            <xs:element name="FamilyName" type="LangString"/>
+            <xs:element name="Given_name" type="LangString"/>
+            <xs:element name="Family_name" type="LangString"/>
         </xs:sequence>
         <xs:attribute name="EmployeeId" type="TypeEmployeeId" use="required"/>
     </xs:complexType>
@@ -48,7 +48,7 @@
         <xs:sequence>
             <!-- Properties -->
             <xs:element name="Number" type="xs:integer"></xs:element>
-            <xs:element name="IsSelfCheckout" type="xs:boolean"/>
+            <xs:element name="Is_self_checkout" type="xs:boolean"/>
             <!-- Relation refs-->
             <xs:element name="Employee" type="TypeEmployee"></xs:element>
         </xs:sequence>
@@ -73,10 +73,10 @@
         <xs:complexType name="TypeCustomer">
         <xs:sequence>
             <!-- Properties -->
-            <xs:element name="GivenName" type="LangString"/>
-            <xs:element name="FamilyName" type="LangString"/>
-            <xs:element name="BirthDate" type="xs:date"/>
-            <xs:element name="Phone" type="LangString"></xs:element>
+            <xs:element name="Given_name" type="LangString"/>
+            <xs:element name="Family_name" type="LangString"/>
+            <xs:element name="Birth_date" type="xs:date"/>
+            <xs:element name="Phone_number" type="LangString"></xs:element>
         </xs:sequence>
         <xs:attribute name="CustomerId" type="TypeCustomerId" use="required"/>
     </xs:complexType>
@@ -95,7 +95,7 @@
             <!-- Properties -->
             <xs:element name="City" type="LangString" />
             <xs:element name="Street" type="LangString" />
-            <xs:element name="ZipCode" type="LangString" />
+            <xs:element name="Zip_code" type="LangString" />
         </xs:sequence>
         <xs:attribute name="AddressId" type="TypeAddressId" use="required"/>
     </xs:complexType>
@@ -108,7 +108,7 @@
         <xs:sequence>
             <!-- Properties-->
             <xs:element name="Name" type="LangString"/>
-            <xs:element name="HasWarehouse" type="xs:boolean"/>
+            <xs:element name="has_warehouse" type="xs:boolean"/>
             <!-- Relations direct -->
             <xs:element name="Employees" type="TypeEmployees"></xs:element>
             <xs:element name="CashRegisters" type="TypeCashRegisters"></xs:element>
