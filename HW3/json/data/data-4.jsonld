@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "type": "@type",
+    "id": "@id",
+    "ex": "http://purl.org/net/ns/ex#",
+    "schema": "http://schema.org/",
+    "juso": "http://rdfs.co/juso/",
+    "dpv": "https://w3id.org/dpv#",
+    "tro": "https://w3id.org/TRO#",
+    "mads": "http://www.loc.gov/mads/rdf/v1#",
+    "customers": "dpv:Customer",
+    "given_name": "foaf:givenName",
+    "family_name": "foaf:familyName",
+    "birth_date": "mads:birthDate",
+    "phone_number": "foaf:phone",
+    "has_loyalty_card": "ex:hasLoyaltyCard",
+    "shops_at": "ex:shopsAt",
+    "loyalty_card": "schema:ProgramMembership",
+    "number": "schema:identifier",
+    "points": "schema:membershipPointsEarned",
+    "store_branch": "ex:StoreBranch",
+    "name": "juso:name",
+    "has_warehouse": "ex:has_warehouse"
+  },
+  "customers": [
+    {
+      "id": "http://example.org/customer/Marek-Velky",
+      "given_name": "Marek",
+      "family_name": "Velký",
+      "birth_date": "2001-01-01",
+      "phone_number": "tel:+420777777777",
+      "has_loyalty_card": {
+        "id": "http://example.org/loyaltycard/1",
+        "number": 1,
+        "points": 147
+      },
+      "shops_at": {
+        "id": "http://example.org/store/StoreBranch2",
+        "name": "Albert Olomouc",
+        "has_warehouse": false
+      }
+    },
+    {
+      "id": "http://example.org/customer/Petra-Mrkvickova",
+      "given_name": "Petra",
+      "family_name": "Mrkvickova",
+      "birth_date": "2002-02-02",
+      "phone_number": "tel:+420123321231",
+      "has_loyalty_card": {
+        "id": "http://example.org/loyaltycard/2",
+        "number": 2,
+        "points": 258
+      },
+      "shops_at": {
+        "id": "http://example.org/store/StoreBranch1",
+        "name": "Albert Liberec, Žižkova",
+        "has_warehouse": false
+      }
+    },
+    {
+      "id": "http://example.org/customer/Janka-Cibulkova",
+      "given_name": "Janka",
+      "family_name": "Cibulkova",
+      "birth_date": "2003-03-03",
+      "phone_number": "tel:+420666666666",
+      "has_loyalty_card": {
+        "id": "http://example.org/loyaltycard/3",
+        "number": 3,
+        "points": 369
+      },
+      "shops_at": {
+        "id": "http://example.org/store/StoreBranch3",
+        "name": "Albert Brno",
+        "has_warehouse": true
+      }
+    }
+  ]
+}
