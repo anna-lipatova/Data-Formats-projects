@@ -6,7 +6,7 @@
     <xsl:output method="text" encoding="UTF-8" />
     <xsl:variable name="prefix">http://example.org/</xsl:variable>
 
-    <xsl:template match="StoreBranches">
+    <xsl:template match="/">
         @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
         @prefix tro: &lt;https://w3id.org/TRO#&gt; .
         @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
@@ -22,14 +22,23 @@
 
 
         <xsl:apply-templates/>
+        <xsl:apply-templates select="StoreBranches/StoreBranch/CashRegisters"/>
     </xsl:template>
 
 
-    <xsl:template match="StoreBranch">
+    <xsl:template match="StoreBranches/StoreBranch">
         &lt;<xsl:value-of select="@id"/>&gt; a ex:StoreBranch;
         juso:name &quot;<xsl:value-of select="Name"/>&quot;@<xsl:value-of select="Name/@xml:lang"/>;
-        ex:isSelfCheckout <xsl:value-of select="has_warehouse"/>;
+        ex:has_warehouse <xsl:value-of select="has_warehouse"/>;
         cpmeta:locatedAt &lt;$prefix/<xsl:value-of select="Addresses/Address[1]/City"/>&gt; .
+    </xsl:template>
+
+    <xsl:template match="CashRegister">
+        &lt;<xsl:value-of select="@registerId"/>&gt; a ex:CashRegister;
+        schema:identifier <xsl:value-of select="Number"/>;
+        ex:isSelfCheckout <xsl:value-of select="Is_self_checkout"/>;
+        cpmeta:locatedAt &lt;<xsl:value-of select="ancestor::StoreBranch[1]/@id"/>&gt; .
+        ex:operated_by &lt;<xsl:value-of select="Employees/Employee[1]/@employeeId"/>&gt; .
     </xsl:template>
 
     <xsl:template match="text()"/>
