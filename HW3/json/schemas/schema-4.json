@@ -1,0 +1,69 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://example.org/schema-4.json",
+    "type": "object",
+    "properties": {
+        "Customers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Customer",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "given_name": {
+                        "type": "string"
+                    },
+                    "family_name": {
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "phone_number": {
+                        "type": "string"
+                    },
+                    "has_loyalty_card": {
+                        "type": "object",
+                        "title": "Loyalty Card",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "number": {
+                                "type": "integer"
+                            },
+                            "points": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": ["id", "number", "points"]
+                    },
+                    "shops_at": {
+                        "type": "object",
+                        "title": "Store Branch",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "has_warehouse": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": ["id", "name", "has_warehouse"]
+                    }
+                },
+                "required": ["id", "given_name", "family_name", "birth_date", "phone_number"]
+            }
+        }
+    },
+    "required": ["Customers"]
+}
