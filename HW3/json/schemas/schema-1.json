@@ -1,25 +1,40 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://example.org/schema-cash-register.json",
+    "$id": "https://example.org/schema-1.json",
     "type": "object",
     "properties": {
-        "cash_registers": {
+        "StoreBranches": {
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Cash Register",
+                "title": "Store branch",
                 "properties": {
                     "id": {
                         "type": "string",
                         "format": "uri"
                     },
-                    "number": {
-                        "type": "integer"
+                    "name": {
+                        "type": "string"
                     },
-                    "is_self_checkout": {
+                    "has_warehouse": {
                         "type": "boolean"
                     },
-                    "leads": {
+                    "Address": {
+                        "type": "object",
+                        "properties": {
+                            "city": {
+                                "type": "string"
+                            },
+                            "street": {
+                                "type": "string"
+                            },
+                            "zip_code": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["city", "street", "zip_code"]
+                    },
+                    "Employees": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -34,51 +49,62 @@
                                 },
                                 "family_name": {
                                     "type": "string"
-                                },
-                                "works_at": {
-                                    "type": "string",
-                                    "format": "uri"
                                 }
                             },
-                            "required": ["id", "given_name", "family_name", "works_at"]
+                            "required": ["id", "given_name", "family_name"]
                         }
                     },
-                    "located_at": {
-                        "type": "object",
-                        "title": "Store Branch",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "format": "uri"
-                            },
-                            "name": {
-                                "type": "string"
-                            },
-                            "has_warehouse": {
-                                "type": "boolean"
-                            },
-                            "address": {
-                                "type": "object",
-                                "properties": {
-                                    "city": {
-                                        "type": "string"
-                                    },
-                                    "street": {
-                                        "type": "string"
-                                    },
-                                    "zip_code": {
-                                        "type": "string"
-                                    }
+                    "CashRegisters": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "Cash Register",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uri"
                                 },
-                                "required": ["city", "street", "zip_code"]
-                            }
-                        },
-                        "required": ["id", "has_warehouse", "address"]
+                                "number": {
+                                    "type": "integer"
+                                },
+                                "is_self_checkout": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["id", "number", "is_self_checkout"]
+                        }
+                    },
+                    "Customers": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "Customer",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "given_name": {
+                                    "type": "string"
+                                },
+                                "family_name": {
+                                    "type": "string"
+                                },
+                                "birth_date": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "phone_number": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["id", "given_name", "family_name", "birth_date", "phone_number"]
+                        }
                     }
                 },
-                "required": ["id", "number", "is_self_checkout", "located_at"]
+                "required": ["id", "name", "has_warehouse"]
             }
         }
     },
-    "required": ["cash_registers"]
+    "required": ["StoreBranches"]
 }

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://example.org/schema-2.json",
+    "type": "object",
+    "properties": {
+        "Addresses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Address",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "street": {
+                        "type": "string"
+                    },
+                    "zip_code": {
+                        "type": "string"
+                    },
+                    "StoreBranches": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "Store Branch",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "has_warehouse": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["id", "has_warehouse"]
+                        }
+                    }
+                },
+                "required": ["id", "city", "street", "zip_code"]
+            }
+        }
+    },
+    "required": ["Addresses"]
+}

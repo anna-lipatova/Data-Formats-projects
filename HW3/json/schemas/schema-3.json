@@ -1,0 +1,65 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://example.org/schema-3.json",
+    "type": "object",
+    "properties": {
+        "Employees": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Employee",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "given_name": {
+                        "type": "string"
+                    },
+                    "family_name": {
+                        "type": "string"
+                    },
+                    "works_at": {
+                        "type": "object",
+                        "title": "Store Branch",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "has_warehouse": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": ["id", "has_warehouse"]
+                    },
+                    "leads": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "Cash Register",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "number": {
+                                    "type": "integer"
+                                },
+                                "is_self_checkout": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["id", "number", "is_self_checkout"]
+                        }
+                    }
+                },
+                "required": ["id", "given_name", "family_name"]
+            }
+        }
+    },
+    "required": ["Employees"]
+}
