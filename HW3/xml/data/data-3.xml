@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-2.xsd">
     <Employee employeeId="http://example.org/person/Marie-Krasna">
-        <Given_name>Marie</Given_name>
-        <Family_name>Krásná</Family_name>
+        <Given_name xml:lang="cs">Marie</Given_name>
+        <Family_name xml:lang="cs">Krásná</Family_name>
         <CashRegisters>
-            <CashRegister registerId="http://example.org/register/1">
+            <CashRegister CashRegisterId="http://example.org/register/1">
                 <number>1</number>
                 <is_self_checkout>true</is_self_checkout>
             </CashRegister>
         </CashRegisters>
         <StoreBranches>
-            <StoreBranch storeId="http://example.org/store/StoreBranch1">
+            <StoreBranch StoreBranchId="http://example.org/store/StoreBranch1">
                 <name xml:lang="cs">Albert Liberec, Žižkova</name>
                 <has_warehouse>false</has_warehouse>
             </StoreBranch>
         </StoreBranches>
     </Employee>
 
-    <Employee employeeId="http://example.org/person/Janko-Mrkvicka">
-        <Given_name>Janko</Given_name>
-        <Family_name>Mrkvicka</Family_name>
+    <Employee EmployeeId="http://example.org/person/Janko-Mrkvicka">
+        <Given_name xml:lang="cs">Janko</Given_name>
+        <Family_name xml:lang="cs">Mrkvicka</Family_name>
         <CashRegisters>
-            <CashRegister registerId="http://example.org/register/2">
+            <CashRegister CashRegisterId="http://example.org/register/2">
                 <number>2</number>
                 <is_self_checkout>false</is_self_checkout>
             </CashRegister>
         </CashRegisters>
         <StoreBranches>
-            <StoreBranch storeId="http://example.org/store/StoreBranch2">
+            <StoreBranch StoreBranchId="http://example.org/store/StoreBranch2">
                 <name xml:lang="cs">Albert Olomouc</name>
                 <has_warehouse>false</has_warehouse>
             </StoreBranch>
         </StoreBranches>
     </Employee>
 
-    <Employee employeeId="http://example.org/person/Peter-Cibulka">
-        <Given_name>Peter</Given_name>
-        <Family_name>Cibulka</Family_name>
+    <Employee EmployeeId="http://example.org/person/Peter-Cibulka">
+        <Given_name xml:lang="cs">Peter</Given_name>
+        <Family_name xml:lang="cs">Cibulka</Family_name>
         <CashRegisters>
-            <CashRegister registerId="http://example.org/register/3">
+            <CashRegister CashRegisterId="http://example.org/register/3">
                 <number>3</number>
                 <is_self_checkout>true</is_self_checkout>
             </CashRegister>
         </CashRegisters>
         <StoreBranches>
-            <StoreBranch storeId="http://example.org/store/StoreBranch3">
+            <StoreBranch StoreBranchId="http://example.org/store/StoreBranch3">
                 <name xml:lang="cs">Albert Brno</name>
                 <has_warehouse>true</has_warehouse>
             </StoreBranch>
