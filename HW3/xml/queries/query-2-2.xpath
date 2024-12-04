@@ -1,0 +1,6 @@
+(: Get the full name (given and family) of employees working at 'Albert Brno' and with the number of a cash register greater than 1. :)
+
+/Employees/Employee[
+    CashRegisters/CashRegister[number > 1] and 
+    StoreBranches/StoreBranch[name='Albert Brno']
+]/(Given_name|Family_name)

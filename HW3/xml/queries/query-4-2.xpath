@@ -1,0 +1,7 @@
+(: Find customers born after 2002 and their loyalty card number. :)
+
+/Customers/Customer[
+    Birth_date > '2002-12-31'
+    ]/(Given_name|Family_name|LoyaltyCards/LoyaltyCard/Number)
+
+

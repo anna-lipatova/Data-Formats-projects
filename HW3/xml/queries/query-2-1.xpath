@@ -1,0 +1,6 @@
+(: Identify employees who operate self checkout and work at the store without warehouse. :)
+
+/Employees/Employee[
+    CashRegisters/CashRegister[is_self_checkout='true'] and 
+    StoreBranches/StoreBranch[has_warehouse='false']
+]

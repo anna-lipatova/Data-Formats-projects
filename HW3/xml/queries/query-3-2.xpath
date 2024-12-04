@@ -1,0 +1,5 @@
+(: Give the city names and zip codes of all adresses where the street starts with the letter "P". :)
+
+/Addresses/Address[
+    starts-with(Street, 'P')
+    ]/ (Zip_code | City)

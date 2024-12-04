@@ -1,0 +1,5 @@
+(: Find all stores in Brno that have self checkout. :)
+
+/StoreBranches/StoreBranch[
+    CashRegisters/CashRegister[Is_self_checkout='true'] 
+    and Addresses/Address[City='Brno']]

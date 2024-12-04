@@ -1,0 +1,6 @@
+(: Find customers who shop at a store without warehouse and with loyalty card points greater than 200. :)
+
+/Customers/Customer[
+    LoyaltyCards/LoyaltyCard/Points > 200 and 
+    StoreBranches/StoreBranch[has_warehouse='false']
+    ]

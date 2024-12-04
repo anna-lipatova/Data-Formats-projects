@@ -1,0 +1,6 @@
+(: Find the number of self checkout registers :)
+
+count(/StoreBranches/StoreBranch[
+    CashRegisters/CashRegister[Is_self_checkout='true'] 
+    and Customers/Customer[Given_name="Petra"]
+    ])

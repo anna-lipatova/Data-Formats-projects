@@ -1,0 +1,5 @@
+(: Give the names of store branches and their cities where the zip code is greater than 50 000. :)
+
+/Addresses/Address[
+    Zip_code > 60000
+    ]/(StoreBranches/StoreBranch/Name)
