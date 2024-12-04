@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Addresses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-3.xsd">
+    <Address>
+        <City xml:lang="cs">Liberec</City>
+        <Street xml:lang="cs">Prokopova, 261</Street>
+        <Zip_code>10400</Zip_code>
+        <StoreBranches>
+            <StoreBranch storeId="http://example.org/store/StoreBranch1">
+                <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
+                <has_warehouse>false</has_warehouse>
+            </StoreBranch>
+        </StoreBranches>
+    </Address>
+
+    <Address>
+        <City xml:lang="cs">Olomouc</City>
+        <Street xml:lang="cs">Polska, 1</Street>
+        <Zip_code>77900</Zip_code>
+        <StoreBranches>
+            <StoreBranch storeId="http://example.org/store/StoreBranch2">
+                <Name xml:lang="cs">Albert Olomouc</Name>
+                <has_warehouse>false</has_warehouse>
+            </StoreBranch>
+        </StoreBranches>
+    </Address>
+
+    <Address>
+        <City xml:lang="cs">Brno</City>
+        <Street xml:lang="cs">Nádražní, 2</Street>
+        <Zip_code>60200</Zip_code>
+        <StoreBranches>
+            <StoreBranch storeId="http://example.org/store/StoreBranch3">
+                <Name xml:lang="cs">Albert Brno</Name>
+                <has_warehouse>true</has_warehouse>
+            </StoreBranch>
+        </StoreBranches>
+    </Address>
+</Addresses>

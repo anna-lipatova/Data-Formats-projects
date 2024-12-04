@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Customers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-4.xsd">
+    <Customer customerId="http://example.org/customer/Marek-Velky">
+        <Given_name>Marek</Given_name>
+        <Family_name>Velký</Family_name>
+        <Birth_date>2001-01-01</Birth_date>
+        <Phone_number>tel:+420777777777</Phone_number>
+        <LoyaltyCards>
+            <LoyaltyCard>
+                <Number>1</Number>
+                <Points>147</Points>
+            </LoyaltyCard>
+        </LoyaltyCards>
+        <StoreBranches>
+            <StoreBranch storeId="http://example.org/store/StoreBranch2">
+                <Name xml:lang="cs">Albert Olomouc</Name>
+                <has_warehouse>false</has_warehouse>
+            </StoreBranch>
+        </StoreBranches>
+    </Customer>
+
+    <Customer customerId="http://example.org/customer/Petra-Mrkvickova">
+        <Given_name>Petra</Given_name>
+        <Family_name>Mrkvickova</Family_name>
+        <Birth_date>2002-02-02</Birth_date>
+        <Phone_number>tel:+420123321231</Phone_number>
+        <LoyaltyCards>
+            <LoyaltyCard>
+                <Number>2</Number>
+                <Points>258</Points>
+            </LoyaltyCard>
+        </LoyaltyCards>
+        <StoreBranches>
+            <StoreBranch storeId="http://example.org/store/StoreBranch1">
+                <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
+                <has_warehouse>false</has_warehouse>
+            </StoreBranch>
+        </StoreBranches>
+    </Customer>
+
+    <Customer customerId="http://example.org/customer/Janka-Cibulkova">
+        <Given_name>Janka</Given_name>
+        <Family_name>Cibulkova</Family_name>
+        <Birth_date>2003-03-03</Birth_date>
+        <Phone_number>tel:+420666666666</Phone_number>
+        <LoyaltyCards>
+            <LoyaltyCard>
+                <Number>3</Number>
+                <Points>369</Points>
+            </LoyaltyCard>
+        </LoyaltyCards>
+        <StoreBranches>
+            <StoreBranch storeId="http://example.org/store/StoreBranch3">
+                <Name xml:lang="cs">Albert Brno</Name>
+                <has_warehouse>true</has_warehouse>
+            </StoreBranch>
+        </StoreBranches>
+    </Customer>
+</Customers>
