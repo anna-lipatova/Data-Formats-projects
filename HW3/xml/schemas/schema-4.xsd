@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+                schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+
+    
+    <xs:complexType name="LangString">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="optional" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Type Program Membership-->
+    <xs:simpleType name="TypeProgramMembershipId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeProgramMembershipIds">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="TypeCustomerId" minOccurs="0" maxOccurs="1"></xs:element>
+        </xs:sequence>  
+    </xs:complexType>
+    <xs:complexType name="TypeProgramMembership">
+        <xs:sequence>
+            <!-- Properties -->
+            <xs:element name="MembershipPointsEarned" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="ProgramMembershipId" type="TypeProgramMembershipId" use="required"/>
+    </xs:complexType>
+
+    <!-- Type Customer-->
+    <xs:simpleType name="TypeCustomerId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeCustomerIds">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="TypeCustomerId" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>  
+    </xs:complexType>
+    <xs:complexType name="TypeCustomer">
+        <xs:sequence>
+            <!-- Properties -->
+            <xs:element name="GivenName" type="LangString"/>
+            <xs:element name="FamilyName" type="LangString"/>
+            <xs:element name="BirthDate" type="xs:date"/>
+            <xs:element name="Phone" type="LangString"></xs:element>
+            <!-- Relations direct -->
+            <xs:element name="LoyaltyCard" type="TypeProgramMembership"></xs:element>
+            <!-- Relations reference -->
+            <xs:element name="StoreBranch" type="TypeStoreBranch"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="CustomerId" type="TypeCustomerId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TypeCustomers">
+        <xs:sequence>
+            <xs:element name="Customer" type="TypeCustomer" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--Type Store Branch-->
+    <xs:simpleType name="TypeStoreBranchId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeStoreBranch">
+        <xs:sequence>
+            <!-- Properties-->
+            <xs:element name="Name" type="LangString"/>
+            <xs:element name="HasWarehouse" type="xs:boolean"/>
+        </xs:sequence>
+        <xs:attribute name="StoreBranchId" type="TypeStoreBranchId" use="required"/>
+    </xs:complexType>
+    
+    <!-- Root -->
+    <xs:element name="Customers" type="TypeCustomers"/>
+</xs:schema>    
