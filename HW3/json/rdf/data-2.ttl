@@ -1,0 +1,35 @@
+@prefix schema: <http://schema.org/> .
+@prefix ex:    <http://purl.org/net/ns/ex#> .
+@prefix juso:  <http://rdfs.co/juso/> .
+
+[ juso:Address  <http://example.org/address/Brno> , <http://example.org/address/Olomouc> , <http://example.org/address/Liberec> ] .
+
+<http://example.org/address/Brno>
+        <cpmeta:locatedAt>      <http://example.org/store/StoreBranch3> ;
+        juso:postal_code        "60200" ;
+        schema:addressLocality  "Brno" ;
+        schema:streetAddress    "Nádražní, 2" .
+
+<http://example.org/store/StoreBranch2>
+        ex:has_warehouse  false ;
+        juso:name         "Albert Olomouc" .
+
+<http://example.org/address/Liberec>
+        <cpmeta:locatedAt>      <http://example.org/store/StoreBranch1> ;
+        juso:postal_code        "10400" ;
+        schema:addressLocality  "Liberec" ;
+        schema:streetAddress    "Prokopova, 261" .
+
+<http://example.org/store/StoreBranch3>
+        ex:has_warehouse  true ;
+        juso:name         "Albert Brno" .
+
+<http://example.org/address/Olomouc>
+        <cpmeta:locatedAt>      <http://example.org/store/StoreBranch2> ;
+        juso:postal_code        "77900" ;
+        schema:addressLocality  "Olomouc" ;
+        schema:streetAddress    "Polska, 1" .
+
+<http://example.org/store/StoreBranch1>
+        ex:has_warehouse  false ;
+        juso:name         "Albert Liberec, Žižkova" .
