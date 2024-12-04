@@ -41,10 +41,10 @@
     <xs:complexType name="TypeCustomer">
         <xs:sequence>
             <!-- Properties -->
-            <xs:element name="GivenName" type="LangString"/>
-            <xs:element name="FamilyName" type="LangString"/>
-            <xs:element name="BirthDate" type="xs:date"/>
-            <xs:element name="Phone" type="LangString"></xs:element>
+            <xs:element name="Given_name" type="LangString"/>
+            <xs:element name="Family_name" type="LangString"/>
+            <xs:element name="Birth_date" type="xs:date"/>
+            <xs:element name="Phone_number" type="LangString"></xs:element>
             <!-- Relations direct -->
             <xs:element name="LoyaltyCard" type="TypeProgramMembership"></xs:element>
             <!-- Relations reference -->
@@ -66,7 +66,7 @@
         <xs:sequence>
             <!-- Properties-->
             <xs:element name="Name" type="LangString"/>
-            <xs:element name="HasWarehouse" type="xs:boolean"/>
+            <xs:element name="has_warehouse" type="xs:boolean"/>
         </xs:sequence>
         <xs:attribute name="StoreBranchId" type="TypeStoreBranchId" use="required"/>
     </xs:complexType>
