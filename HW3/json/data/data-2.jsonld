@@ -10,6 +10,7 @@
     "city": "schema:addressLocality",
     "street": "schema:streetAddress",
     "zip_code": "juso:postal_code",
+    "locatedAt": "cpmeta:locatedAt",
     "name": "juso:name",
     "has_warehouse": "ex:has_warehouse"
   },
@@ -19,7 +20,7 @@
       "city": "Liberec",
       "street": "Prokopova, 261",
       "zip_code": "10400",
-      "StoreBranches": [
+      "locatedAt": [
         {
           "id": "http://example.org/store/StoreBranch1",
           "name": "Albert Liberec, Žižkova",
@@ -32,7 +33,7 @@
       "city": "Olomouc",
       "street": "Polska, 1",
       "zip_code": "77900",
-      "StoreBranches": [
+      "locatedAt": [
         {
           "id": "http://example.org/store/StoreBranch2",
           "name": "Albert Olomouc",
@@ -45,7 +46,7 @@
       "city": "Brno",
       "street": "Nádražní, 2",
       "zip_code": "60200",
-      "StoreBranches": [
+      "locatedAt": [
         {
           "id": "http://example.org/store/StoreBranch3",
           "name": "Albert Brno",
