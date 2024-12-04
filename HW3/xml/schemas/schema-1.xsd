@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+                schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+
+    
+    <xs:complexType name="LangString">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="optional" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Type Employee-->
+    <xs:simpleType name="TypeEmployeeId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeEmployeeIds">
+        <xs:sequence>
+            <xs:element name="EmployeeId" type="TypeEmployeeId" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>  
+    </xs:complexType>
+    <xs:complexType name="TypeEmployee">
+        <xs:sequence>
+            <!-- Properties -->
+            <xs:element name="GivenName" type="LangString"/>
+            <xs:element name="FamilyName" type="LangString"/>
+        </xs:sequence>
+        <xs:attribute name="EmployeeId" type="TypeEmployeeId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TypeEmployees">
+        <xs:sequence>
+            <xs:element name="Employee" type="TypeEmployee" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Type Cash Register-->
+    <xs:simpleType name="TypeCashRegisterId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeCashRegisterIds">
+        <xs:sequence>
+            <xs:element name="CashregisterId" type="TypeCashRegisterId" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>  
+    </xs:complexType>
+    <xs:complexType name="TypeCashRegister">
+        <xs:sequence>
+            <!-- Properties -->
+            <xs:element name="Number" type="xs:integer"></xs:element>
+            <xs:element name="IsSelfCheckout" type="xs:boolean"/>
+            <!-- Relation refs-->
+            <xs:element name="Employee" type="TypeEmployee"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="CashRegisterId" type="TypeCashRegisterId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TypeCashRegisters">
+        <xs:sequence>
+            <xs:element name="CashRegister" type="TypeCashRegister" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- Type Customer-->
+    <xs:simpleType name="TypeCustomerId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeCustomerIds">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="TypeCustomerId" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>  
+    </xs:complexType>
+        <xs:complexType name="TypeCustomer">
+        <xs:sequence>
+            <!-- Properties -->
+            <xs:element name="GivenName" type="LangString"/>
+            <xs:element name="FamilyName" type="LangString"/>
+            <xs:element name="BirthDate" type="xs:date"/>
+            <xs:element name="Phone" type="LangString"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="CustomerId" type="TypeCustomerId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TypeCustomers">
+        <xs:sequence>
+            <xs:element name="Customer" type="TypeCustomer" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Type Address--> 
+    <xs:simpleType name="TypeAddressId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeAddress">
+        <xs:sequence>
+            <!-- Properties -->
+            <xs:element name="City" type="LangString" />
+            <xs:element name="Street" type="LangString" />
+            <xs:element name="ZipCode" type="LangString" />
+        </xs:sequence>
+        <xs:attribute name="AddressId" type="TypeAddressId" use="required"/>
+    </xs:complexType>
+
+    <!--Type Store Branch-->
+    <xs:simpleType name="TypeStoreBranchId">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    <xs:complexType name="TypeStoreBranch">
+        <xs:sequence>
+            <!-- Properties-->
+            <xs:element name="Name" type="LangString"/>
+            <xs:element name="HasWarehouse" type="xs:boolean"/>
+            <!-- Relations direct -->
+            <xs:element name="Employees" type="TypeEmployees"></xs:element>
+            <xs:element name="CashRegisters" type="TypeCashRegisters"></xs:element>
+            <xs:element name="Customers" type="TypeCustomers"></xs:element>
+            <!-- Relation refs-->
+            <xs:element name="Address" type="TypeAddress"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="StoreBranchId" type="TypeStoreBranchId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TypeStoreBranches">
+        <xs:sequence>
+            <xs:element name="StoreBranch" type="TypeStoreBranch" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Root -->
+    <xs:element name="StoreBranches" type="TypeStoreBranches"/>
+</xs:schema>    
