@@ -1,0 +1,48 @@
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix tro: <https://w3id.org/TRO#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://purl.org/net/ns/ex#> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix cpmeta: <http://meta.icos-cp.eu/ontologies/cpmeta/> .
+@prefix juso: <http://rdfs.co/juso/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+<http://example.org/store/StoreBranch1> a ex:StoreBranch;
+        juso:name "Albert Liberec, Žižkova"@cs;
+        ex:has_warehouse false;
+        cpmeta:locatedAt <$prefix/Liberec> .
+
+<http://example.org/store/StoreBranch2> a ex:StoreBranch;
+        juso:name "Albert Olomouc"@cs;
+        ex:has_warehouse false;
+        cpmeta:locatedAt <$prefix/Olomouc> .
+
+<http://example.org/store/StoreBranch3> a ex:StoreBranch;
+        juso:name "Albert Brno"@cs;
+        ex:has_warehouse true;
+        cpmeta:locatedAt <$prefix/Brno> .
+
+<http://example.org/register/1> a ex:CashRegister;
+        schema:identifier 1;
+        ex:isSelfCheckout true;
+        cpmeta:locatedAt <http://example.org/store/StoreBranch1> ;
+        ex:operated_by <http://example.org/person/Marie-Krasna> .
+
+<http://example.org/register/2> a ex:CashRegister;
+        schema:identifier 2;
+        ex:isSelfCheckout false;
+        cpmeta:locatedAt <http://example.org/store/StoreBranch2> ;
+        ex:operated_by <http://example.org/person/Janko-Mrkvicka> .
+
+<http://example.org/register/3> a ex:CashRegister;
+        schema:identifier 3;
+        ex:isSelfCheckout true;
+        cpmeta:locatedAt <http://example.org/store/StoreBranch3> ;
+        ex:operated_by <http://example.org/person/Peter-Cibulka> .

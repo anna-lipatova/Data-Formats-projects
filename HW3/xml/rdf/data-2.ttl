@@ -1,0 +1,30 @@
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix tro: <https://w3id.org/TRO#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://purl.org/net/ns/ex#> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix cpmeta: <http://meta.icos-cp.eu/ontologies/cpmeta/> .
+@prefix juso: <http://rdfs.co/juso/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+<http://example.org/address/Liberec> a juso:Address;
+        schema:addressLocality "Liberec"@cs;
+        schema:streetAddress "Prokopova, 261"@cs;
+        juso:postal_code "10400".
+
+<http://example.org/address/Olomouc> a juso:Address;
+        schema:addressLocality "Olomouc"@cs;
+        schema:streetAddress "Polska, 1"@cs;
+        juso:postal_code "77900".
+
+<http://example.org/address/Brno> a juso:Address;
+        schema:addressLocality "Brno"@cs;
+        schema:streetAddress "Nádražní, 2"@cs;
+        juso:postal_code "60200".

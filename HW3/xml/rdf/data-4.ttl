@@ -1,0 +1,52 @@
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix tro: <https://w3id.org/TRO#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://purl.org/net/ns/ex#> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix cpmeta: <http://meta.icos-cp.eu/ontologies/cpmeta/> .
+@prefix juso: <http://rdfs.co/juso/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+<http://example.org/customer/Marek-Velky> a dpv:Customer;
+        foaf:givenName "Marek"@cs;
+        foaf:familyName "Marek"@cs;
+        mads:birthDate "2001-01-01"^^xsd:date;
+        foaf:phone <tel:+420777777777>;
+        ex:shopsAt <http://example.org/store/StoreBranch2>;
+        ex:hasLoyaltyCard <http://example.org/loyaltycard/1>.
+
+<http://example.org/loyaltycard/1> a schema:ProgramMembership;
+        schema:membershipPointsEarned 147;
+        schema:identifier 1 .
+
+<http://example.org/customer/Petra-Mrkvickova> a dpv:Customer;
+        foaf:givenName "Petra"@cs;
+        foaf:familyName "Petra"@cs;
+        mads:birthDate "2002-02-02"^^xsd:date;
+        foaf:phone <tel:+420123321231>;
+        ex:shopsAt <http://example.org/store/StoreBranch1>;
+        ex:hasLoyaltyCard <http://example.org/loyaltycard/2>.
+
+<http://example.org/loyaltycard/2> a schema:ProgramMembership;
+        schema:membershipPointsEarned 258;
+        schema:identifier 2 .
+
+<http://example.org/customer/Janka-Cibulkova> a dpv:Customer;
+        foaf:givenName "Janka"@cs;
+        foaf:familyName "Janka"@cs;
+        mads:birthDate "2003-03-03"^^xsd:date;
+        foaf:phone <tel:+420666666666>;
+        ex:shopsAt <http://example.org/store/StoreBranch3>;
+        ex:hasLoyaltyCard <http://example.org/loyaltycard/3>.
+
+<http://example.org/loyaltycard/3> a schema:ProgramMembership;
+        schema:membershipPointsEarned 369;
+        schema:identifier 3 .
+    
