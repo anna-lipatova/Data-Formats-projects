@@ -29,7 +29,7 @@
       "@type": "@id"
     }
   },
-  "store_branches": [
+  "StoreBranches": [
     {
       "id": "http://example.org/store/StoreBranch1",
       "name": "Albert Liberec, Žižkova",
