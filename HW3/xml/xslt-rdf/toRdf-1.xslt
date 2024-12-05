@@ -3,7 +3,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions">
-    <xsl:output method="text" encoding="UTF-8" />
+    <xsl:output method="text" encoding="UTF-8"/>
     <xsl:variable name="prefix">http://example.org/</xsl:variable>
 
     <xsl:template match="/">
@@ -21,25 +21,26 @@
         @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 
-        <xsl:apply-templates/>
+        <xsl:apply-templates select="StoreBranches"/>
         <xsl:apply-templates select="StoreBranches/StoreBranch/CashRegisters"/>
     </xsl:template>
 
 
-    <xsl:template match="StoreBranches/StoreBranch">
-        &lt;<xsl:value-of select="@id"/>&gt; a ex:StoreBranch;
+    <xsl:template match="StoreBranch">
+        &lt;<xsl:value-of select="@StoreBranchId"/>&gt; a ex:StoreBranch;
         juso:name &quot;<xsl:value-of select="Name"/>&quot;@<xsl:value-of select="Name/@xml:lang"/>;
         ex:has_warehouse <xsl:value-of select="has_warehouse"/>;
-        cpmeta:locatedAt &lt;$prefix/<xsl:value-of select="Addresses/Address[1]/City"/>&gt; .
+        cpmeta:locatedAt &lt;$prefix/<xsl:value-of select="Address/City"/>&gt; .
     </xsl:template>
 
     <xsl:template match="CashRegister">
-        &lt;<xsl:value-of select="@registerId"/>&gt; a ex:CashRegister;
+        &lt;<xsl:value-of select="@CashRegisterId"/>&gt; a ex:CashRegister;
         schema:identifier <xsl:value-of select="Number"/>;
         ex:isSelfCheckout <xsl:value-of select="Is_self_checkout"/>;
-        cpmeta:locatedAt &lt;<xsl:value-of select="ancestor::StoreBranch[1]/@id"/>&gt; .
-        ex:operated_by &lt;<xsl:value-of select="Employees/Employee[1]/@employeeId"/>&gt; .
+        cpmeta:locatedAt &lt;<xsl:value-of select="ancestor::StoreBranch[1]/@StoreBranchId"/>&gt; ;
+        ex:operated_by &lt;<xsl:value-of select="Employee/@EmployeeId"/>&gt; .
     </xsl:template>
+
 
     <xsl:template match="text()"/>
 

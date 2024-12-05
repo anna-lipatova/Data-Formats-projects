@@ -25,6 +25,7 @@
         <xs:sequence>
             <!-- Properties -->
             <xs:element name="MembershipPointsEarned" type="xs:integer"/>
+            <xs:element name="Identifier" type="xs:integer"/>
         </xs:sequence>
         <xs:attribute name="ProgramMembershipId" type="TypeProgramMembershipId" use="required"/>
     </xs:complexType>

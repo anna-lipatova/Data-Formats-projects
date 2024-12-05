@@ -7,6 +7,7 @@
         <Phone_number>tel:+420777777777</Phone_number>
         <LoyaltyCard ProgramMembershipId="http://example.org/loyaltycard/1">
             <MembershipPointsEarned>147</MembershipPointsEarned>
+            <Identifier>1</Identifier>
         </LoyaltyCard>
         <StoreBranch StoreBranchId="http://example.org/store/StoreBranch2">
             <Name xml:lang="cs">Albert Olomouc</Name>
@@ -21,6 +22,7 @@
         <Phone_number>tel:+420123321231</Phone_number>
         <LoyaltyCard ProgramMembershipId="http://example.org/loyaltycard/2">
             <MembershipPointsEarned>258</MembershipPointsEarned>
+            <Identifier>2</Identifier>
         </LoyaltyCard>
         <StoreBranch StoreBranchId="http://example.org/store/StoreBranch1">
             <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
@@ -35,6 +37,7 @@
         <Phone_number>tel:+420666666666</Phone_number>
         <LoyaltyCard ProgramMembershipId="http://example.org/loyaltycard/3">
             <MembershipPointsEarned>369</MembershipPointsEarned>
+            <Identifier>3</Identifier>
         </LoyaltyCard>
         <StoreBranch StoreBranchId="http://example.org/store/StoreBranch3">
             <Name xml:lang="cs">Albert Brno</Name>
