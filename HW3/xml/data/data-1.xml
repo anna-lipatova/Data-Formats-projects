@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<StoreBranches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-1.xsd">
+<StoreBranches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="../schemas/schema-1.xsd">
     <StoreBranch StoreBranchId="http://example.org/store/StoreBranch1">
         <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
         <has_warehouse>false</has_warehouse>
@@ -11,31 +12,27 @@
                 <Phone_number>tel:+420123321231</Phone_number>
             </Customer>
         </Customers>
-        <Addresses>
-            <Address AddressId="http://example.org/address/Liberec">
-                <City xml:lang="cs">Liberec</City>
-                <Street xml:lang="cs">Prokopova, 261</Street>
-                <Zip_code>10400</Zip_code>
-            </Address>
-        </Addresses>
-        <CashRegisters>
-            <CashRegister CashRegisterId="http://example.org/register/1">
-                <Number>1</Number>
-                <Is_self_checkout>true</Is_self_checkout>
-                <Employees>
-                    <Employee EmployeeId="http://example.org/person/Marie-Krasna">
-                        <Given_name xml:lang="cs">Marie</Given_name>
-                        <Family_name xml:lang="cs">Krásná</Family_name>
-                    </Employee>
-                </Employees>
-            </CashRegister>
-        </CashRegisters>
         <Employees>
             <Employee EmployeeId="http://example.org/person/Marie-Krasna">
                 <Given_name xml:lang="cs">Marie</Given_name>
                 <Family_name xml:lang="cs">Krásná</Family_name>
             </Employee>
         </Employees>
+        <CashRegisters>
+            <CashRegister CashRegisterId="http://example.org/register/1">
+                <Number>1</Number>
+                <Is_self_checkout>true</Is_self_checkout>
+                <Employee EmployeeId="http://example.org/person/Marie-Krasna">
+                    <Given_name xml:lang="cs">Marie</Given_name>
+                    <Family_name xml:lang="cs">Krásná</Family_name>
+                </Employee>
+            </CashRegister>
+        </CashRegisters>
+        <Address AddressId="http://example.org/address/Liberec">
+            <City xml:lang="cs">Liberec</City>
+            <Street xml:lang="cs">Prokopova, 261</Street>
+            <Zip_code>10400</Zip_code>
+        </Address>
     </StoreBranch>
 
     <StoreBranch StoreBranchId="http://example.org/store/StoreBranch2">
@@ -49,31 +46,27 @@
                 <Phone_number>tel:+420777777777</Phone_number>
             </Customer>
         </Customers>
-        <Addresses>
-            <Address AddressId="http://example.org/address/Olomouc">
-                <City xml:lang="cs">Olomouc</City>
-                <Street xml:lang="cs">Polska, 1</Street>
-                <Zip_code>77900</Zip_code>
-            </Address>
-        </Addresses>
-        <CashRegisters>
-            <CashRegister CashRegisterId="http://example.org/register/2">
-                <Number>2</Number>
-                <Is_self_checkout>false</Is_self_checkout>
-                <Employees>
-                    <Employee EmployeeId="http://example.org/person/Janko-Mrkvicka">
-                        <Given_name xml:lang="cs">Janko</Given_name>
-                        <Family_name xml:lang="cs">Mrkvicka</Family_name>
-                    </Employee>
-                </Employees>
-            </CashRegister>
-        </CashRegisters>
         <Employees>
             <Employee EmployeeId="http://example.org/person/Janko-Mrkvicka">
                 <Given_name xml:lang="cs">Janko</Given_name>
                 <Family_name xml:lang="cs">Mrkvicka</Family_name>
             </Employee>
         </Employees>
+        <CashRegisters>
+            <CashRegister CashRegisterId="http://example.org/register/2">
+                <Number>2</Number>
+                <Is_self_checkout>false</Is_self_checkout>
+                <Employee EmployeeId="http://example.org/person/Janko-Mrkvicka">
+                    <Given_name xml:lang="cs">Janko</Given_name>
+                    <Family_name xml:lang="cs">Mrkvicka</Family_name>
+                </Employee>
+            </CashRegister>
+        </CashRegisters>
+        <Address AddressId="http://example.org/address/Olomouc">
+            <City xml:lang="cs">Olomouc</City>
+            <Street xml:lang="cs">Polska, 1</Street>
+            <Zip_code>77900</Zip_code>
+        </Address>
     </StoreBranch>
 
     <StoreBranch StoreBranchId="http://example.org/store/StoreBranch3">
@@ -87,30 +80,26 @@
                 <Phone_number>tel:+420666666666</Phone_number>
             </Customer>
         </Customers>
-        <Addresses>
-            <Address AddressId="http://example.org/address/Brno">
-                <City xml:lang="cs">Brno</City>
-                <Street xml:lang="cs">Nádražní, 2</Street>
-                <Zip_code>60200</Zip_code>
-            </Address>
-        </Addresses>
-        <CashRegisters>
-            <CashRegister CashRegisterId="http://example.org/register/3">
-                <Number>3</Number>
-                <Is_self_checkout>true</Is_self_checkout>
-                <Employees>
-                    <Employee EmployeeId="http://example.org/person/Peter-Cibulka">
-                        <Given_name xml:lang="cs">Peter</Given_name>
-                        <Family_name xml:lang="cs">Cibulka</Family_name>
-                    </Employee>
-                </Employees>
-            </CashRegister>
-        </CashRegisters>
         <Employees>
             <Employee EmployeeId="http://example.org/person/Peter-Cibulka">
                 <Given_name xml:lang="cs">Peter</Given_name>
                 <Family_name xml:lang="cs">Cibulka</Family_name>
             </Employee>
         </Employees>
+        <CashRegisters>
+            <CashRegister CashRegisterId="http://example.org/register/3">
+                <Number>3</Number>
+                <Is_self_checkout>true</Is_self_checkout>
+                <Employee EmployeeId="http://example.org/person/Peter-Cibulka">
+                    <Given_name xml:lang="cs">Peter</Given_name>
+                    <Family_name xml:lang="cs">Cibulka</Family_name>
+                </Employee>
+            </CashRegister>
+        </CashRegisters>
+        <Address AddressId="http://example.org/address/Brno">
+            <City xml:lang="cs">Brno</City>
+            <Street xml:lang="cs">Nádražní, 2</Street>
+            <Zip_code>60200</Zip_code>
+        </Address>
     </StoreBranch>
 </StoreBranches>
