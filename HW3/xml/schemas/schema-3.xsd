@@ -1,81 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-                schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+<<<<<<< HEAD
+<Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-2.xsd">
+=======
+<Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-3.xsd">
+>>>>>>> 97ab606992999cd496a2c83dc7fe1ebad6ace389
+    <Employee EmployeeId="http://example.org/person/Marie-Krasna">
+        <Given_name xml:lang="cs">Marie</Given_name>
+        <Family_name xml:lang="cs">Krásná</Family_name>
+        <CashRegisters>
+            <CashRegister CashRegisterId="http://example.org/register/1">
+                <Number>1</Number>
+                <Is_self_checkout>true</Is_self_checkout>
+            </CashRegister>
+        </CashRegisters>
+        <StoreBranch StoreBranchId="http://example.org/store/StoreBranch1">
+            <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
+            <has_warehouse>false</has_warehouse>
+        </StoreBranch>
+    </Employee>
 
-    
-    <xs:complexType name="LangString">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute ref="xml:lang" use="optional" />
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
+    <Employee EmployeeId="http://example.org/person/Janko-Mrkvicka">
+        <Given_name xml:lang="cs">Janko</Given_name>
+        <Family_name xml:lang="cs">Mrkvicka</Family_name>
+        <CashRegisters>
+            <CashRegister CashRegisterId="http://example.org/register/2">
+                <Number>2</Number>
+                <Is_self_checkout>false</Is_self_checkout>
+            </CashRegister>
+        </CashRegisters>
+        <StoreBranch StoreBranchId="http://example.org/store/StoreBranch2">
+            <Name xml:lang="cs">Albert Olomouc</Name>
+            <has_warehouse>false</has_warehouse>
+        </StoreBranch>
+    </Employee>
 
-    <!-- Type Employee-->
-    <xs:simpleType name="TypeEmployeeId">
-        <xs:restriction base="xs:anyURI"/>
-    </xs:simpleType>
-    <xs:complexType name="TypeEmployeeIds">
-        <xs:sequence>
-            <xs:element name="EmployeeId" type="TypeEmployeeId" minOccurs="0" maxOccurs="unbounded"></xs:element>
-        </xs:sequence>  
-    </xs:complexType>
-    <xs:complexType name="TypeEmployee">
-        <xs:sequence>
-            <!-- Properties -->
-            <xs:element name="Given_name" type="LangString"/>
-            <xs:element name="Family_name" type="LangString"/>
-            <!-- Relations direct -->
-            <xs:element name="CashRegisters" type="TypeCashRegisters"></xs:element>
-            <!-- Relations reference -->
-            <xs:element name="StoreBranch" type="TypeStoreBranch" minOccurs="1" maxOccurs="1"></xs:element>
-        </xs:sequence>
-        <xs:attribute name="EmployeeId" type="TypeEmployeeId" use="required"/>
-    </xs:complexType>
-    <xs:complexType name="TypeEmployees">
-        <xs:sequence>
-            <xs:element name="Employee" type="TypeEmployee" minOccurs="0" maxOccurs="unbounded"></xs:element>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Type Cash Register-->
-    <xs:simpleType name="TypeCashRegisterId">
-        <xs:restriction base="xs:anyURI"/>
-    </xs:simpleType>
-    <xs:complexType name="TypeCashRegisterIds">
-        <xs:sequence>
-            <xs:element name="CashregisterId" type="TypeCashRegisterId" minOccurs="1" maxOccurs="unbounded"></xs:element>
-        </xs:sequence>  
-    </xs:complexType>
-    <xs:complexType name="TypeCashRegister">
-        <xs:sequence>
-            <!-- Properties -->
-            <xs:element name="Number" type="xs:integer"></xs:element>
-            <xs:element name="Is_self_checkout" type="xs:boolean"/>
-        </xs:sequence>
-        <xs:attribute name="CashRegisterId" type="TypeCashRegisterId" use="required"/>
-    </xs:complexType>
-    <xs:complexType name="TypeCashRegisters">
-        <xs:sequence>
-            <xs:element name="CashRegister" type="TypeCashRegister" minOccurs="1" maxOccurs="unbounded"></xs:element>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!--Type Store Branch-->
-    <xs:simpleType name="TypeStoreBranchId">
-        <xs:restriction base="xs:anyURI"/>
-    </xs:simpleType>
-    <xs:complexType name="TypeStoreBranch">
-        <xs:sequence>
-            <!-- Properties-->
-            <xs:element name="Name" type="LangString"/>
-            <xs:element name="has_warehouse" type="xs:boolean"/>
-        </xs:sequence>
-        <xs:attribute name="StoreBranchId" type="TypeStoreBranchId" use="required"/>
-    </xs:complexType>
-
-    
-    <!-- Root -->
-    <xs:element name="Employees" type="TypeEmployees"/>
-</xs:schema>    
+    <Employee EmployeeId="http://example.org/person/Peter-Cibulka">
+        <Given_name xml:lang="cs">Peter</Given_name>
+        <Family_name xml:lang="cs">Cibulka</Family_name>
+        <CashRegisters>
+            <CashRegister CashRegisterId="http://example.org/register/3">
+                <Number>3</Number>
+                <Is_self_checkout>true</Is_self_checkout>
+            </CashRegister>
+        </CashRegisters>
+        <StoreBranch StoreBranchId="http://example.org/store/StoreBranch3">
+            <Name xml:lang="cs">Albert Brno</Name>
+            <has_warehouse>true</has_warehouse>
+        </StoreBranch>
+    </Employee>
+</Employees>
