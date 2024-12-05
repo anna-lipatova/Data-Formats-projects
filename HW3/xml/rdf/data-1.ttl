@@ -17,17 +17,17 @@
 <http://example.org/store/StoreBranch1> a ex:StoreBranch;
         juso:name "Albert Liberec, Žižkova"@cs;
         ex:has_warehouse false;
-        cpmeta:locatedAt <$prefix/Liberec> .
+        cpmeta:locatedAt <http://example.org/address/Liberec> .
 
 <http://example.org/store/StoreBranch2> a ex:StoreBranch;
         juso:name "Albert Olomouc"@cs;
         ex:has_warehouse false;
-        cpmeta:locatedAt <$prefix/Olomouc> .
+        cpmeta:locatedAt <http://example.org/address/Olomouc> .
 
 <http://example.org/store/StoreBranch3> a ex:StoreBranch;
         juso:name "Albert Brno"@cs;
         ex:has_warehouse true;
-        cpmeta:locatedAt <$prefix/Brno> .
+        cpmeta:locatedAt <http://example.org/address/Brno> .
 
 <http://example.org/register/1> a ex:CashRegister;
         schema:identifier 1;
@@ -46,3 +46,4 @@
         ex:isSelfCheckout true;
         cpmeta:locatedAt <http://example.org/store/StoreBranch3> ;
         ex:operated_by <http://example.org/person/Peter-Cibulka> .
+    

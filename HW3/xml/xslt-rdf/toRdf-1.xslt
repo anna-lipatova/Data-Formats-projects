@@ -30,7 +30,7 @@
         &lt;<xsl:value-of select="@StoreBranchId"/>&gt; a ex:StoreBranch;
         juso:name &quot;<xsl:value-of select="Name"/>&quot;@<xsl:value-of select="Name/@xml:lang"/>;
         ex:has_warehouse <xsl:value-of select="has_warehouse"/>;
-        cpmeta:locatedAt &lt;$prefix/<xsl:value-of select="Address/City"/>&gt; .
+        cpmeta:locatedAt &lt;<xsl:value-of select="Address/@AddressId"/>&gt; .
     </xsl:template>
 
     <xsl:template match="CashRegister">
