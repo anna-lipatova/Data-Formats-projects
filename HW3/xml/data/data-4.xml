@@ -5,18 +5,13 @@
         <Family_name xml:lang="cs">Velký</Family_name>
         <Birth_date>2001-01-01</Birth_date>
         <Phone_number>tel:+420777777777</Phone_number>
-        <LoyaltyCards>
-            <LoyaltyCard LoyaltyCardId="http://example.org/loyaltycard/1">
-                <Number>1</Number>
-                <Points>147</Points>
-            </LoyaltyCard>
-        </LoyaltyCards>
-        <StoreBranches>
-            <StoreBranch StoreBranchId="http://example.org/store/StoreBranch2">
-                <Name xml:lang="cs">Albert Olomouc</Name>
-                <has_warehouse>false</has_warehouse>
-            </StoreBranch>
-        </StoreBranches>
+        <LoyaltyCard ProgramMembershipId="http://example.org/loyaltycard/1">
+            <MembershipPointsEarned>147</MembershipPointsEarned>
+        </LoyaltyCard>
+        <StoreBranch StoreBranchId="http://example.org/store/StoreBranch2">
+            <Name xml:lang="cs">Albert Olomouc</Name>
+            <has_warehouse>false</has_warehouse>
+        </StoreBranch>
     </Customer>
 
     <Customer CustomerId="http://example.org/customer/Petra-Mrkvickova">
@@ -24,18 +19,13 @@
         <Family_name xml:lang="cs">Mrkvickova</Family_name>
         <Birth_date>2002-02-02</Birth_date>
         <Phone_number>tel:+420123321231</Phone_number>
-        <LoyaltyCards>
-            <LoyaltyCard LoyaltyCardId="http://example.org/loyaltycard/2">
-                <Number>2</Number>
-                <Points>258</Points>
-            </LoyaltyCard>
-        </LoyaltyCards>
-        <StoreBranches>
-            <StoreBranch StoreBranchId="http://example.org/store/StoreBranch1">
-                <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
-                <has_warehouse>false</has_warehouse>
-            </StoreBranch>
-        </StoreBranches>
+        <LoyaltyCard ProgramMembershipId="http://example.org/loyaltycard/2">
+            <MembershipPointsEarned>258</MembershipPointsEarned>
+        </LoyaltyCard>
+        <StoreBranch StoreBranchId="http://example.org/store/StoreBranch1">
+            <Name xml:lang="cs">Albert Liberec, Žižkova</Name>
+            <has_warehouse>false</has_warehouse>
+        </StoreBranch>
     </Customer>
 
     <Customer CustomerId="http://example.org/customer/Janka-Cibulkova">
@@ -43,17 +33,12 @@
         <Family_name xml:lang="cs">Cibulkova</Family_name>
         <Birth_date>2003-03-03</Birth_date>
         <Phone_number>tel:+420666666666</Phone_number>
-        <LoyaltyCards>
-            <LoyaltyCard LoyaltyCardId="http://example.org/loyaltycard/3">
-                <Number>3</Number>
-                <Points>369</Points>
-            </LoyaltyCard>
-        </LoyaltyCards>
-        <StoreBranches>
-            <StoreBranch StoreBranchId="http://example.org/store/StoreBranch3">
-                <Name xml:lang="cs">Albert Brno</Name>
-                <has_warehouse>true</has_warehouse>
-            </StoreBranch>
-        </StoreBranches>
+        <LoyaltyCard ProgramMembershipId="http://example.org/loyaltycard/3">
+            <MembershipPointsEarned>369</MembershipPointsEarned>
+        </LoyaltyCard>
+        <StoreBranch StoreBranchId="http://example.org/store/StoreBranch3">
+            <Name xml:lang="cs">Albert Brno</Name>
+            <has_warehouse>true</has_warehouse>
+        </StoreBranch>
     </Customer>
 </Customers>
