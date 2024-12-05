@@ -27,8 +27,8 @@
 
     <xsl:template match="Employee">
         &lt;<xsl:value-of select="@EmployeeId"/>&gt; a tro:Employee;
-        juso:name &quot;<xsl:value-of select="Given_name"/>&quot;;
-        juso:name &quot;<xsl:value-of select="Family_name"/>&quot;;
+        juso:name &quot;<xsl:value-of select="Given_name"/>&quot;@<xsl:value-of select="Given_name/@xml:lang"/>;
+        juso:name &quot;<xsl:value-of select="Family_name"/>&quot;@<xsl:value-of select="Family_name/@xml:lang"/>;
         sealit:works_at &lt;<xsl:value-of select="StoreBranch/@StoreBranchId"/>&gt; .
     </xsl:template>
 

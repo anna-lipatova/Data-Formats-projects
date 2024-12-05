@@ -28,7 +28,7 @@
     <xsl:template match="Customers/Customer">
         &lt;<xsl:value-of select="@CustomerId"/>&gt; a dpv:Customer;
         foaf:givenName &quot;<xsl:value-of select="Given_name"/>&quot;@<xsl:value-of select="Given_name/@xml:lang"/>;
-        foaf:familyName &quot;<xsl:value-of select="Given_name"/>&quot;@<xsl:value-of select="Given_name/@xml:lang"/>;
+        foaf:familyName &quot;<xsl:value-of select="Family_name"/>&quot;@<xsl:value-of select="Family_name/@xml:lang"/>;
         mads:birthDate &quot;<xsl:value-of select="Birth_date"/>&quot;^^xsd:date;
         foaf:phone &lt;<xsl:value-of select="Phone_number"/>&gt;;
         ex:shopsAt &lt;<xsl:value-of select="StoreBranch/@StoreBranchId"/>&gt;;

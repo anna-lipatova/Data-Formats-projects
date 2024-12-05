@@ -16,7 +16,7 @@
 
 <http://example.org/customer/Marek-Velky> a dpv:Customer;
         foaf:givenName "Marek"@cs;
-        foaf:familyName "Marek"@cs;
+        foaf:familyName "Velký"@cs;
         mads:birthDate "2001-01-01"^^xsd:date;
         foaf:phone <tel:+420777777777>;
         ex:shopsAt <http://example.org/store/StoreBranch2>;
@@ -28,7 +28,7 @@
 
 <http://example.org/customer/Petra-Mrkvickova> a dpv:Customer;
         foaf:givenName "Petra"@cs;
-        foaf:familyName "Petra"@cs;
+        foaf:familyName "Mrkvickova"@cs;
         mads:birthDate "2002-02-02"^^xsd:date;
         foaf:phone <tel:+420123321231>;
         ex:shopsAt <http://example.org/store/StoreBranch1>;
@@ -40,7 +40,7 @@
 
 <http://example.org/customer/Janka-Cibulkova> a dpv:Customer;
         foaf:givenName "Janka"@cs;
-        foaf:familyName "Janka"@cs;
+        foaf:familyName "Cibulkova"@cs;
         mads:birthDate "2003-03-03"^^xsd:date;
         foaf:phone <tel:+420666666666>;
         ex:shopsAt <http://example.org/store/StoreBranch3>;

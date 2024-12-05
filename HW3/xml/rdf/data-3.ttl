@@ -15,16 +15,16 @@
 
 
 <http://example.org/person/Marie-Krasna> a tro:Employee;
-        juso:name "Marie";
-        juso:name "Krásná";
+        juso:name "Marie"@cs;
+        juso:name "Krásná"@cs;
         sealit:works_at <http://example.org/store/StoreBranch1> .
 
 <http://example.org/person/Janko-Mrkvicka> a tro:Employee;
-        juso:name "Janko";
-        juso:name "Mrkvicka";
+        juso:name "Janko"@cs;
+        juso:name "Mrkvicka"@cs;
         sealit:works_at <http://example.org/store/StoreBranch2> .
 
 <http://example.org/person/Peter-Cibulka> a tro:Employee;
-        juso:name "Peter";
-        juso:name "Cibulka";
+        juso:name "Peter"@cs;
+        juso:name "Cibulka"@cs;
         sealit:works_at <http://example.org/store/StoreBranch3> .
