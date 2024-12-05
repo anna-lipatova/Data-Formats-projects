@@ -22,7 +22,7 @@
     "name": "juso:name",
     "has_warehouse": "ex:has_warehouse"
   },
-  "customers": [
+  "Customers": [
     {
       "id": "http://example.org/customer/Marek-Velky",
       "given_name": "Marek",
