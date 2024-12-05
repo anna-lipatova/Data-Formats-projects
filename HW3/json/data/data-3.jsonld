@@ -19,7 +19,7 @@
     "number": "schema:identifier",
     "is_self_checkout": "ex:isSelfCheckout"
   },
-  "employees": [
+  "Employees": [
     {
       "id": "http://example.org/person/Marie-Krasna",
       "given_name": "Marie",
