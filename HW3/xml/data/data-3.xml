@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-2.xsd">
-=======
 <Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-3.xsd">
->>>>>>> 97ab606992999cd496a2c83dc7fe1ebad6ace389
     <Employee EmployeeId="http://example.org/person/Marie-Krasna">
         <Given_name xml:lang="cs">Marie</Given_name>
         <Family_name xml:lang="cs">Krásná</Family_name>
