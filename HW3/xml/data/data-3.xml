@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-2.xsd">
-    <Employee employeeId="http://example.org/person/Marie-Krasna">
+<Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-3.xsd">
+    <Employee EmployeeId="http://example.org/person/Marie-Krasna">
         <Given_name xml:lang="cs">Marie</Given_name>
         <Family_name xml:lang="cs">Krásná</Family_name>
         <CashRegisters>
             <CashRegister CashRegisterId="http://example.org/register/1">
-                <number>1</number>
-                <is_self_checkout>true</is_self_checkout>
+                <Number>1</Number>
+                <Is_self_checkout>true</Is_self_checkout>
             </CashRegister>
         </CashRegisters>
         <StoreBranches>
@@ -22,8 +22,8 @@
         <Family_name xml:lang="cs">Mrkvicka</Family_name>
         <CashRegisters>
             <CashRegister CashRegisterId="http://example.org/register/2">
-                <number>2</number>
-                <is_self_checkout>false</is_self_checkout>
+                <Number>2</Number>
+                <Is_self_checkout>false</Is_self_checkout>
             </CashRegister>
         </CashRegisters>
         <StoreBranches>
@@ -39,8 +39,8 @@
         <Family_name xml:lang="cs">Cibulka</Family_name>
         <CashRegisters>
             <CashRegister CashRegisterId="http://example.org/register/3">
-                <number>3</number>
-                <is_self_checkout>true</is_self_checkout>
+                <Number>3</Number>
+                <Is_self_checkout>true</Is_self_checkout>
             </CashRegister>
         </CashRegisters>
         <StoreBranches>
