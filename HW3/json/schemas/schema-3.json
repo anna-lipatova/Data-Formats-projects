@@ -31,7 +31,8 @@
                                 "type": "string"
                             },
                             "has_warehouse": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "enum": [true, false]
                             }
                         },
                         "required": ["id", "has_warehouse"]
@@ -50,7 +51,8 @@
                                     "type": "integer"
                                 },
                                 "is_self_checkout": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "enum": [true, false]
                                 }
                             },
                             "required": ["id", "number", "is_self_checkout"]
