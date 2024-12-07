@@ -1,56 +1,64 @@
-@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
-@prefix tro:   <https://w3id.org/TRO#> .
-@prefix schema: <http://schema.org/> .
-@prefix ex:    <http://purl.org/net/ns/ex#> .
+@prefix ex:  <http://purl.org/net/ns/ex#> .
+@prefix schema:  <http://schema.org/> .
 @prefix juso:  <http://rdfs.co/juso/> .
-@prefix dpv:   <https://w3id.org/dpv#> .
+@prefix dpv:  <https://w3id.org/dpv#> .
+@prefix tro:  <https://w3id.org/TRO#> .
+@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-<http://example.org/loyaltycard/2>
-        schema:identifier              2 ;
-        schema:membershipPointsEarned  258 .
+<http://example.org/customer/Marek-Velky>
+        rdf:type           dpv:Customer ;
+        <foaf:familyName>  "Velký"@cs ;
+        <foaf:givenName>   "Marek"@cs ;
+        <foaf:phone>       <tel:+420777777777> ;
+        ex:hasLoyaltyCard  <http://example.org/loyaltycard/1> ;
+        ex:shopsAt         <http://example.org/store/StoreBranch2> ;
+        mads:birthDate     "2001-01-01"^^<xsd:date> .
+
+<http://example.org/loyaltycard/1>
+        rdf:type                       schema:ProgramMembership ;
+        schema:identifier              1 ;
+        schema:membershipPointsEarned  147 .
 
 <http://example.org/store/StoreBranch2>
+        rdf:type          ex:StoreBranch ;
         ex:has_warehouse  false ;
         juso:name         "Albert Olomouc" .
 
-<http://example.org/customer/Marek-Velky>
-        <foaf:familyName>  "Velký" ;
-        <foaf:givenName>   "Marek" ;
-        <foaf:phone>       "tel:+420777777777" ;
-        ex:hasLoyaltyCard  <http://example.org/loyaltycard/1> ;
-        ex:shopsAt         <http://example.org/store/StoreBranch2> ;
-        mads:birthDate     "2001-01-01" .
+<http://example.org/customer/Petra-Mrkvickova>
+        rdf:type           dpv:Customer ;
+        <foaf:familyName>  "Mrkvickova"@cs ;
+        <foaf:givenName>   "Petra"@cs ;
+        <foaf:phone>       <tel:+420123321231> ;
+        ex:hasLoyaltyCard  <http://example.org/loyaltycard/2> ;
+        ex:shopsAt         <http://example.org/store/StoreBranch1> ;
+        mads:birthDate     "2002-02-02"^^<xsd:date> .
+
+<http://example.org/loyaltycard/2>
+        rdf:type                       schema:ProgramMembership ;
+        schema:identifier              2 ;
+        schema:membershipPointsEarned  258 .
+
+<http://example.org/store/StoreBranch1>
+        rdf:type          ex:StoreBranch ;
+        ex:has_warehouse  false ;
+        juso:name         "Albert Liberec, Žižkova" .
 
 <http://example.org/customer/Janka-Cibulkova>
-        <foaf:familyName>  "Cibulkova" ;
-        <foaf:givenName>   "Janka" ;
-        <foaf:phone>       "tel:+420666666666" ;
+        rdf:type           dpv:Customer ;
+        <foaf:familyName>  "Cibulkova"@cs ;
+        <foaf:givenName>   "Janka"@cs ;
+        <foaf:phone>       <tel:+420666666666> ;
         ex:hasLoyaltyCard  <http://example.org/loyaltycard/3> ;
         ex:shopsAt         <http://example.org/store/StoreBranch3> ;
-        mads:birthDate     "2003-03-03" .
-
-[ dpv:Customer  <http://example.org/customer/Janka-Cibulkova> , <http://example.org/customer/Petra-Mrkvickova> , <http://example.org/customer/Marek-Velky> ] .
+        mads:birthDate     "2003-03-03"^^<xsd:date> .
 
 <http://example.org/loyaltycard/3>
+        rdf:type                       schema:ProgramMembership ;
         schema:identifier              3 ;
         schema:membershipPointsEarned  369 .
 
 <http://example.org/store/StoreBranch3>
+        rdf:type          ex:StoreBranch ;
         ex:has_warehouse  true ;
         juso:name         "Albert Brno" .
-
-<http://example.org/customer/Petra-Mrkvickova>
-        <foaf:familyName>  "Mrkvickova" ;
-        <foaf:givenName>   "Petra" ;
-        <foaf:phone>       "tel:+420123321231" ;
-        ex:hasLoyaltyCard  <http://example.org/loyaltycard/2> ;
-        ex:shopsAt         <http://example.org/store/StoreBranch1> ;
-        mads:birthDate     "2002-02-02" .
-
-<http://example.org/loyaltycard/1>
-        schema:identifier              1 ;
-        schema:membershipPointsEarned  147 .
-
-<http://example.org/store/StoreBranch1>
-        ex:has_warehouse  false ;
-        juso:name         "Albert Liberec, Žižkova" .
