@@ -8,6 +8,8 @@
     "dpv": "https://w3id.org/dpv#",
     "tro": "https://w3id.org/TRO#",
     "mads": "http://www.loc.gov/mads/rdf/v1#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "a": {"@id": "rdf:type"},
     "customers": "dpv:Customer",
     "given_name": "foaf:givenName",
     "family_name": "foaf:familyName",
@@ -22,54 +24,96 @@
     "name": "juso:name",
     "has_warehouse": "ex:has_warehouse"
   },
-  "Customers": [
+  "@graph": [
     {
-      "id": "http://example.org/customer/Marek-Velky",
-      "given_name": "Marek",
-      "family_name": "Velký",
-      "birth_date": "2001-01-01",
-      "phone_number": "tel:+420777777777",
+      "@id": "http://example.org/customer/Marek-Velky",
+      "@type": "dpv:Customer",
+      "given_name": {
+        "@value": "Marek",
+        "@language": "cs"
+      },
+      "family_name": {
+        "@value": "Velký",
+        "@language": "cs"
+      },
+      "birth_date": {
+        "@value": "2001-01-01",
+        "@type": "xsd:date"
+      },
+      "phone_number": {
+        "@id": "tel:+420777777777"
+      },
       "has_loyalty_card": {
-        "id": "http://example.org/loyaltycard/1",
+        "@type": "schema:ProgramMembership",
+        "@id": "http://example.org/loyaltycard/1",
         "number": 1,
         "points": 147
       },
       "shops_at": {
-        "id": "http://example.org/store/StoreBranch2",
+        "@type": "ex:StoreBranch",
+        "@id": "http://example.org/store/StoreBranch2",
         "name": "Albert Olomouc",
         "has_warehouse": false
       }
     },
     {
-      "id": "http://example.org/customer/Petra-Mrkvickova",
-      "given_name": "Petra",
-      "family_name": "Mrkvickova",
-      "birth_date": "2002-02-02",
-      "phone_number": "tel:+420123321231",
+      "@id": "http://example.org/customer/Petra-Mrkvickova",
+      "@type": "dpv:Customer",
+      "given_name": {
+        "@value": "Petra",
+        "@language": "cs"
+      },
+      "family_name": {
+        "@value": "Mrkvickova",
+        "@language": "cs"
+      },
+      "birth_date": {
+        "@value": "2002-02-02",
+        "@type": "xsd:date"
+      },
+      "phone_number": {
+        "@id": "tel:+420123321231"
+      },
       "has_loyalty_card": {
-        "id": "http://example.org/loyaltycard/2",
+        "@type": "schema:ProgramMembership",
+        "@id": "http://example.org/loyaltycard/2",
         "number": 2,
         "points": 258
       },
       "shops_at": {
-        "id": "http://example.org/store/StoreBranch1",
+        "@type": "ex:StoreBranch",
+        "@id": "http://example.org/store/StoreBranch1",
         "name": "Albert Liberec, Žižkova",
         "has_warehouse": false
       }
     },
     {
-      "id": "http://example.org/customer/Janka-Cibulkova",
-      "given_name": "Janka",
-      "family_name": "Cibulkova",
-      "birth_date": "2003-03-03",
-      "phone_number": "tel:+420666666666",
+      "@id": "http://example.org/customer/Janka-Cibulkova",
+      "@type": "dpv:Customer",
+      "given_name": {
+        "@value": "Janka",
+        "@language": "cs"
+      },
+      "family_name": {
+        "@value": "Cibulkova",
+        "@language": "cs"
+      },
+      "birth_date": {
+        "@value": "2003-03-03",
+        "@type": "xsd:date"
+      },
+      "phone_number": {
+        "@id": "tel:+420666666666"
+      },
       "has_loyalty_card": {
-        "id": "http://example.org/loyaltycard/3",
+        "@type": "schema:ProgramMembership",
+        "@id": "http://example.org/loyaltycard/3",
         "number": 3,
         "points": 369
       },
       "shops_at": {
-        "id": "http://example.org/store/StoreBranch3",
+        "@type": "ex:StoreBranch",
+        "@id": "http://example.org/store/StoreBranch3",
         "name": "Albert Brno",
         "has_warehouse": true
       }
