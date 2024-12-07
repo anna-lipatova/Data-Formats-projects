@@ -1,35 +1,26 @@
-@prefix schema: <http://schema.org/> .
-@prefix ex:    <http://purl.org/net/ns/ex#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix ex:  <http://purl.org/net/ns/ex#> .
+@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:  <http://schema.org/> .
 @prefix juso:  <http://rdfs.co/juso/> .
-
-[ juso:Address  <http://example.org/address/Brno> , <http://example.org/address/Olomouc> , <http://example.org/address/Liberec> ] .
-
-<http://example.org/address/Brno>
-        <cpmeta:locatedAt>      <http://example.org/store/StoreBranch3> ;
-        juso:postal_code        "60200" ;
-        schema:addressLocality  "Brno" ;
-        schema:streetAddress    "Nádražní, 2" .
-
-<http://example.org/store/StoreBranch2>
-        ex:has_warehouse  false ;
-        juso:name         "Albert Olomouc" .
+@prefix dpv:  <https://w3id.org/dpv#> .
+@prefix tro:  <https://w3id.org/TRO#> .
 
 <http://example.org/address/Liberec>
-        <cpmeta:locatedAt>      <http://example.org/store/StoreBranch1> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  juso:Address ;
         juso:postal_code        "10400" ;
-        schema:addressLocality  "Liberec" ;
-        schema:streetAddress    "Prokopova, 261" .
-
-<http://example.org/store/StoreBranch3>
-        ex:has_warehouse  true ;
-        juso:name         "Albert Brno" .
+        schema:addressLocality  "Liberec"@cs ;
+        schema:streetAddress    "Prokopova, 261"@cs .
 
 <http://example.org/address/Olomouc>
-        <cpmeta:locatedAt>      <http://example.org/store/StoreBranch2> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  juso:Address ;
         juso:postal_code        "77900" ;
-        schema:addressLocality  "Olomouc" ;
-        schema:streetAddress    "Polska, 1" .
+        schema:addressLocality  "Olomouc"@cs ;
+        schema:streetAddress    "Polska, 1"@cs .
 
-<http://example.org/store/StoreBranch1>
-        ex:has_warehouse  false ;
-        juso:name         "Albert Liberec, Žižkova" .
+<http://example.org/address/Brno>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  juso:Address ;
+        juso:postal_code        "60200" ;
+        schema:addressLocality  "Brno"@cs ;
+        schema:streetAddress    "Nádražní, 2"@cs .
