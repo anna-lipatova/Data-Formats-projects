@@ -55,7 +55,8 @@
                                 "type": "string"
                             },
                             "has_warehouse": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "enum": [true, false]
                             }
                         },
                         "required": ["id", "name", "has_warehouse"]
