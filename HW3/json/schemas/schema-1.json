@@ -17,7 +17,8 @@
                         "type": "string"
                     },
                     "has_warehouse": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "enum": [true, false]
                     },
                     "Address": {
                         "type": "object",
@@ -68,7 +69,8 @@
                                     "type": "integer"
                                 },
                                 "is_self_checkout": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "enum": [true, false]
                                 }
                             },
                             "required": ["id", "number", "is_self_checkout"]
