@@ -1,49 +1,26 @@
-@prefix tro:   <https://w3id.org/TRO#> .
-@prefix schema: <http://schema.org/> .
-@prefix sealit: <http://www.sealitproject.eu/ontology/> .
-@prefix ex:    <http://purl.org/net/ns/ex#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix ex:  <http://purl.org/net/ns/ex#> .
+@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:  <http://schema.org/> .
 @prefix juso:  <http://rdfs.co/juso/> .
-
-<http://example.org/register/1>
-        ex:isSelfCheckout  true ;
-        schema:identifier  1 .
-
-<http://example.org/store/StoreBranch2>
-        ex:has_warehouse  false ;
-        juso:name         "Albert Olomouc" .
-
-<http://example.org/register/2>
-        ex:isSelfCheckout  false ;
-        schema:identifier  2 .
-
-<http://example.org/store/StoreBranch3>
-        ex:has_warehouse  true ;
-        juso:name         "Albert Brno" .
-
-<http://example.org/person/Janko-Mrkvicka>
-        <foaf:familyName>  "Mrkvicka" ;
-        <foaf:givenName>   "Janko" ;
-        ex:operated_by     <http://example.org/register/2> ;
-        sealit:works_at    <http://example.org/store/StoreBranch2> .
+@prefix dpv:  <https://w3id.org/dpv#> .
+@prefix tro:  <https://w3id.org/TRO#> .
 
 <http://example.org/person/Marie-Krasna>
-        <foaf:familyName>  "Krásná" ;
-        <foaf:givenName>   "Marie" ;
-        ex:operated_by     <http://example.org/register/1> ;
-        sealit:works_at    <http://example.org/store/StoreBranch1> .
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  tro:Employee ;
+        juso:name          "Marie"@cs ;
+        juso:name          "Krásná"@cs ;
+        <sealit:works_at>  <http://example.org/store/StoreBranch1> .
 
-<http://example.org/register/3>
-        ex:isSelfCheckout  true ;
-        schema:identifier  3 .
-
-<http://example.org/store/StoreBranch1>
-        ex:has_warehouse  false ;
-        juso:name         "Albert Liberec, Žižkova" .
+<http://example.org/person/Janko-Mrkvicka>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  tro:Employee ;
+        juso:name          "Janko"@cs ;
+        juso:name          "Mrkvicka"@cs ;
+        <sealit:works_at>  <http://example.org/store/StoreBranch2> .
 
 <http://example.org/person/Peter-Cibulka>
-        <foaf:familyName>  "Cibulka" ;
-        <foaf:givenName>   "Peter" ;
-        ex:operated_by     <http://example.org/register/3> ;
-        sealit:works_at    <http://example.org/store/StoreBranch3> .
-
-[ tro:Employee  <http://example.org/person/Peter-Cibulka> , <http://example.org/person/Janko-Mrkvicka> , <http://example.org/person/Marie-Krasna> ] .
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  tro:Employee ;
+        juso:name          "Peter"@cs ;
+        juso:name          "Cibulka"@cs ;
+        <sealit:works_at>  <http://example.org/store/StoreBranch3> .
