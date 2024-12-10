@@ -3,43 +3,19 @@
     "type": "@type",
     "id": "@id",
     "foaf": "http://xmlns.com/foaf/0.1/",
-    "ex": "http://purl.org/net/ns/ex#",
-    "mads": "http://www.loc.gov/mads/rdf/v1#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "schema": "http://schema.org/",
+    "sealit": "http://example.org/sealit#",
     "juso": "http://rdfs.co/juso/",
-    "dpv": "https://w3id.org/dpv#",
     "tro": "https://w3id.org/TRO#",
-    "store_branches": "ex:StoreBranch",
-    "customers": "dpv:Customer",
-    "employees": "tro:Employee",
-    "cash_registers": "ex:CashRegister",
-    "name": {
-      "@id": "juso:name",
+    "givenName": {
+      "@id": "foaf:givenName",
       "@language": "cs"
     },
-    "has_loyalty_card": {
-      "@id": "ex:hasLoyaltyCard",
-      "@type": "@id"
+    "familyName": {
+      "@id": "foaf:familyName",
+      "@language": "cs"
     },
-    "shops_at": "ex:shopsAt",
-    "works_at": "sealit:works_at",
-    "has_warehouse": {
-      "@id": "ex:has_warehouse",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "is_self_checkout": "ex:isSelfCheckout",
-    "located_at": {
-      "@id": "cpmeta:locatedAt",
-      "@type": "@id"
-    },
-    "identifier": "schema:identifier",
-    "address": "juso:Address",
-    "city": "schema:addressLocality",
-    "street": "schema:streetAddress",
-    "zip_code": "juso:postal_code",
-    "operated_by": {
-      "@id": "ex:operated_by",
+    "works_at": {
+      "@id": "sealit:works_at",
       "@type": "@id"
     }
   },
@@ -47,16 +23,14 @@
     {
       "@id": "http://example.org/person/Marie-Krasna",
       "@type": "tro:Employee",
-      "juso:name": [
-        {
-          "@value": "Marie",
-          "@language": "cs"
-        },
-        {
-          "@value": "Krásná",
-          "@language": "cs"
-        }
-      ],
+      "foaf:givenName": {
+        "@value": "Marie",
+        "@language": "cs"
+      },
+      "foaf:familyName": {
+        "@value": "Krásná",
+        "@language": "cs"
+      },
       "sealit:works_at": {
         "@id": "http://example.org/store/StoreBranch1"
       }
@@ -64,16 +38,14 @@
     {
       "@id": "http://example.org/person/Janko-Mrkvicka",
       "@type": "tro:Employee",
-      "juso:name": [
-        {
-          "@value": "Janko",
-          "@language": "cs"
-        },
-        {
-          "@value": "Mrkvicka",
-          "@language": "cs"
-        }
-      ],
+      "foaf:givenName": {
+        "@value": "Janko",
+        "@language": "cs"
+      },
+      "foaf:familyName": {
+        "@value": "Mrkvicka",
+        "@language": "cs"
+      },
       "sealit:works_at": {
         "@id": "http://example.org/store/StoreBranch2"
       }
@@ -81,18 +53,16 @@
     {
       "@id": "http://example.org/person/Peter-Cibulka",
       "@type": "tro:Employee",
-      "juso:name": [
-        {
-          "@value": "Peter",
-          "@language": "cs"
-        },
-        {
-          "@value": "Cibulka",
-          "@language": "cs"
-        }
-      ],
+      "foaf:givenName": {
+        "@value": "Peter",
+        "@language": "cs"
+      },
+      "foaf:familyName": {
+        "@value": "Cibulka",
+        "@language": "cs"
+      },
       "sealit:works_at": {
-        "@id": "http://example.org/store/StoreBranch3"
+        "@id": "http://example.org/store/StoreBranch1"
       }
     }
   ]
