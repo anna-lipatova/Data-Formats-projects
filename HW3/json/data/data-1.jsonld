@@ -12,7 +12,7 @@
         "tro": "https://w3id.org/TRO#",
         "cpmeta": "http://meta.icos-cp.eu/ontologies/cpmeta/",
         "sealit": "http://www.sealitproject.eu/ontology/",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         
         "store_branches": "ex:StoreBranch",
         "customers": "dpv:Customer",
