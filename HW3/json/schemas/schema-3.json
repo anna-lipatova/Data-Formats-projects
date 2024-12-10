@@ -3,7 +3,7 @@
     "$id": "https://example.org/schema-3.json",
     "type": "object",
     "properties": {
-        "Employees": {
+        "employees": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -47,7 +47,7 @@
                                     "type": "string",
                                     "format": "uri"
                                 },
-                                "number": {
+                                "identifier": {
                                     "type": "integer"
                                 },
                                 "is_self_checkout": {
@@ -55,7 +55,7 @@
                                     "enum": [true, false]
                                 }
                             },
-                            "required": ["id", "number", "is_self_checkout"]
+                            "required": ["id", "identifier", "is_self_checkout"]
                         }
                     }
                 },
@@ -63,5 +63,5 @@
             }
         }
     },
-    "required": ["Employees"]
+    "required": ["employees"]
 }
