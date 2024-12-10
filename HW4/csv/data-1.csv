@@ -1,0 +1,4 @@
+CashRegisterId,Number,IsSelfCheckout
+1,1,true
+2,2,false
+3,3,true

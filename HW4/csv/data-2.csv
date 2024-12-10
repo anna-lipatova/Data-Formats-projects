@@ -1,0 +1,4 @@
+StoreBranchId,name,has_warehouse
+StoreBranch1,"Albert Liberec, Žižkova",false
+StoreBranch2,"Albert Olomouc",false
+StoreBranch3,"Albert Brno",true
