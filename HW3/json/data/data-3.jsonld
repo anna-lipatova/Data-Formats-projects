@@ -6,6 +6,7 @@
     "sealit": "http://example.org/sealit#",
     "juso": "http://rdfs.co/juso/",
     "tro": "https://w3id.org/TRO#",
+
     "givenName": {
       "@id": "foaf:givenName",
       "@language": "cs"
@@ -21,49 +22,25 @@
   },
   "@graph": [
     {
-      "@id": "http://example.org/person/Marie-Krasna",
-      "@type": "tro:Employee",
-      "foaf:givenName": {
-        "@value": "Marie",
-        "@language": "cs"
-      },
-      "foaf:familyName": {
-        "@value": "Krásná",
-        "@language": "cs"
-      },
-      "sealit:works_at": {
-        "@id": "http://example.org/store/StoreBranch1"
-      }
+      "id": "http://example.org/person/Marie-Krasna",
+      "type": "tro:Employee",
+      "givenName": "Marie",
+      "familyName": "Krásná",
+      "works_at": "http://example.org/store/StoreBranch1"
     },
     {
-      "@id": "http://example.org/person/Janko-Mrkvicka",
-      "@type": "tro:Employee",
-      "foaf:givenName": {
-        "@value": "Janko",
-        "@language": "cs"
-      },
-      "foaf:familyName": {
-        "@value": "Mrkvicka",
-        "@language": "cs"
-      },
-      "sealit:works_at": {
-        "@id": "http://example.org/store/StoreBranch2"
-      }
+      "id": "http://example.org/person/Janko-Mrkvicka",
+      "type": "tro:Employee",
+      "givenName": "Janko",
+      "familyName": "Mrkvicka",
+      "works_at": "http://example.org/store/StoreBranch2"
     },
     {
-      "@id": "http://example.org/person/Peter-Cibulka",
-      "@type": "tro:Employee",
-      "foaf:givenName": {
-        "@value": "Peter",
-        "@language": "cs"
-      },
-      "foaf:familyName": {
-        "@value": "Cibulka",
-        "@language": "cs"
-      },
-      "sealit:works_at": {
-        "@id": "http://example.org/store/StoreBranch1"
-      }
+      "id": "http://example.org/person/Peter-Cibulka",
+      "type": "tro:Employee",
+      "givenName": "Peter",
+      "familyName": "Cibulka",
+      "works_at": "http://example.org/store/StoreBranch1"
     }
   ]
 }
