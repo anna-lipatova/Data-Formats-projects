@@ -3,7 +3,7 @@
     "$id": "https://example.org/schema-1.json",
     "type": "object",
     "properties": {
-        "StoreBranches": {
+        "store_branches": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -35,7 +35,7 @@
                         },
                         "required": ["city", "street", "zip_code"]
                     },
-                    "Employees": {
+                    "employees": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -55,7 +55,7 @@
                             "required": ["id", "given_name", "family_name"]
                         }
                     },
-                    "CashRegisters": {
+                    "cash_registers": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -65,7 +65,7 @@
                                     "type": "string",
                                     "format": "uri"
                                 },
-                                "number": {
+                                "identifier": {
                                     "type": "integer"
                                 },
                                 "is_self_checkout": {
@@ -73,10 +73,10 @@
                                     "enum": [true, false]
                                 }
                             },
-                            "required": ["id", "number", "is_self_checkout"]
+                            "required": ["id", "identifier", "is_self_checkout"]
                         }
                     },
-                    "Customers": {
+                    "customers": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -108,5 +108,5 @@
             }
         }
     },
-    "required": ["StoreBranches"]
+    "required": ["store_branches"]
 }
