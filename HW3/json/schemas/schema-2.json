@@ -3,7 +3,7 @@
     "$id": "https://example.org/schema-2.json",
     "type": "object",
     "properties": {
-        "Addresses": {
+        "address": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -22,7 +22,7 @@
                     "zip_code": {
                         "type": "string"
                     },
-                    "StoreBranches": {
+                    "store_branches": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -39,7 +39,7 @@
                                     "type": "boolean"
                                 }
                             },
-                            "required": ["id", "has_warehouse"]
+                            "required": ["id", "name", "has_warehouse"]
                         }
                     }
                 },
@@ -47,5 +47,5 @@
             }
         }
     },
-    "required": ["Addresses"]
+    "required": ["address"]
 }
