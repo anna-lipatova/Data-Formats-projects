@@ -6,13 +6,12 @@
     "sealit": "http://example.org/sealit#",
     "juso": "http://rdfs.co/juso/",
     "tro": "https://w3id.org/TRO#",
-
     "employees": "tro:Employee",
-    "givenName": {
+    "given_name": {
       "@id": "foaf:givenName",
       "@language": "cs"
     },
-    "familyName": {
+    "family_name": {
       "@id": "foaf:familyName",
       "@language": "cs"
     },
@@ -21,27 +20,36 @@
       "@type": "@id"
     }
   },
-  "@graph": [
+  "employees": [
     {
       "id": "http://example.org/person/Marie-Krasna",
-      "type": "tro:Employee",
-      "givenName": "Marie",
-      "familyName": "Krásná",
-      "works_at": "http://example.org/store/StoreBranch1"
+      "given_name": "Marie",
+      "family_name": "Krásná",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch1",
+        "name": "Albert Liberec, Žižkova",
+        "has_warehouse": false
+      }
     },
     {
       "id": "http://example.org/person/Janko-Mrkvicka",
-      "type": "tro:Employee",
-      "givenName": "Janko",
-      "familyName": "Mrkvicka",
-      "works_at": "http://example.org/store/StoreBranch2"
+      "given_name": "Janko",
+      "family_name": "Mrkvicka",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch2",
+        "name": "Albert Olomouc",
+        "has_warehouse": false
+      }
     },
     {
       "id": "http://example.org/person/Peter-Cibulka",
-      "type": "tro:Employee",
-      "givenName": "Peter",
-      "familyName": "Cibulka",
-      "works_at": "http://example.org/store/StoreBranch1"
+      "given_name": "Peter",
+      "family_name": "Cibulka",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch1",
+        "name": "Albert Liberec, Žižkova",
+        "has_warehouse": false
+      }
     }
   ]
 }
