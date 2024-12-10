@@ -1,26 +1,26 @@
-@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-@prefix ex:  <http://purl.org/net/ns/ex#> .
-@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema:  <http://schema.org/> .
-@prefix juso:  <http://rdfs.co/juso/> .
-@prefix dpv:  <https://w3id.org/dpv#> .
-@prefix tro:  <https://w3id.org/TRO#> .
-
-<http://example.org/address/Liberec>
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  juso:Address ;
-        juso:postal_code        "10400" ;
-        schema:addressLocality  "Liberec"@cs ;
-        schema:streetAddress    "Prokopova, 261"@cs .
+PREFIX dpv:    <https://w3id.org/dpv#>
+PREFIX ex:     <http://purl.org/net/ns/ex#>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX juso:   <http://rdfs.co/juso/>
+PREFIX mads:   <http://www.loc.gov/mads/rdf/v1#>
+PREFIX schema: <http://schema.org/>
+PREFIX tro:    <https://w3id.org/TRO#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.org/address/Olomouc>
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  juso:Address ;
-        juso:postal_code        "77900" ;
-        schema:addressLocality  "Olomouc"@cs ;
+        a                       juso:Address;
+        juso:postal_code        "779 00";
+        schema:addressLocality  "Olomouc"@cs;
         schema:streetAddress    "Polska, 1"@cs .
 
+<http://example.org/address/Liberec>
+        a                       juso:Address;
+        juso:postal_code        "104 00";
+        schema:addressLocality  "Liberec"@cs;
+        schema:streetAddress    "Prokopova, 261"@cs .
+
 <http://example.org/address/Brno>
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  juso:Address ;
-        juso:postal_code        "60200" ;
-        schema:addressLocality  "Brno"@cs ;
+        a                       juso:Address;
+        juso:postal_code        "602 00";
+        schema:addressLocality  "Brno"@cs;
         schema:streetAddress    "Nádražní, 2"@cs .
