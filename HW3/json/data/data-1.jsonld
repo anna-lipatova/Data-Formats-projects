@@ -12,6 +12,7 @@
         "tro": "https://w3id.org/TRO#",
         "cpmeta": "http://meta.icos-cp.eu/ontologies/cpmeta/",
         "sealit": "http://www.sealitproject.eu/ontology/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         
         "store_branches": "ex:StoreBranch",
         "customers": "dpv:Customer",
@@ -47,8 +48,15 @@
             "@type": "@id"
         },
 
-        "shops_at": "ex:shopsAt",
-        "works_at": "sealit:works_at",
+        "shops_at": {
+            "@id": "ex:shopsAt",
+            "@type": "@id"
+        },
+
+        "works_at": {
+            "@id": "sealit:works_at",
+            "@type": "@id"
+        },
 
         "has_warehouse": { 
             "@id": "ex:has_warehouse", 
