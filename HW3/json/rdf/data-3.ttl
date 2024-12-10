@@ -1,26 +1,22 @@
-@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-@prefix ex:  <http://purl.org/net/ns/ex#> .
-@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema:  <http://schema.org/> .
-@prefix juso:  <http://rdfs.co/juso/> .
-@prefix dpv:  <https://w3id.org/dpv#> .
-@prefix tro:  <https://w3id.org/TRO#> .
-
-<http://example.org/person/Marie-Krasna>
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  tro:Employee ;
-        juso:name          "Marie"@cs ;
-        juso:name          "Krásná"@cs ;
-        <sealit:works_at>  <http://example.org/store/StoreBranch1> .
-
-<http://example.org/person/Janko-Mrkvicka>
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  tro:Employee ;
-        juso:name          "Janko"@cs ;
-        juso:name          "Mrkvicka"@cs ;
-        <sealit:works_at>  <http://example.org/store/StoreBranch2> .
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX juso:   <http://rdfs.co/juso/>
+PREFIX sealit: <http://example.org/sealit#>
+PREFIX tro:    <https://w3id.org/TRO#>
 
 <http://example.org/person/Peter-Cibulka>
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  tro:Employee ;
-        juso:name          "Peter"@cs ;
-        juso:name          "Cibulka"@cs ;
-        <sealit:works_at>  <http://example.org/store/StoreBranch3> .
+        a                tro:Employee;
+        sealit:works_at  <http://example.org/store/StoreBranch1>;
+        foaf:familyName  "Cibulka"@cs;
+        foaf:givenName   "Peter"@cs .
+
+<http://example.org/person/Marie-Krasna>
+        a                tro:Employee;
+        sealit:works_at  <http://example.org/store/StoreBranch1>;
+        foaf:familyName  "Krásná"@cs;
+        foaf:givenName   "Marie"@cs .
+
+<http://example.org/person/Janko-Mrkvicka>
+        a                tro:Employee;
+        sealit:works_at  <http://example.org/store/StoreBranch2>;
+        foaf:familyName  "Mrkvicka"@cs;
+        foaf:givenName   "Janko"@cs .
