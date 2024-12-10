@@ -3,7 +3,7 @@
     "$id": "https://example.org/schema-4.json",
     "type": "object",
     "properties": {
-        "Customers": {
+        "customers": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -66,5 +66,5 @@
             }
         }
     },
-    "required": ["Customers"]
+    "required": ["customers"]
 }
