@@ -59,63 +59,45 @@
             "@type": "@id"
         }
     },
-    "@graph": [
+    "address": [
         {
             "id": "http://example.org/address/Liberec",
-            "type": "juso:Address",
-            "city": {
-                "@value": "Liberec",
-                "@language": "cs"
-            },
-            "street": {
-                "@value": "Prokopova, 261",
-                "@language": "cs"
-            },
+            "city": "Liberec",
+            "street": "Prokopova, 261",
             "zip_code": "104 00",
-            "locatedAt": {
-                "id": "http://example.org/store/StoreBranch1",
-                "type": "ex:StoreBranch",
-                "name": "Albert Liberec, Žižkova",
-                "has_warehouse": false
-            }
+            "store_branches": [
+                {
+                    "id": "http://example.org/store/StoreBranch1",
+                    "name": "Albert Liberec, Žižkova",
+                    "has_warehouse": false
+                }
+            ]
         },
         {
             "id": "http://example.org/address/Olomouc",
-            "type": "juso:Address",
-            "city": {
-                "@value": "Olomouc",
-                "@language": "cs"
-            },
-            "street": {
-                "@value": "Polska, 1",
-                "@language": "cs"
-            },
+            "city": "Olomouc",
+            "street": "Polska, 1",
             "zip_code": "779 00",
-            "locatedAt": {
-                "id": "http://example.org/store/StoreBranch2",
-                "type": "ex:StoreBranch",
-                "name": "Albert Olomouc",
-                "has_warehouse": false
-            }
+            "store_branches": [
+                {
+                    "id": "http://example.org/store/StoreBranch2",
+                    "name": "Albert Olomouc",
+                    "has_warehouse": false
+                }
+            ]
         },
         {
             "id": "http://example.org/address/Brno",
-            "type": "juso:Address",
-            "city": {
-                "@value": "Brno",
-                "@language": "cs"
-            },
-            "street": {
-                "@value": "Nádražní, 2",
-                "@language": "cs"
-            },
+            "city": "Brno",
+            "street": "Nádražní, 2",
             "zip_code": "602 00",
-            "locatedAt": {
-                "id": "http://example.org/store/StoreBranch3",
-                "type": "ex:StoreBranch",
-                "name": "Albert Brno",
-                "has_warehouse": true
-            }
+            "store_branches": [
+                {
+                    "id": "http://example.org/store/StoreBranch3",
+                    "name": "Albert Brno",
+                    "has_warehouse": true
+                }
+            ]
         }
     ]
 }
