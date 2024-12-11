@@ -72,6 +72,12 @@
                         "titles": "Has Warehouse",
                         "datatype": "boolean",
                         "propertyUrl": "http://example.org/vocabulary/hasWarehouse"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/address/{+AddressId}"
                     }
                 ],
                 "primaryKey": "StoreBranchId"
