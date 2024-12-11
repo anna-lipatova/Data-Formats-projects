@@ -188,6 +188,12 @@
                         "titles": "Phone Number",
                         "datatype": "anyURI",
                         "propertyUrl": "foaf:phone"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/net/ns/ex#shopsAt",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
                     }
                 ],
                 "primaryKey": "CustomerId"
