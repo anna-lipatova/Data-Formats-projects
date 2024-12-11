@@ -10,6 +10,9 @@
     "juso": "http://rdfs.co/juso/",
     "dpv": "https://w3id.org/dpv#",
     "cpmeta": "http://meta.icos-cp.eu/ontologies/cpmeta/",
+
+    "customers": "dpv:Customer",
+    "store_branch": "ex:StoreBranch",
     "name": {
       "@id": "juso:name",
       "@language": "cs"
@@ -47,56 +50,69 @@
     "located_at": {
       "@id": "cpmeta:locatedAt",
       "@type": "@id"
-    }
+    },
+    "customers": "@graph"
   },
   "customers": [
     {
       "id": "http://example.org/customer/Marek-Velky",
+      "@type": "dpv:Customer",
       "given_name": "Marek",
       "family_name": "Velký",
       "birth_date": "2001-01-01",
       "phone_number": "tel:+420777777777",
       "shops_at": {
         "id": "http://example.org/store/StoreBranch2",
+        "@type": "ex:StoreBranch",
         "name": "Albert Olomouc",
-        "has_warehouse": false
+        "has_warehouse": false,
+        "located_at": "http://example.org/address/Olomouc"
       },
       "has_loyalty_card": {
         "id": "http://example.org/loyaltycard/1",
+        "@type": "schema:ProgramMembership",
         "number": 1,
         "points": 147
       }
     },
     {
       "id": "http://example.org/customer/Petra-Mrkvickova",
+      "@type": "dpv:Customer",
       "given_name": "Petra",
       "family_name": "Mrkvickova",
       "birth_date": "2002-02-02",
       "phone_number": "tel:+420123321231",
       "shops_at": {
         "id": "http://example.org/store/StoreBranch1",
+        "@type": "ex:StoreBranch",
         "name": "Albert Liberec, Žižkova",
-        "has_warehouse": false
+        "has_warehouse": false,
+        "located_at": "http://example.org/address/Liberec"
       },
       "has_loyalty_card": {
         "id": "http://example.org/loyaltycard/2",
+        "@type": "schema:ProgramMembership",
         "number": 2,
         "points": 258
       }
     },
     {
       "id": "http://example.org/customer/Janka-Cibulkova",
+      "@type": "dpv:Customer",
       "given_name": "Janka",
       "family_name": "Cibulkova",
       "birth_date": "2003-03-03",
       "phone_number": "tel:+420666666666",
       "shops_at": {
         "id": "http://example.org/store/StoreBranch3",
+        "@type": "ex:StoreBranch",
         "name": "Albert Brno",
-        "has_warehouse": true
+        "has_warehouse": true,
+        "located_at": "http://example.org/address/Brno"
       },
       "has_loyalty_card": {
         "id": "http://example.org/loyaltycard/3",
+        "@type": "schema:ProgramMembership",
         "number": 3,
         "points": 369
       }
