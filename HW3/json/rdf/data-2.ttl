@@ -1,26 +1,21 @@
-PREFIX dpv:    <https://w3id.org/dpv#>
 PREFIX ex:     <http://purl.org/net/ns/ex#>
-PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
 PREFIX juso:   <http://rdfs.co/juso/>
-PREFIX mads:   <http://www.loc.gov/mads/rdf/v1#>
 PREFIX schema: <http://schema.org/>
-PREFIX tro:    <https://w3id.org/TRO#>
-PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.org/address/Olomouc>
         a                       juso:Address;
         juso:postal_code        "779 00";
-        schema:addressLocality  "Olomouc"@cs;
-        schema:streetAddress    "Polska, 1"@cs .
+        schema:addressLocality  "Olomouc";
+        schema:streetAddress    "Polska, 1" .
 
 <http://example.org/address/Liberec>
         a                       juso:Address;
         juso:postal_code        "104 00";
-        schema:addressLocality  "Liberec"@cs;
-        schema:streetAddress    "Prokopova, 261"@cs .
+        schema:addressLocality  "Liberec";
+        schema:streetAddress    "Prokopova, 261" .
 
 <http://example.org/address/Brno>
         a                       juso:Address;
         juso:postal_code        "602 00";
-        schema:addressLocality  "Brno"@cs;
-        schema:streetAddress    "Nádražní, 2"@cs .
+        schema:addressLocality  "Brno";
+        schema:streetAddress    "Nádražní, 2" .
