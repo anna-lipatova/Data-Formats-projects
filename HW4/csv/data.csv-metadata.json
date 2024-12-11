@@ -106,6 +106,12 @@
                         "titles": "Family Name",
                         "datatype": "string",
                         "propertyUrl": "foaf:familyName"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://www.sealitproject.eu/ontology/works_at",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
                     }
                 ],
                 "primaryKey": "EmployeeId"
