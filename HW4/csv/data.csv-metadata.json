@@ -248,6 +248,7 @@
                         "datatype": "string"
                     }
                 ],
+                "primaryKey": ["CashRegisterId", "StoreBranchId"],
                 "foreignKeys": [
                     {
                         "columnReference": "CashRegisterId",
