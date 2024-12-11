@@ -1,0 +1,419 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type": "TableGroup",
+    "@id": "http://example.org/tableGroup",
+    "tables": [
+        {
+            "url": "data-1.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/#{+CashRegisterId}",
+                "columns": [
+                    {
+                        "name": "CashRegisterId",
+                        "titles": "Cash Register ID",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocab/CashRegister"
+                    },
+                    {
+                        "name": "Number",
+                        "titles": "Register Number",
+                        "datatype": "integer",
+                        "propertyUrl": "http://example.org/vocab/number"
+                    },
+                    {
+                        "name": "IsSelfCheckout",
+                        "titles": "Is Self Checkout",
+                        "datatype": "boolean",
+                        "propertyUrl": "http://example.org/vocab/isSelfCheckout"
+                    }
+                ],
+                "primaryKey": "CashRegisterId"
+            }
+        },
+        
+        {
+            "url": "data-2.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/store/{+StoreBranchId}",
+                "columns": [
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "Store Branch ID",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocab/StoreBranch"
+                    },
+                    {
+                        "name": "name",
+                        "titles": "Store Branch Name",
+                        "datatype": "string",
+                        "propertyUrl": "juso:name"
+                    },
+                    {
+                        "name": "has_warehouse",
+                        "titles": "Has Warehouse",
+                        "datatype": "boolean",
+                        "propertyUrl": "http://example.org/vocab/hasWarehouse"
+                    }
+                ],
+                "primaryKey": "StoreBranchId"
+            }
+        },
+        {
+            "url": "data-3.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/person/{+EmployeeId}",
+                "columns": [
+                    {
+                        "name": "EmployeeId",
+                        "titles": "Employee ID",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocab/Employee"
+                    },
+                    {
+                        "name": "given_name",
+                        "titles": "Given Name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:givenName"
+                    },
+                    {
+                        "name": "family_name",
+                        "titles": "Family Name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:familyName"
+                    }
+                ],
+                "primaryKey": "EmployeeId"
+            }
+        },
+
+        {
+            "url": "data-4.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/address/{+AddressId}",
+                "columns": [
+                    {
+                        "name": "AddressId",
+                        "titles": "Address ID",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocab/Address"
+                    },
+                    {
+                        "name": "city",
+                        "titles": "City",
+                        "datatype": "string",
+                        "propertyUrl": "schema:addressLocality"
+                    },
+                    {
+                        "name": "street",
+                        "titles": "Street Address",
+                        "datatype": "string",
+                        "propertyUrl": "schema:streetAddress"
+                    },
+                    {
+                        "name": "zip-code",
+                        "titles": "Postal Code",
+                        "datatype": "string",
+                        "propertyUrl": "juso:postal_code"
+                    }
+                ],
+                "primaryKey": "AddressId"
+            }
+        },
+
+        {
+            "url": "data-5.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/customer/{+CustomerId}",
+                "columns": [
+                    {
+                        "name": "CustomerId",
+                        "titles": "Customer ID",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocab/Customer"
+                    },
+                    {
+                        "name": "given_name",
+                        "titles": "Given Name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:givenName"
+                    },
+                    {
+                        "name": "family_name",
+                        "titles": "Family Name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:familyName"
+                    },
+                    {
+                        "name": "birth_date",
+                        "titles": "Birth Date",
+                        "datatype": "date",
+                        "propertyUrl": "mads:birthDate"
+                    },
+                    {
+                        "name": "phone_number",
+                        "titles": "Phone Number",
+                        "datatype": "anyURI",
+                        "propertyUrl": "foaf:phone"
+                    }
+                ],
+                "primaryKey": "CustomerId"
+            }
+        },
+
+        {
+            "url": "data-6.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}",
+                "columns": [
+                    {
+                        "name": "LoyaltyCardId",
+                        "titles": "Loyalty Card ID",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocab/LoyaltyCard"
+                    },
+                    {
+                        "name": "number",
+                        "titles": "Card Number",
+                        "datatype": "integer",
+                        "propertyUrl": "schema:identifier"
+                    },
+                    {
+                        "name": "points",
+                        "titles": "Points Earned",
+                        "datatype": "integer",
+                        "propertyUrl": "schema:membershipPointsEarned"
+                    }
+                ],
+                "primaryKey": "LoyaltyCardId"
+            }
+        },
+
+        {
+            "url": "data-7.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "CashRegisterId",
+                        "titles": "Cash Register ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "EmployeeId",
+                        "titles": "Employee ID",
+                        "datatype": "string"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": "CashRegisterId",
+                        "reference": {
+                            "resource": "data-1.csv",
+                            "columnReference": "CashRegisterId"
+                        }
+                    },
+                    {
+                        "columnReference": "EmployeeId",
+                        "reference": {
+                            "resource": "data-3.csv",
+                            "columnReference": "EmployeeId"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "url": "data-8.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "CashRegisterId",
+                        "titles": "Cash Register ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "Store Branch ID",
+                        "datatype": "string"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": "CashRegisterId",
+                        "reference": {
+                            "resource": "data-1.csv",
+                            "columnReference": "CashRegisterId"
+                        }
+                    },
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "url": "data-9.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "Store Branch ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/StoreBranchId"
+                    },
+                    {
+                        "name": "EmployeeId",
+                        "titles": "Employee ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/EmployeeId"
+                    }
+                ],
+                "primaryKey": ["StoreBranchId", "EmployeeId"],
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    },
+                    {
+                        "columnReference": "EmployeeId",
+                        "reference": {
+                            "resource": "data-3.csv",
+                            "columnReference": "EmployeeId"
+                        }
+                    }
+                ]
+            }
+        },
+        
+        {
+            "url": "data-10.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "Store Branch ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/StoreBranchId"
+                    },
+                    {
+                        "name": "AddressId",
+                        "titles": "Address ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/AddressId"
+                    }
+                ],
+                "primaryKey": ["StoreBranchId", "AddressId"],
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    },
+                    {
+                        "columnReference": "AddressId",
+                        "reference": {
+                            "resource": "data-4.csv",
+                            "columnReference": "AddressId"
+                        }
+                    }
+                ]
+            }
+        },
+        
+        {
+            "url": "data-11.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "Store Branch ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/StoreBranchId"
+                    },
+                    {
+                        "name": "CustomerId",
+                        "titles": "Customer ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/CustomerId"
+                    }
+                ],
+                "primaryKey": ["StoreBranchId", "CustomerId"],
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    },
+                    {
+                        "columnReference": "CustomerId",
+                        "reference": {
+                            "resource": "data-5.csv",
+                            "columnReference": "CustomerId"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "url": "data-12.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "LoyaltyCardId",
+                        "titles": "Loyalty Card ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/LoyaltyCardId"
+                    },
+                    {
+                        "name": "CustomerId",
+                        "titles": "Customer ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocab/CustomerId"
+                    }
+                ],
+                "primaryKey": ["LoyaltyCardId", "CustomerId"],
+                "foreignKeys": [
+                    {
+                        "columnReference": "LoyaltyCardId",
+                        "reference": {
+                            "resource": "data-6.csv",
+                            "columnReference": "LoyaltyCardId"
+                        }
+                    },
+                    {
+                        "columnReference": "CustomerId",
+                        "reference": {
+                            "resource": "data-5.csv",
+                            "columnReference": "CustomerId"
+                        }
+                    }
+                ]
+            }
+        }
+
+    ]
+}
