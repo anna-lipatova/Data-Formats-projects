@@ -11,7 +11,7 @@
         {
             "url": "data-1.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/#{+CashRegisterId}",
+                "aboutUrl": "http://example.org/register/{+CashRegisterId}",
                 "columns": [
                     {
                         "name": "CashRegisterId",
@@ -31,16 +31,37 @@
                         "titles": "Is Self Checkout",
                         "datatype": "boolean",
                         "propertyUrl": "http://example.org/vocabulary/isSelfCheckout"
+                    },
+                    {
+                        "name": "StoreBranchId",
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/net/ns/ex#operated_by",
+                        "valueUrl": "http://example.org/person/{+has_warehouse}"
                     }
+
                 ],
-                "primaryKey": "CashRegisterId"
+                "primaryKey": "CashRegisterId",
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    }
+                ]
+
             }
         },
-        
         {
             "url": "data-2.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/#{+StoreBranchId}",
+                "aboutUrl": "http://example.org/store/StoreBranch{+StoreBranchId}",
                 "columns": [
                     {
                         "name": "StoreBranchId",
@@ -53,7 +74,8 @@
                         "name": "name",
                         "titles": "Store Branch Name",
                         "datatype": "string",
-                        "propertyUrl": "juso:name"
+                        "propertyUrl": "http://rdfs.co/juso/name",
+                        "lang": "cs"
                     },
                     {
                         "name": "has_warehouse",
@@ -68,7 +90,7 @@
         {
             "url": "data-3.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/#{+EmployeeId}",
+                "aboutUrl": "http://example.org/person/{+given_name}-{+family_name}",
                 "columns": [
                     {
                         "name": "EmployeeId",
@@ -81,13 +103,15 @@
                         "name": "given_name",
                         "titles": "Given Name",
                         "datatype": "string",
-                        "propertyUrl": "foaf:givenName"
+                        "propertyUrl": "foaf:givenName",
+                        "lang": "cs"
                     },
                     {
                         "name": "family_name",
                         "titles": "Family Name",
                         "datatype": "string",
-                        "propertyUrl": "foaf:familyName"
+                        "propertyUrl": "foaf:familyName",
+                        "lang": "cs"
                     }
                 ],
                 "primaryKey": "EmployeeId"
@@ -97,7 +121,7 @@
         {
             "url": "data-4.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/#{+AddressId}",
+                "aboutUrl": "http://example.org/address{+city}",
                 "columns": [
                     {
                         "name": "AddressId",
@@ -110,19 +134,21 @@
                         "name": "city",
                         "titles": "City",
                         "datatype": "string",
-                        "propertyUrl": "schema:addressLocality"
+                        "propertyUrl": "schema:addressLocality",
+                        "lang": "cs"
                     },
                     {
                         "name": "street",
                         "titles": "Street Address",
                         "datatype": "string",
-                        "propertyUrl": "schema:streetAddress"
+                        "propertyUrl": "schema:streetAddress",
+                        "lang": "cs"
                     },
                     {
-                        "name": "zip-code",
+                        "name": "zipcode",
                         "titles": "Postal Code",
                         "datatype": "string",
-                        "propertyUrl": "juso:postal_code"
+                        "propertyUrl": "http://rdfs.co/juso/postal_code"
                     }
                 ],
                 "primaryKey": "AddressId"
@@ -132,7 +158,7 @@
         {
             "url": "data-5.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/#{+CustomerId}",
+                "aboutUrl": "http://example.org/customer/{+given_name}-{+family_name}",
                 "columns": [
                     {
                         "name": "CustomerId",
@@ -145,19 +171,21 @@
                         "name": "given_name",
                         "titles": "Given Name",
                         "datatype": "string",
-                        "propertyUrl": "foaf:givenName"
+                        "propertyUrl": "foaf:givenName",
+                        "lang": "cs"
                     },
                     {
                         "name": "family_name",
                         "titles": "Family Name",
                         "datatype": "string",
-                        "propertyUrl": "foaf:familyName"
+                        "propertyUrl": "foaf:familyName",
+                        "lang": "cs"
                     },
                     {
                         "name": "birth_date",
                         "titles": "Birth Date",
                         "datatype": "date",
-                        "propertyUrl": "mads:birthDate"
+                        "propertyUrl": "http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate"
                     },
                     {
                         "name": "phone_number",
@@ -173,7 +201,7 @@
         {
             "url": "data-6.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/#{+LoyaltyCardId}",
+                "aboutUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}",
                 "columns": [
                     {
                         "name": "LoyaltyCardId",
