@@ -214,6 +214,7 @@
                         "datatype": "string"
                     }
                 ],
+                "primaryKey": ["CashRegisterId", "EmployeeId"],
                 "foreignKeys": [
                     {
                         "columnReference": "CashRegisterId",
