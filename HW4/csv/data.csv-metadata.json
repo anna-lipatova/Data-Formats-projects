@@ -194,6 +194,12 @@
                         "virtual": true,
                         "propertyUrl": "http://purl.org/net/ns/ex#shopsAt",
                         "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/net/ns/ex#hasLoyaltyCard",
+                        "valueUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}"
                     }
                 ],
                 "primaryKey": "CustomerId"
