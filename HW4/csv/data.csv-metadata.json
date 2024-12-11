@@ -18,19 +18,19 @@
                         "titles": "Cash Register ID",
                         "datatype": "string",
                         "propertyUrl": "rdf:type",
-                        "valueUrl": "http://example.org/vocab/CashRegister"
+                        "valueUrl": "http://example.org/vocabulary/CashRegister"
                     },
                     {
                         "name": "Number",
                         "titles": "Register Number",
                         "datatype": "integer",
-                        "propertyUrl": "http://example.org/vocab/number"
+                        "propertyUrl": "http://example.org/vocabulary/number"
                     },
                     {
                         "name": "IsSelfCheckout",
                         "titles": "Is Self Checkout",
                         "datatype": "boolean",
-                        "propertyUrl": "http://example.org/vocab/isSelfCheckout"
+                        "propertyUrl": "http://example.org/vocabulary/isSelfCheckout"
                     }
                 ],
                 "primaryKey": "CashRegisterId"
@@ -40,14 +40,14 @@
         {
             "url": "data-2.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/store/{+StoreBranchId}",
+                "aboutUrl": "http://example.org/#{+StoreBranchId}",
                 "columns": [
                     {
                         "name": "StoreBranchId",
                         "titles": "Store Branch ID",
                         "datatype": "string",
                         "propertyUrl": "rdf:type",
-                        "valueUrl": "http://example.org/vocab/StoreBranch"
+                        "valueUrl": "http://example.org/vocabulary/StoreBranch"
                     },
                     {
                         "name": "name",
@@ -59,7 +59,7 @@
                         "name": "has_warehouse",
                         "titles": "Has Warehouse",
                         "datatype": "boolean",
-                        "propertyUrl": "http://example.org/vocab/hasWarehouse"
+                        "propertyUrl": "http://example.org/vocabulary/hasWarehouse"
                     }
                 ],
                 "primaryKey": "StoreBranchId"
@@ -68,14 +68,14 @@
         {
             "url": "data-3.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/person/{+EmployeeId}",
+                "aboutUrl": "http://example.org/#{+EmployeeId}",
                 "columns": [
                     {
                         "name": "EmployeeId",
                         "titles": "Employee ID",
                         "datatype": "string",
                         "propertyUrl": "rdf:type",
-                        "valueUrl": "http://example.org/vocab/Employee"
+                        "valueUrl": "http://example.org/vocabulary/Employee"
                     },
                     {
                         "name": "given_name",
@@ -97,14 +97,14 @@
         {
             "url": "data-4.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/address/{+AddressId}",
+                "aboutUrl": "http://example.org/#{+AddressId}",
                 "columns": [
                     {
                         "name": "AddressId",
                         "titles": "Address ID",
                         "datatype": "string",
                         "propertyUrl": "rdf:type",
-                        "valueUrl": "http://example.org/vocab/Address"
+                        "valueUrl": "http://example.org/vocabulary/Address"
                     },
                     {
                         "name": "city",
@@ -132,14 +132,14 @@
         {
             "url": "data-5.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/customer/{+CustomerId}",
+                "aboutUrl": "http://example.org/#{+CustomerId}",
                 "columns": [
                     {
                         "name": "CustomerId",
                         "titles": "Customer ID",
                         "datatype": "string",
                         "propertyUrl": "rdf:type",
-                        "valueUrl": "http://example.org/vocab/Customer"
+                        "valueUrl": "http://example.org/vocabulary/Customer"
                     },
                     {
                         "name": "given_name",
@@ -173,14 +173,14 @@
         {
             "url": "data-6.csv",
             "tableSchema": {
-                "aboutUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}",
+                "aboutUrl": "http://example.org/#{+LoyaltyCardId}",
                 "columns": [
                     {
                         "name": "LoyaltyCardId",
                         "titles": "Loyalty Card ID",
                         "datatype": "string",
                         "propertyUrl": "rdf:type",
-                        "valueUrl": "http://example.org/vocab/LoyaltyCard"
+                        "valueUrl": "http://example.org/vocabulary/LoyaltyCard"
                     },
                     {
                         "name": "number",
@@ -275,13 +275,13 @@
                         "name": "StoreBranchId",
                         "titles": "Store Branch ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/StoreBranchId"
+                        "propertyUrl": "http://example.org/vocabulary/StoreBranchId"
                     },
                     {
                         "name": "EmployeeId",
                         "titles": "Employee ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/EmployeeId"
+                        "propertyUrl": "http://example.org/vocabulary/EmployeeId"
                     }
                 ],
                 "primaryKey": ["StoreBranchId", "EmployeeId"],
@@ -312,13 +312,13 @@
                         "name": "StoreBranchId",
                         "titles": "Store Branch ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/StoreBranchId"
+                        "propertyUrl": "http://example.org/vocabulary/StoreBranchId"
                     },
                     {
                         "name": "AddressId",
                         "titles": "Address ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/AddressId"
+                        "propertyUrl": "http://example.org/vocabulary/AddressId"
                     }
                 ],
                 "primaryKey": ["StoreBranchId", "AddressId"],
@@ -349,13 +349,13 @@
                         "name": "StoreBranchId",
                         "titles": "Store Branch ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/StoreBranchId"
+                        "propertyUrl": "http://example.org/vocabulary/StoreBranchId"
                     },
                     {
                         "name": "CustomerId",
                         "titles": "Customer ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/CustomerId"
+                        "propertyUrl": "http://example.org/vocabulary/CustomerId"
                     }
                 ],
                 "primaryKey": ["StoreBranchId", "CustomerId"],
@@ -386,13 +386,13 @@
                         "name": "LoyaltyCardId",
                         "titles": "Loyalty Card ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/LoyaltyCardId"
+                        "propertyUrl": "http://example.org/vocabulary/LoyaltyCardId"
                     },
                     {
                         "name": "CustomerId",
                         "titles": "Customer ID",
                         "datatype": "string",
-                        "propertyUrl": "http://example.org/vocab/CustomerId"
+                        "propertyUrl": "http://example.org/vocabulary/CustomerId"
                     }
                 ],
                 "primaryKey": ["LoyaltyCardId", "CustomerId"],
