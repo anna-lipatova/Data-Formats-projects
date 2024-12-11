@@ -31,18 +31,6 @@
                         "titles": "Is Self Checkout",
                         "datatype": "boolean",
                         "propertyUrl": "http://example.org/vocabulary/isSelfCheckout"
-                    },
-                    {
-                        "@type": "Column",
-                        "virtual": true,
-                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
-                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
-                    },
-                    {
-                        "@type": "Column",
-                        "virtual": true,
-                        "propertyUrl": "http://purl.org/net/ns/ex#operated_by",
-                        "valueUrl": "http://example.org/person/{+EmployeeId}"
                     }
                 ],
                 "primaryKey": "CashRegisterId"
@@ -72,12 +60,6 @@
                         "titles": "Has Warehouse",
                         "datatype": "boolean",
                         "propertyUrl": "http://example.org/vocabulary/hasWarehouse"
-                    },
-                    {
-                        "@type": "Column",
-                        "virtual": true,
-                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
-                        "valueUrl": "http://example.org/address/{+AddressId}"
                     }
                 ],
                 "primaryKey": "StoreBranchId"
@@ -106,12 +88,6 @@
                         "titles": "Family Name",
                         "datatype": "string",
                         "propertyUrl": "foaf:familyName"
-                    },
-                    {
-                        "@type": "Column",
-                        "virtual": true,
-                        "propertyUrl": "http://www.sealitproject.eu/ontology/works_at",
-                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
                     }
                 ],
                 "primaryKey": "EmployeeId"
@@ -188,18 +164,6 @@
                         "titles": "Phone Number",
                         "datatype": "anyURI",
                         "propertyUrl": "foaf:phone"
-                    },
-                    {
-                        "@type": "Column",
-                        "virtual": true,
-                        "propertyUrl": "http://purl.org/net/ns/ex#shopsAt",
-                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
-                    },
-                    {
-                        "@type": "Column",
-                        "virtual": true,
-                        "propertyUrl": "http://purl.org/net/ns/ex#hasLoyaltyCard",
-                        "valueUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}"
                     }
                 ],
                 "primaryKey": "CustomerId"
@@ -248,6 +212,12 @@
                         "name": "EmployeeId",
                         "titles": "Employee ID",
                         "datatype": "string"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://example.org/vocabulary/operated_by",
+                        "valueUrl": "http://example.org/person/{+EmployeeId}"
                     }
                 ],
                 "primaryKey": ["CashRegisterId", "EmployeeId"],
@@ -283,7 +253,13 @@
                         "name": "StoreBranchId",
                         "titles": "Store Branch ID",
                         "datatype": "string"
-                    }
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    }                    
                 ],
                 "primaryKey": ["CashRegisterId", "StoreBranchId"],
                 "foreignKeys": [
@@ -320,7 +296,19 @@
                         "titles": "Employee ID",
                         "datatype": "string",
                         "propertyUrl": "http://example.org/vocabulary/EmployeeId"
-                    }
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://www.sealitproject.eu/ontology/works_at",
+                        "valueUrl": "http://example.org/store/{StoreBranchId}"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://www.sealitproject.eu/ontology/works_at",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    }                    
                 ],
                 "primaryKey": ["StoreBranchId", "EmployeeId"],
                 "foreignKeys": [
@@ -357,6 +345,12 @@
                         "titles": "Address ID",
                         "datatype": "string",
                         "propertyUrl": "http://example.org/vocabulary/AddressId"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/store/{+AddressId}"
                     }
                 ],
                 "primaryKey": ["StoreBranchId", "AddressId"],
@@ -394,7 +388,14 @@
                         "titles": "Customer ID",
                         "datatype": "string",
                         "propertyUrl": "http://example.org/vocabulary/CustomerId"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/net/ns/ex#shopsAt",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
                     }
+                    
                 ],
                 "primaryKey": ["StoreBranchId", "CustomerId"],
                 "foreignKeys": [
@@ -431,6 +432,12 @@
                         "titles": "Customer ID",
                         "datatype": "string",
                         "propertyUrl": "http://example.org/vocabulary/CustomerId"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/net/ns/ex#hasLoyaltyCard",
+                        "valueUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}"
                     }
                 ],
                 "primaryKey": ["LoyaltyCardId", "CustomerId"],
