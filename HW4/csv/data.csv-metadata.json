@@ -31,6 +31,18 @@
                         "titles": "Is Self Checkout",
                         "datatype": "boolean",
                         "propertyUrl": "http://example.org/vocabulary/isSelfCheckout"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    },
+                    {
+                        "@type": "Column",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/net/ns/ex#operated_by",
+                        "valueUrl": "http://example.org/person/{+EmployeeId}"
                     }
                 ],
                 "primaryKey": "CashRegisterId"
