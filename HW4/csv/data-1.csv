@@ -1,4 +1,4 @@
-CashRegisterId,Number,IsSelfCheckout,StoreBranchId
-1,1,true,StoreBranch1
-2,2,false,StoreBranch2
-3,3,true,StoreBranch3
+CashRegisterId,Number,IsSelfCheckout,StoreBranchId,EmployeeId
+1,1,true,StoreBranch1,Marie-Krasna
+2,2,false,StoreBranch2,Janko-Mrkvicka
+3,3,true,StoreBranch3,Peter-Cibulka

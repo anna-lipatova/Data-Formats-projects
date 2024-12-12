@@ -1,4 +1,4 @@
-CustomerId,given_name,family_name,birth_date,phone_number
-Marek-Velky,Marek,Velky,"2001-01-01","tel:+420777777777"
-Petra-Mrkvickova,Petra,Mrkvickova,"2002-02-02","tel:+420123321231"
-Janka-Cibulkova,Janka,Cibulkova,"2003-03-03","tel:+420666666666"
+CustomerId,given_name,family_name,birth_date,phone_number,store_branch_id,loyalty_card_id
+Marek-Velky,Marek,Velky,"2001-01-01","tel:+420777777777",StoreBranch2,1
+Petra-Mrkvickova,Petra,Mrkvickova,"2002-02-02","tel:+420123321231",StoreBranch1,2
+Janka-Cibulkova,Janka,Cibulkova,"2003-03-03","tel:+420666666666",StoreBranch3,3

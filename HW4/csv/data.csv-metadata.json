@@ -1,0 +1,290 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type": "TableGroup",
+    "@id": "http://example.org/tableGroup",
+    "tables": [
+        {
+            "url": "data-1.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/register/{+CashRegisterId}",
+                "columns": [
+                    {
+                        "name": "CashRegisterId",
+                        "titles": "CashRegisterId",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/CashRegister"
+                    },
+                    {
+                        "name": "Number",
+                        "titles": "Number",
+                        "datatype": "integer",
+                        "propertyUrl": "schema:identifier"
+                    },
+                    {
+                        "name": "IsSelfCheckout",
+                        "titles": "IsSelfCheckout",
+                        "datatype": "boolean",
+                        "propertyUrl": "http://example.org/vocabulary/isSelfCheckout"
+                    },
+                    {
+                        "name": "StoreBranchId",
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    },
+                    {
+                        "name": "EmployeeId",
+                        "propertyUrl": "http://example.org/vocabulary/operated_by",
+                        "valueUrl": "http://example.org/person/{+EmployeeId}"
+                    }
+                ],
+                "primaryKey": "CashRegisterId",
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    },
+                    {
+                        "columnReference": "EmployeeId",
+                        "reference": {
+                            "resource": "data-3.csv",
+                            "columnReference": "EmployeeId"
+                        }
+                    }
+                ]
+
+            }
+        },
+        {
+            "url": "data-2.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/store/StoreBranch{+StoreBranchId}",
+                "columns": [
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "StoreBranchId",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/StoreBranch"
+                    },
+                    {
+                        "name": "name",
+                        "titles": "name",
+                        "datatype": "string",
+                        "propertyUrl": "http://rdfs.co/juso/name",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "has_warehouse",
+                        "titles": "has_warehouse",
+                        "datatype": "boolean",
+                        "propertyUrl": "http://example.org/vocabulary/hasWarehouse"
+                    },
+                    {
+                        "name": "address_id",
+                        "propertyUrl": "http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt",
+                        "valueUrl": "http://example.org/store/{+address_id}"
+                    }
+                ],
+                "primaryKey": "StoreBranchId",
+                "foreignKeys": [
+                    {
+                        "columnReference": "address_id",
+                        "reference": {
+                            "resource": "data-4.csv",
+                            "columnReference": "AddressId"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "url": "data-3.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/person/{+given_name}-{+family_name}",
+                "columns": [
+                    {
+                        "name": "EmployeeId",
+                        "titles": "EmployeeId",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/Employee"
+                    },
+                    {
+                        "name": "given_name",
+                        "titles": "given_name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:givenName",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "family_name",
+                        "titles": "family_name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:familyName",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "StoreBranchId",
+                        "propertyUrl": "http://www.sealitproject.eu/ontology/works_at",
+                        "valueUrl": "http://example.org/store/{+StoreBranchId}"
+                    }
+                ],
+                "primaryKey": "EmployeeId",
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "url": "data-4.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/address{+city}",
+                "columns": [
+                    {
+                        "name": "AddressId",
+                        "titles": "AddressId",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/Address"
+                    },
+                    {
+                        "name": "city",
+                        "titles": "city",
+                        "datatype": "string",
+                        "propertyUrl": "schema:addressLocality",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "street",
+                        "titles": "street",
+                        "datatype": "string",
+                        "propertyUrl": "schema:streetAddress",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "zipcode",
+                        "titles": "zipcode",
+                        "datatype": "string",
+                        "propertyUrl": "http://rdfs.co/juso/postal_code"
+                    }
+                ],
+                "primaryKey": "AddressId"
+            }
+        },
+
+        {
+            "url": "data-5.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/customer/{+given_name}-{+family_name}",
+                "columns": [
+                    {
+                        "name": "CustomerId",
+                        "titles": "CustomerId",
+                        "datatype": "string",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/Customer"
+                    },
+                    {
+                        "name": "given_name",
+                        "titles": "given_name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:givenName",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "family_name",
+                        "titles": "family_name",
+                        "datatype": "string",
+                        "propertyUrl": "foaf:familyName",
+                        "lang": "cs"
+                    },
+                    {
+                        "name": "birth_date",
+                        "titles": "birth_date",
+                        "datatype": "date",
+                        "propertyUrl": "http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate"
+                    },
+                    {
+                        "name": "phone_number",
+                        "titles": "phone_number",
+                        "datatype": "anyURI",
+                        "propertyUrl": "foaf:phone"
+                    },
+                    {
+                        "name": "store_branch_id",
+                        "propertyUrl": "http://purl.org/net/ns/ex#shopsAt",
+                        "valueUrl": "http://example.org/store/{+store_branch_id}"
+                    },
+                    {
+                        "name": "loyalty_card_id",
+                        "propertyUrl": "http://example.org/vocabulary/hasLoyaltyCard",
+                        "valueUrl": "http://example.org/loyaltycard/{+loyalty_card_id}"
+                    }
+                ],
+                "primaryKey": "CustomerId",
+                "foreignKeys": [
+                    {
+                        "columnReference": "store_branch_id",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    },
+                    {
+                        "columnReference": "loyalty_card_id",
+                        "reference": {
+                            "resource": "data-6.csv",
+                            "columnReference": "LoyaltyCardId"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "url": "data-6.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/loyaltycard/{+LoyaltyCardId}",
+                "columns": [
+                    {
+                        "name": "LoyaltyCardId",
+                        "titles": "LoyaltyCardId",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "schema:ProgramMembership"
+                    },
+                    {
+                        "name": "number",
+                        "titles": "number",
+                        "datatype": "integer",
+                        "propertyUrl": "schema:identifier"
+                    },
+                    {
+                        "name": "points",
+                        "titles": "points",
+                        "datatype": "integer",
+                        "propertyUrl": "schema:membershipPointsEarned"
+                    }
+                ],
+                "primaryKey": "LoyaltyCardId"
+            }
+        }
+
+
+    ]
+}

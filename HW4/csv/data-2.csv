@@ -1,4 +1,4 @@
-StoreBranchId,name,has_warehouse
-StoreBranch1,"Albert Liberec, Žižkova",false
-StoreBranch2,"Albert Olomouc",false
-StoreBranch3,"Albert Brno",true
+StoreBranchId,name,has_warehouse,address_id
+StoreBranch1,"Albert Liberec, Žižkova",false,Liberec
+StoreBranch2,"Albert Olomouc",false,Olomouc
+StoreBranch3,"Albert Brno",true,Brno

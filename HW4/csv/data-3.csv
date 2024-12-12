@@ -1,4 +1,4 @@
-EmployeeId,given_name,family_name
-Marie-Krasna,Marie,Krasna
-Janko-Mrkvicka,Janko,Mrkvicka
-Peter-Cibulka,Peter,Cibulka
+EmployeeId,given_name,family_name,StoreBranchId
+Marie-Krasna,Marie,Krasna,StoreBranch1
+Janko-Mrkvicka,Janko,Mrkvicka,StoreBranch2
+Peter-Cibulka,Peter,Cibulka,StoreBranch1

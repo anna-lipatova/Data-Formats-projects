@@ -1,0 +1,103 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/addressBrno> a <http://example.org/vocabulary/Address>;
+                                 <http://rdfs.co/juso/postal_code> "602 00";
+                                 schema:addressLocality "Brno"@cs;
+                                 schema:streetAddress "Nádražní, 2"@cs .
+
+<http://example.org/addressLiberec> a <http://example.org/vocabulary/Address>;
+                                    <http://rdfs.co/juso/postal_code> "104 00";
+                                    schema:addressLocality "Liberec"@cs;
+                                    schema:streetAddress "Prokopova, 261"@cs .
+
+<http://example.org/addressOlomouc> a <http://example.org/vocabulary/Address>;
+                                    <http://rdfs.co/juso/postal_code> "779 00";
+                                    schema:addressLocality "Olomouc"@cs;
+                                    schema:streetAddress "Polska, 1"@cs .
+
+<http://example.org/customer/Janka-Cibulkova> a <http://example.org/vocabulary/Customer>;
+                                              <http://example.org/vocabulary/hasLoyaltyCard> <http://example.org/loyaltycard/3>;
+                                              <http://purl.org/net/ns/ex#shopsAt> <http://example.org/store/StoreBranch3>;
+                                              <http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate> "2003-03-03"^^xsd:date;
+                                              foaf:familyName "Cibulkova"@cs;
+                                              foaf:givenName "Janka"@cs;
+                                              foaf:phone "tel:+420666666666"^^xsd:anyURI .
+
+<http://example.org/customer/Marek-Velky> a <http://example.org/vocabulary/Customer>;
+                                          <http://example.org/vocabulary/hasLoyaltyCard> <http://example.org/loyaltycard/1>;
+                                          <http://purl.org/net/ns/ex#shopsAt> <http://example.org/store/StoreBranch2>;
+                                          <http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate> "2001-01-01"^^xsd:date;
+                                          foaf:familyName "Velky"@cs;
+                                          foaf:givenName "Marek"@cs;
+                                          foaf:phone "tel:+420777777777"^^xsd:anyURI .
+
+<http://example.org/customer/Petra-Mrkvickova> a <http://example.org/vocabulary/Customer>;
+                                               <http://example.org/vocabulary/hasLoyaltyCard> <http://example.org/loyaltycard/2>;
+                                               <http://purl.org/net/ns/ex#shopsAt> <http://example.org/store/StoreBranch1>;
+                                               <http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate> "2002-02-02"^^xsd:date;
+                                               foaf:familyName "Mrkvickova"@cs;
+                                               foaf:givenName "Petra"@cs;
+                                               foaf:phone "tel:+420123321231"^^xsd:anyURI .
+
+<http://example.org/register/1> a <http://example.org/vocabulary/CashRegister>;
+                                <http://example.org/vocabulary/isSelfCheckout> true;
+                                <http://example.org/vocabulary/operated_by> <http://example.org/person/Marie-Krasna>;
+                                <http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt> <http://example.org/store/StoreBranch1>;
+                                schema:identifier 1 .
+
+<http://example.org/register/2> a <http://example.org/vocabulary/CashRegister>;
+                                <http://example.org/vocabulary/isSelfCheckout> false;
+                                <http://example.org/vocabulary/operated_by> <http://example.org/person/Janko-Mrkvicka>;
+                                <http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt> <http://example.org/store/StoreBranch2>;
+                                schema:identifier 2 .
+
+<http://example.org/register/3> a <http://example.org/vocabulary/CashRegister>;
+                                <http://example.org/vocabulary/isSelfCheckout> true;
+                                <http://example.org/vocabulary/operated_by> <http://example.org/person/Peter-Cibulka>;
+                                <http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt> <http://example.org/store/StoreBranch3>;
+                                schema:identifier 3 .
+
+<http://example.org/store/StoreBranchStoreBranch1> a <http://example.org/vocabulary/StoreBranch>;
+                                                   <http://example.org/vocabulary/hasWarehouse> false;
+                                                   <http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt> <http://example.org/store/Liberec>;
+                                                   <http://rdfs.co/juso/name> "Albert Liberec, Žižkova"@cs .
+
+<http://example.org/store/StoreBranchStoreBranch2> a <http://example.org/vocabulary/StoreBranch>;
+                                                   <http://example.org/vocabulary/hasWarehouse> false;
+                                                   <http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt> <http://example.org/store/Olomouc>;
+                                                   <http://rdfs.co/juso/name> "Albert Olomouc"@cs .
+
+<http://example.org/store/StoreBranchStoreBranch3> a <http://example.org/vocabulary/StoreBranch>;
+                                                   <http://example.org/vocabulary/hasWarehouse> true;
+                                                   <http://meta.icos-cp.eu/ontologies/cpmeta/locatedAt> <http://example.org/store/Brno>;
+                                                   <http://rdfs.co/juso/name> "Albert Brno"@cs .
+
+<http://example.org/loyaltycard/1> a schema:ProgramMembership;
+                                   schema:identifier 1;
+                                   schema:membershipPointsEarned 147 .
+
+<http://example.org/loyaltycard/2> a schema:ProgramMembership;
+                                   schema:identifier 2;
+                                   schema:membershipPointsEarned 258 .
+
+<http://example.org/loyaltycard/3> a schema:ProgramMembership;
+                                   schema:identifier 3;
+                                   schema:membershipPointsEarned 369 .
+
+<http://example.org/person/Janko-Mrkvicka> a <http://example.org/vocabulary/Employee>;
+                                           <http://www.sealitproject.eu/ontology/works_at> <http://example.org/store/StoreBranch2>;
+                                           foaf:familyName "Mrkvicka"@cs;
+                                           foaf:givenName "Janko"@cs .
+
+<http://example.org/person/Marie-Krasna> a <http://example.org/vocabulary/Employee>;
+                                         <http://www.sealitproject.eu/ontology/works_at> <http://example.org/store/StoreBranch1>;
+                                         foaf:familyName "Krasna"@cs;
+                                         foaf:givenName "Marie"@cs .
+
+<http://example.org/person/Peter-Cibulka> a <http://example.org/vocabulary/Employee>;
+                                          <http://www.sealitproject.eu/ontology/works_at> <http://example.org/store/StoreBranch1>;
+                                          foaf:familyName "Cibulka"@cs;
+                                          foaf:givenName "Peter"@cs .
