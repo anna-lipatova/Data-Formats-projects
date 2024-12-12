@@ -5,6 +5,8 @@
     "foaf": "http://xmlns.com/foaf/0.1/",
     "tro": "https://w3id.org/TRO#",
     "sealit": "http://example.org/sealit#",
+      
+    "employees": "tro:Employee",  
     "given_name": {
       "@id": "foaf:givenName",
       "@language": "cs"
@@ -14,9 +16,10 @@
       "@language": "cs"
     },
     "works_at": "sealit:works_at",
-    "Employees": "@graph"
+      
+    "employees": "@graph"
   },
-  "Employees": [
+  "employees": [
     {
       "id": "http://example.org/person/Peter-Cibulka",
       "@type": "tro:Employee",
