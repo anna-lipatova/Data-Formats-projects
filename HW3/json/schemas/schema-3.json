@@ -3,7 +3,7 @@
     "$id": "https://example.org/schema-3.json",
     "type": "object",
     "properties": {
-        "employees": {
+        "Employees": {
             "type": "array",
             "items": {
                 "type": "object",
