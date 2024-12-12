@@ -1,96 +1,52 @@
-@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-@prefix ex:  <http://purl.org/net/ns/ex#> .
-@prefix mads:  <http://www.loc.gov/mads/rdf/v1#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema:  <http://schema.org/> .
-@prefix juso:  <http://rdfs.co/juso/> .
-@prefix dpv:  <https://w3id.org/dpv#> .
-@prefix tro:  <https://w3id.org/TRO#> .
-@prefix cpmeta:  <http://meta.icos-cp.eu/ontologies/cpmeta/> .
-@prefix sealit:  <http://www.sealitproject.eu/ontology/> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://example.org/store/StoreBranch1>
-        rdf:type          ex:StoreBranch ;
-        cpmeta:locatedAt  <http://example.org/address/Liberec> ;
-        ex:has_warehouse  false ;
-        juso:name         "Albert Liberec, Žižkova"@cs .
-
-<http://example.org/customer/Petra-Mrkvickova>
-        rdf:type           <dvp:Customer> ;
-        ex:hasLoyaltyCard  <http://example.org/loyaltycard/2> ;
-        ex:shopsAt         <http://example.org/store/StoreBranch1> ;
-        mads:birthDate     "2002-02-02"^^xsd:date ;
-        foaf:familyName    "Mrkvickova"@cs ;
-        foaf:givenName     "Petra"@cs ;
-        foaf:phone         <tel:+420123321231> .
-
-<http://example.org/person/Marie-Krasna>
-        rdf:type         tro:Employee ;
-        sealit:works_at  <http://example.org/store/StoreBranch1> ;
-        foaf:familyName  "Krásná"@cs ;
-        foaf:givenName   "Marie"@cs .
-
-<http://example.org/register/1>
-        rdf:type           ex:CashRegister ;
-        cpmeta:locatedAt   <http://example.org/store/StoreBranch1> ;
-        ex:isSelfCheckout  true ;
-        ex:operated_by     <http://example.org/person/Marie-Krasna> ;
-        schema:identifier  1 .
-
-<http://example.org/store/StoreBranch2>
-        rdf:type          ex:StoreBranch ;
-        cpmeta:locatedAt  <http://example.org/address/Olomouc> ;
-        ex:has_warehouse  false ;
-        juso:name         "Albert Olomouc"@cs .
-
-<http://example.org/customer/Marek-Velky>
-        rdf:type           <dvp:Customer> ;
-        ex:hasLoyaltyCard  <http://example.org/loyaltycard/1> ;
-        ex:shopsAt         <http://example.org/store/StoreBranch2> ;
-        mads:birthDate     "2001-01-01"^^xsd:date ;
-        foaf:familyName    "Velký"@cs ;
-        foaf:givenName     "Marek"@cs ;
-        foaf:phone         <tel:+420777777777> .
-
-<http://example.org/person/Janko-Mrkvicka>
-        rdf:type         tro:Employee ;
-        sealit:works_at  <http://example.org/store/StoreBranch2> ;
-        foaf:familyName  "Mrkvicka"@cs ;
-        foaf:givenName   "Janko"@cs .
-
-<http://example.org/register/2>
-        rdf:type           ex:CashRegister ;
-        cpmeta:locatedAt   <http://example.org/store/StoreBranch2> ;
-        ex:isSelfCheckout  false ;
-        ex:operated_by     <http://example.org/person/Janko-Mrkvicka> ;
-        schema:identifier  2 .
+PREFIX cpmeta: <http://meta.icos-cp.eu/ontologies/cpmeta/>
+PREFIX dpv:    <https://w3id.org/dpv#>
+PREFIX ex:     <http://purl.org/net/ns/ex#>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX juso:   <http://rdfs.co/juso/>
+PREFIX mads:   <http://www.loc.gov/mads/rdf/v1#>
+PREFIX schema: <http://schema.org/>
+PREFIX sealit: <http://www.sealitproject.eu/ontology/>
+PREFIX tro:    <https://w3id.org/TRO#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.org/store/StoreBranch3>
-        rdf:type          ex:StoreBranch ;
-        cpmeta:locatedAt  <http://example.org/address/Brno> ;
-        ex:has_warehouse  true ;
+        a                 ex:StoreBranch;
+        cpmeta:locatedAt  <http://example.org/address/Brno>;
+        ex:CashRegister   <http://example.org/register/3>;
+        ex:has_warehouse  true;
         juso:name         "Albert Brno"@cs .
 
-<http://example.org/customer/Janka-Cibulkova>
-        rdf:type           <dvp:Customer> ;
-        ex:hasLoyaltyCard  <http://example.org/loyaltycard/3> ;
-        ex:shopsAt         <http://example.org/store/StoreBranch3> ;
-        mads:birthDate     "2003-03-03"^^xsd:date ;
-        foaf:familyName    "Cibulkova"@cs ;
-        foaf:givenName     "Janka"@cs ;
-        foaf:phone         <tel:+420666666666> .
+<http://example.org/store/StoreBranch2>
+        a                 ex:StoreBranch;
+        cpmeta:locatedAt  <http://example.org/address/Olomouc>;
+        ex:CashRegister   <http://example.org/register/2>;
+        ex:has_warehouse  false;
+        juso:name         "Albert Olomouc"@cs .
 
-<http://example.org/person/Peter-Cibulka>
-        rdf:type         tro:Employee ;
-        sealit:works_at  <http://example.org/store/StoreBranch1> ;
-        foaf:familyName  "Cibulka"@cs ;
-        foaf:givenName   "Peter"@cs .
+<http://example.org/store/StoreBranch1>
+        a                 ex:StoreBranch;
+        cpmeta:locatedAt  <http://example.org/address/Liberec>;
+        ex:CashRegister   <http://example.org/register/1>;
+        ex:has_warehouse  false;
+        juso:name         "Albert Liberec, Žižkova"@cs .
 
 <http://example.org/register/3>
-        rdf:type           ex:CashRegister ;
-        cpmeta:locatedAt   <http://example.org/store/StoreBranch1> ;
-        ex:isSelfCheckout  true ;
-        ex:operated_by     <http://example.org/person/Peter-Cibulka> ;
+        a                  ex:CashRegister;
+        cpmeta:locatedAt   <http://example.org/store/StoreBranch1>;
+        ex:isSelfCheckout  true;
+        ex:operated_by     <http://example.org/person/Peter-Cibulka>;
         schema:identifier  3 .
+
+<http://example.org/register/2>
+        a                  ex:CashRegister;
+        cpmeta:locatedAt   <http://example.org/store/StoreBranch2>;
+        ex:isSelfCheckout  false;
+        ex:operated_by     <http://example.org/person/Janko-Mrkvicka>;
+        schema:identifier  2 .
+
+<http://example.org/register/1>
+        a                  ex:CashRegister;
+        cpmeta:locatedAt   <http://example.org/store/StoreBranch1>;
+        ex:isSelfCheckout  true;
+        ex:operated_by     <http://example.org/person/Marie-Krasna>;
+        schema:identifier  1 .
