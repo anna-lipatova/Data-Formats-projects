@@ -1,3 +1,4 @@
+PREFIX ex:     <http://example.org/>
 PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
 PREFIX juso:   <http://rdfs.co/juso/>
 PREFIX sealit: <http://example.org/sealit#>
