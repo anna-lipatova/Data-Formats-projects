@@ -104,7 +104,7 @@
       "birth_date": "2003-03-03",
       "phone_number": "tel:+420666666666",
       "shops_at": {
-        "id": "http://example.org/store/StoreBranch1",
+        "id": "http://example.org/store/StoreBranch3",
         "@type": "ex:StoreBranch",
         "name": "Albert Brno",
         "has_warehouse": true,
