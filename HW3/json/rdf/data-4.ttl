@@ -7,6 +7,12 @@ PREFIX mads:   <http://www.loc.gov/mads/rdf/v1#>
 PREFIX schema: <http://schema.org/>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
+<http://example.org/store/StoreBranch3>
+        a                 ex:StoreBranch;
+        cpmeta:locatedAt  <http://example.org/address/Brno>;
+        ex:has_warehouse  true;
+        juso:name         "Albert Brno"@cs .
+
 <http://example.org/store/StoreBranch2>
         a                 ex:StoreBranch;
         cpmeta:locatedAt  <http://example.org/address/Olomouc>;
@@ -15,9 +21,9 @@ PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.org/store/StoreBranch1>
         a                 ex:StoreBranch;
-        cpmeta:locatedAt  <http://example.org/address/Brno> , <http://example.org/address/Liberec>;
-        ex:has_warehouse  true , false;
-        juso:name         "Albert Brno"@cs , "Albert Liberec, Žižkova"@cs .
+        cpmeta:locatedAt  <http://example.org/address/Liberec>;
+        ex:has_warehouse  false;
+        juso:name         "Albert Liberec, Žižkova"@cs .
 
 <http://example.org/loyaltycard/3>
         a                              schema:ProgramMembership;
@@ -55,7 +61,7 @@ PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 <http://example.org/customer/Janka-Cibulkova>
         a                  dpv:Customer;
         ex:hasLoyaltyCard  <http://example.org/loyaltycard/3>;
-        ex:shopsAt         <http://example.org/store/StoreBranch1>;
+        ex:shopsAt         <http://example.org/store/StoreBranch3>;
         mads:birthDate     "2003-03-03"^^xsd:date;
         foaf:familyName    "Cibulkova"@cs;
         foaf:givenName     "Janka"@cs;
