@@ -3,12 +3,8 @@
     "id": "@id",
     "type": "@type",
     "foaf": "http://xmlns.com/foaf/0.1/",
-    "juso": "http://rdfs.co/juso/",
     "tro": "https://w3id.org/TRO#",
-    "ex": "http://example.org/",
     "sealit": "http://example.org/sealit#",
-
-    "employees": "tro:Employee",
     "given_name": {
       "@id": "foaf:givenName",
       "@language": "cs"
@@ -17,43 +13,41 @@
       "@id": "foaf:familyName",
       "@language": "cs"
     },
-    "works_at": {
-      "@id": "sealit:works_at",
-      "@type": "@id"
-    },
-    "has_warehouse": {
-      "@id": "ex:has_warehouse",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-  },
+    "works_at": "sealit:works_at",
     "Employees": "@graph"
   },
   "Employees": [
-
+    {
+      "id": "http://example.org/person/Peter-Cibulka",
+      "@type": "tro:Employee",
+      "given_name": "Peter",
+      "family_name": "Cibulka",
+      "works_at": {
+        "id": "http://example.org/store/StoreBranch1",
+        "name": "Albert Liberec, Žižkova",
+        "has_warehouse": false
+      }
+    },
     {
       "id": "http://example.org/person/Marie-Krasna",
-	  "@type": "tro:Employee",
+      "@type": "tro:Employee",
       "given_name": "Marie",
       "family_name": "Krásná",
       "works_at": {
-         "@id": "http://example.org/store/StoreBranch1"
+        "id": "http://example.org/store/StoreBranch1",
+        "name": "Albert Liberec, Žižkova",
+        "has_warehouse": false
       }
     },
     {
       "id": "http://example.org/person/Janko-Mrkvicka",
-	  "@type": "tro:Employee",
+      "@type": "tro:Employee",
       "given_name": "Janko",
       "family_name": "Mrkvicka",
       "works_at": {
-         "@id": "http://example.org/store/StoreBranch2"
-      }
-    },
-    {
-      "id": "http://example.org/person/Peter-Cibulka",
-	  "@type": "tro:Employee",
-      "given_name": "Peter",
-      "family_name": "Cibulka",
-      "works_at": {
-         "@id": "http://example.org/store/StoreBranch1"
+        "id": "http://example.org/store/StoreBranch2",
+        "name": "Albert Olomouc",
+        "has_warehouse": false
       }
     }
   ]
