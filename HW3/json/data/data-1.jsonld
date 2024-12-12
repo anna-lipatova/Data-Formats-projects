@@ -76,37 +76,6 @@
          "name":"Albert Liberec, Žižkova",
          "has_warehouse":false,
          "located_at":"http://example.org/address/Liberec",
-         "customers":[
-            {
-               "id":"http://example.org/customer/Petra-Mrkvickova",
-               "type":"dvp:Customer",
-               "given_name":"Petra",
-               "family_name":"Mrkvickova",
-               "birth_date":"2002-02-02",
-               "phone_number":"tel:+420123321231",
-               "shops_at":"http://example.org/store/StoreBranch1",
-               "has_loyalty_card":"http://example.org/loyaltycard/2"
-            }
-         ],
-         "employees":[
-            {
-               "id":"http://example.org/person/Marie-Krasna",
-               "type":"tro:Employee",
-               "given_name":"Marie",
-               "family_name":"Krásná",
-               "works_at":"http://example.org/store/StoreBranch1"
-            }
-         ],
-         "cash_registers":[
-            {
-               "id":"http://example.org/register/1",
-               "type":"ex:CashRegister",
-               "identifier":1,
-               "is_self_checkout":true,
-               "located_at":"http://example.org/store/StoreBranch1",
-               "operated_by":"http://example.org/person/Marie-Krasna"
-            }
-         ]
       },
       {
          "id":"http://example.org/store/StoreBranch2",
@@ -114,37 +83,6 @@
          "name":"Albert Olomouc",
          "has_warehouse":false,
          "located_at":"http://example.org/address/Olomouc",
-         "customers":[
-            {
-               "id":"http://example.org/customer/Marek-Velky",
-               "type":"dvp:Customer",
-               "given_name":"Marek",
-               "family_name":"Velký",
-               "birth_date":"2001-01-01",
-               "phone_number":"tel:+420777777777",
-               "shops_at":"http://example.org/store/StoreBranch2",
-               "has_loyalty_card":"http://example.org/loyaltycard/1"
-            }
-         ],
-         "employees":[
-            {
-               "id":"http://example.org/person/Janko-Mrkvicka",
-               "type":"tro:Employee",
-               "given_name":"Janko",
-               "family_name":"Mrkvicka",
-               "works_at":"http://example.org/store/StoreBranch2"
-            }
-         ],
-         "cash_registers":[
-            {
-               "id":"http://example.org/register/2",
-               "type":"ex:CashRegister",
-               "identifier":2,
-               "is_self_checkout":false,
-               "located_at":"http://example.org/store/StoreBranch2",
-               "operated_by":"http://example.org/person/Janko-Mrkvicka"
-            }
-         ]
       },
       {
          "id":"http://example.org/store/StoreBranch3",
@@ -152,37 +90,6 @@
          "name":"Albert Brno",
          "has_warehouse":true,
          "located_at":"http://example.org/address/Brno",
-         "customers":[
-            {
-               "id":"http://example.org/customer/Janka-Cibulkova",
-               "type":"dvp:Customer",
-               "given_name":"Janka",
-               "family_name":"Cibulkova",
-               "birth_date":"2003-03-03",
-               "phone_number":"tel:+420666666666",
-               "shops_at":"http://example.org/store/StoreBranch3",
-               "has_loyalty_card":"http://example.org/loyaltycard/3"
-            }
-         ],
-         "employees":[
-            {
-               "id":"http://example.org/person/Peter-Cibulka",
-               "type":"tro:Employee",
-               "given_name":"Peter",
-               "family_name":"Cibulka",
-               "works_at":"http://example.org/store/StoreBranch1"
-            }
-         ],
-         "cash_registers":[
-            {
-               "id":"http://example.org/register/3",
-               "type":"ex:CashRegister",
-               "identifier":3,
-               "is_self_checkout":true,
-               "located_at":"http://example.org/store/StoreBranch1",
-               "operated_by":"http://example.org/person/Peter-Cibulka"
-            }
-         ]
       }
    ]
 }
