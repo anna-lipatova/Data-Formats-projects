@@ -1,170 +1,183 @@
 {
-  "@context": {
-    "type": "@type",
-    "id": "@id",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "ex": "http://purl.org/net/ns/ex#",
-    "mads": "http://www.loc.gov/mads/rdf/v1#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "schema": "http://schema.org/",
-    "juso": "http://rdfs.co/juso/",
-    "dpv": "https://w3id.org/dpv#",
-    "tro": "https://w3id.org/TRO#",
-    "cpmeta": "http://meta.icos-cp.eu/ontologies/cpmeta/",
-    "sealit": "http://www.sealitproject.eu/ontology/",
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "ex": "http://purl.org/net/ns/ex#",
+        "mads": "http://www.loc.gov/mads/rdf/v1#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "schema": "http://schema.org/",
+        "juso": "http://rdfs.co/juso/",
+        "dpv": "https://w3id.org/dpv#",
+        "tro": "https://w3id.org/TRO#",
+        "cpmeta": "http://meta.icos-cp.eu/ontologies/cpmeta/",
+        "sealit": "http://www.sealitproject.eu/ontology/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        
+        "store_branches": "ex:StoreBranch",
+        "customers": "dpv:Customer",
+        "employees": "tro:Employee",
+        "cash_registers": "ex:CashRegister",
+        "name": {
+            "@id": "juso:name",
+            "@language": "cs"
+        },
+        
+        "given_name": {
+            "@id": "foaf:givenName",
+            "@language": "cs"
+        },
+
+        "family_name": {
+            "@id": "foaf:familyName",
+            "@language": "cs"
+        },
+        
+        "birth_date": {
+            "@id": "mads:birthDate",
+            "@type": "xsd:date"
+        },
     
-    "store_branches": "ex:StoreBranch",
-    "customers": "dpv:Customer",
-    "employees": "tro:Employee",
-    "cash_registers": "ex:CashRegister",
-    "name": {
-      "@id": "juso:name",
-      "@language": "cs"
-    },
-    "given_name": {
-      "@id": "foaf:givenName",
-      "@language": "cs"
-    },
-    "family_name": {
-      "@id": "foaf:familyName",
-      "@language": "cs"
-    },
-    "birth_date": {
-      "@id": "mads:birthDate",
-      "@type": "xsd:date"
-    },
-    "phone_number": {
-      "@id": "foaf:phone",
-      "@type": "@id"
-    },
-    "has_loyalty_card": {
-      "@id": "ex:hasLoyaltyCard",
-      "@type": "@id"
-    },
-    "shops_at": {
-      "@id": "ex:shopsAt",
-      "@type": "@id"
-    },
-    "works_at": {
-      "@id": "sealit:works_at",
-      "@type": "@id"
-    },
-    "has_warehouse": { 
-      "@id": "ex:has_warehouse", 
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "is_self_checkout": "ex:isSelfCheckout",
-    "located_at": {
-      "@id": "cpmeta:locatedAt",
-      "@type": "@id"
-    },
-    "identifier": "schema:identifier",
-    "address": "juso:Address",
-    "city": "schema:addressLocality",
-    "street": "schema:streetAddress",
-    "zip_code": "juso:postal_code",
-    "operated_by": {
-      "@id": "ex:operated_by",
-      "@type": "@id"
-    }
+        "phone_number": {
+            "@id": "foaf:phone",
+            "@type": "@id"
+        },
+        
+        "has_loyalty_card": {
+            "@id": "ex:hasLoyaltyCard",
+            "@type": "@id"
+        },
+
+        "shops_at": {
+            "@id": "ex:shopsAt",
+            "@type": "@id"
+        },
+
+        "works_at": {
+            "@id": "sealit:works_at",
+            "@type": "@id"
+        },
+
+        "has_warehouse": { 
+            "@id": "ex:has_warehouse", 
+            "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+
+        "is_self_checkout": "ex:isSelfCheckout",
+        
+        "located_at": {
+            "@id": "cpmeta:locatedAt",
+            "@type": "@id"
+        },
+
+        "identifier": "schema:identifier",
+        "address": "juso:Address",
+        "city": "schema:addressLocality",
+        "street": "schema:streetAddress",
+        "zip_code": "juso:postal_code",
+        
+        "operated_by": {
+            "@id": "ex:operated_by",
+            "@type": "@id"
+        },
+    "store_branches": "@graph"
   },
   "store_branches": [
     {
-      "id": "http://example.org/store/StoreBranch1",
-      "name": "Albert Liberec, Žižkova",
-      "has_warehouse": false,
-      "Address": {
-        "city": "Liberec",
-        "street": "Prokopova, 261",
-        "zip_code": "104 00"
-      },
-      "employees": [
-        {
-          "id": "http://example.org/person/Marie-Krasna",
-          "given_name": "Marie",
-          "family_name": "Krásná"
+            "id": "http://example.org/store/StoreBranch1",
+            "type": "ex:StoreBranch",
+            "name": "Albert Liberec, Žižkova",
+            "has_warehouse": false,
+            "located_at": "http://example.org/address/Liberec"
         },
         {
-          "id": "http://example.org/person/Peter-Cibulka",
-          "given_name": "Peter",
-          "family_name": "Cibulka"
-        }
-      ],
-      "customers": [
-        {
-          "id": "http://example.org/customer/Petra-Mrkvickova",
-          "given_name": "Petra",
-          "family_name": "Mrkvickova",
-          "birth_date": "2002-02-02",
-          "phone_number": "tel:+420123321231"
-        }
-      ],
-      "cash_registers": [
-        {
-          "id": "http://example.org/register/1",
-          "identifier": 1,
-          "is_self_checkout": true
+            "id": "http://example.org/customer/Petra-Mrkvickova",
+            "type": "dvp:Customer",
+            "given_name": "Petra",
+            "family_name": "Mrkvickova",
+            "birth_date": "2002-02-02",
+            "phone_number": "tel:+420123321231",
+            "shops_at": "http://example.org/store/StoreBranch1",
+            "has_loyalty_card": "http://example.org/loyaltycard/2"
         },
         {
-          "id": "http://example.org/register/3",
-          "identifier": 3,
-          "is_self_checkout": true
-        }
-      ]
-    },
-    {
-      "id": "http://example.org/store/StoreBranch2",
-      "name": "Albert Olomouc",
-      "has_warehouse": false,
-      "Address": {
-        "city": "Olomouc",
-        "street": "Polska, 1",
-        "zip_code": "779 00"
-      },
-      "employees": [
+            "id": "http://example.org/person/Marie-Krasna",
+            "type": "tro:Employee",
+            "given_name": "Marie",
+            "family_name": "Krásná",
+            "works_at": "http://example.org/store/StoreBranch1"
+        },
         {
-          "id": "http://example.org/person/Janko-Mrkvicka",
-          "given_name": "Janko",
-          "family_name": "Mrkvicka"
-        }
-      ],
-      "customers": [
+            "id": "http://example.org/register/1",
+            "type": "ex:CashRegister",
+            "identifier": 1,
+            "is_self_checkout": true,
+            "located_at": "http://example.org/store/StoreBranch1",
+            "operated_by": "http://example.org/person/Marie-Krasna"
+        },
         {
-          "id": "http://example.org/customer/Marek-Velky",
-          "given_name": "Marek",
-          "family_name": "Velký",
-          "birth_date": "2001-01-01",
-          "phone_number": "tel:+420777777777"
-        }
-      ],
-      "cash_registers": [
+            "id": "http://example.org/store/StoreBranch2",
+            "type": "ex:StoreBranch",
+            "name": "Albert Olomouc",
+            "has_warehouse": false,
+            "located_at": "http://example.org/address/Olomouc"
+        },
         {
-          "id": "http://example.org/register/2",
-          "identifier": 2,
-          "is_self_checkout": false
-        }
-      ]
-    },
-    {
-      "id": "http://example.org/store/StoreBranch3",
-      "name": "Albert Brno",
-      "has_warehouse": true,
-      "Address": {
-        "city": "Brno",
-        "street": "Nádražní, 2",
-        "zip_code": "602 00"
-      },
-      "employees": [],
-      "customers": [
+            "id": "http://example.org/customer/Marek-Velky",
+            "type": "dvp:Customer",
+            "given_name": "Marek",
+            "family_name": "Velký",
+            "birth_date": "2001-01-01",
+            "phone_number": "tel:+420777777777",
+            "shops_at": "http://example.org/store/StoreBranch2",
+            "has_loyalty_card": "http://example.org/loyaltycard/1"
+        },
         {
-          "id": "http://example.org/customer/Janka-Cibulkova",
-          "given_name": "Janka",
-          "family_name": "Cibulkova",
-          "birth_date": "2003-03-03",
-          "phone_number": "tel:+420666666666"
+            "id": "http://example.org/person/Janko-Mrkvicka",
+            "type": "tro:Employee",
+            "given_name": "Janko",
+            "family_name": "Mrkvicka",
+            "works_at": "http://example.org/store/StoreBranch2"
+        },
+        {
+            "id": "http://example.org/register/2",
+            "type": "ex:CashRegister",
+            "identifier": 2,
+            "is_self_checkout": false,
+            "located_at": "http://example.org/store/StoreBranch2",
+            "operated_by": "http://example.org/person/Janko-Mrkvicka"
+        },
+        {
+            "id": "http://example.org/store/StoreBranch3",
+            "type": "ex:StoreBranch",
+            "name": "Albert Brno",
+            "has_warehouse": true,
+            "located_at": "http://example.org/address/Brno"
+        },
+        {
+            "id": "http://example.org/customer/Janka-Cibulkova",
+            "type": "dvp:Customer",
+            "given_name": "Janka",
+            "family_name": "Cibulkova",
+            "birth_date": "2003-03-03",
+            "phone_number": "tel:+420666666666",
+            "shops_at": "http://example.org/store/StoreBranch3",
+            "has_loyalty_card": "http://example.org/loyaltycard/3"
+        },
+        {
+            "id": "http://example.org/person/Peter-Cibulka",
+            "type": "tro:Employee",
+            "given_name": "Peter",
+            "family_name": "Cibulka",
+            "works_at": "http://example.org/store/StoreBranch1"
+        },
+        {
+            "id": "http://example.org/register/3",
+            "type": "ex:CashRegister",
+            "identifier": 3,
+            "is_self_checkout": true,
+            "located_at": "http://example.org/store/StoreBranch1",
+            "operated_by": "http://example.org/person/Peter-Cibulka"
         }
-      ],
-      "cash_registers": []
-    }
-  ]
+    ]
 }
