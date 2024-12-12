@@ -5,8 +5,14 @@
         "juso": "http://rdfs.co/juso/",
         "schema": "http://schema.org/",
         "ex": "http://purl.org/net/ns/ex#",
-        "city": "schema:addressLocality",
-        "street": "schema:streetAddress",
+        "city":{
+         "@id":"schema:addressLocality",
+         "@language":"cs"
+       },
+        "street":{
+         "@id":"schema:streetAddress",
+         "@language":"cs"
+       },
         "zip_code": "juso:postal_code",
         "located_at": {
             "@id": "ex:locatedAt",
