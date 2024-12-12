@@ -3,7 +3,7 @@
     "$id": "https://example.org/schema-3.json",
     "type": "object",
     "properties": {
-        "Employees": {
+        "employees": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -35,28 +35,7 @@
                                 "enum": [true, false]
                             }
                         },
-                        "required": ["id", "has_warehouse"]
-                    },
-                    "leads": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "title": "Cash Register",
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "identifier": {
-                                    "type": "integer"
-                                },
-                                "is_self_checkout": {
-                                    "type": "boolean",
-                                    "enum": [true, false]
-                                }
-                            },
-                            "required": ["id", "identifier", "is_self_checkout"]
-                        }
+                        "required": ["id", "has_warehouse", "name"]
                     }
                 },
                 "required": ["id", "given_name", "family_name"]

@@ -21,26 +21,6 @@
                     },
                     "zip_code": {
                         "type": "string"
-                    },
-                    "store_branches": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "title": "Store Branch",
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "name": {
-                                    "type": "string"
-                                },
-                                "has_warehouse": {
-                                    "type": "boolean"
-                                }
-                            },
-                            "required": ["id", "name", "has_warehouse"]
-                        }
                     }
                 },
                 "required": ["id", "city", "street", "zip_code"]
