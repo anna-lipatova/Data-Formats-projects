@@ -76,6 +76,16 @@
          "name":"Albert Liberec, Žižkova",
          "has_warehouse":false,
          "located_at":"http://example.org/address/Liberec",
+         "cash_registers": [
+            {
+               "id":"http://example.org/register/1",
+               "type":"ex:CashRegister",
+               "identifier":1,
+               "is_self_checkout":true,
+               "located_at":"http://example.org/store/StoreBranch1",
+               "operated_by":"http://example.org/person/Marie-Krasna"
+            }
+         ]
       },
       {
          "id":"http://example.org/store/StoreBranch2",
@@ -83,6 +93,16 @@
          "name":"Albert Olomouc",
          "has_warehouse":false,
          "located_at":"http://example.org/address/Olomouc",
+                  "cash_registers":[
+                     {
+                        "id":"http://example.org/register/2",
+                        "type":"ex:CashRegister",
+                        "identifier":2,
+                        "is_self_checkout":false,
+                        "located_at":"http://example.org/store/StoreBranch2",
+                        "operated_by":"http://example.org/person/Janko-Mrkvicka"
+                     }
+                     ]
       },
       {
          "id":"http://example.org/store/StoreBranch3",
@@ -90,6 +110,16 @@
          "name":"Albert Brno",
          "has_warehouse":true,
          "located_at":"http://example.org/address/Brno",
+         "cash_registers":[
+                     {
+                        "id":"http://example.org/register/3",
+                        "type":"ex:CashRegister",
+                        "identifier":3,
+                        "is_self_checkout":true,
+                        "located_at":"http://example.org/store/StoreBranch1",
+                        "operated_by":"http://example.org/person/Peter-Cibulka"
+                     }
+                  ]
       }
    ]
 }

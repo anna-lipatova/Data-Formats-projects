@@ -18,10 +18,41 @@
                     },
                     "has_warehouse": {
                         "type": "boolean",
-                        "enum": [true, false]
+                        "enum": [
+                            true,
+                            false
+                        ]
                     },
                     "located_at": {
                         "type": "string"
+                    },
+                    "cash_registers": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "Cash Register",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "identifier": {
+                                    "type": "integer"
+                                },
+                                "is_self_checkout": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "identifier",
+                                "is_self_checkout"
+                            ]
+                        }
                     }
                 },
                 "required": ["id", "name", "has_warehouse"]
