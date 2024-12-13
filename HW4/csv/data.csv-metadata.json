@@ -221,7 +221,8 @@
                         "name":"phone_number",
                         "titles":"phone_number",
                         "datatype":"anyURI",
-                        "propertyUrl":"foaf:phone"
+                        "propertyUrl":"foaf:phone",
+                        "valueUrl": "{+phone_number}"
                     },
                     {
                         "name":"store_branch_id",
