@@ -24,7 +24,7 @@
                                               <http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate> "2003-03-03"^^xsd:date;
                                               foaf:familyName "Cibulkova"@cs;
                                               foaf:givenName "Janka"@cs;
-                                              foaf:phone "tel:+420666666666"^^xsd:anyURI .
+                                              foaf:phone <tel:+420666666666> .
 
 <http://example.org/customer/Marek-Velky> a <http://example.org/vocabulary/Customer>;
                                           <http://example.org/vocabulary/hasLoyaltyCard> <http://example.org/loyaltycard/1>;
@@ -32,7 +32,7 @@
                                           <http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate> "2001-01-01"^^xsd:date;
                                           foaf:familyName "Velky"@cs;
                                           foaf:givenName "Marek"@cs;
-                                          foaf:phone "tel:+420777777777"^^xsd:anyURI .
+                                          foaf:phone <tel:+420777777777> .
 
 <http://example.org/customer/Petra-Mrkvickova> a <http://example.org/vocabulary/Customer>;
                                                <http://example.org/vocabulary/hasLoyaltyCard> <http://example.org/loyaltycard/2>;
@@ -40,7 +40,7 @@
                                                <http://www.loc.gov/standards/mads/rdf/v1.rdf#birthDate> "2002-02-02"^^xsd:date;
                                                foaf:familyName "Mrkvickova"@cs;
                                                foaf:givenName "Petra"@cs;
-                                               foaf:phone "tel:+420123321231"^^xsd:anyURI .
+                                               foaf:phone <tel:+420123321231> .
 
 <http://example.org/register/1> a <http://example.org/vocabulary/CashRegister>;
                                 <http://example.org/vocabulary/isSelfCheckout> true;
