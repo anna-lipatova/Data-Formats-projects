@@ -106,6 +106,35 @@
             }
         },
         {
+            "url": "data-13.csv",
+            "tableSchema": {
+                "aboutUrl": "http://example.org/store/{+StoreBranchId}/name/{+name}",
+                "columns": [
+                    {
+                        "name": "StoreBranchId",
+                        "titles": "Store Branch ID",
+                        "datatype": "string",
+                        "propertyUrl": "http://example.org/vocabulary/StoreBranchId"
+                    },
+                    {
+                        "name": "name",
+                        "titles": "Store Branch Name",
+                        "datatype": "string",
+                        "propertyUrl": "juso:name"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": "StoreBranchId",
+                        "reference": {
+                            "resource": "data-2.csv",
+                            "columnReference": "StoreBranchId"
+                        }
+                    }
+                ]
+            }
+        },
+        {
             "url":"data-3.csv",
             "tableSchema":{
                 "aboutUrl":"http://example.org/person/{+given_name}-{+family_name}",
