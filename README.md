@@ -24,3 +24,17 @@ Create data samples and queries using graph data models and query languages.
 3. At least 3 instances of each association.
 4. At least 4 non-trivial SPARQL queries.
 5. At least 4 non-trivial Cypher queries.
+
+## Homework 3 assignment
+### What 
+Create data schemas, data samples and queries using hierarchical data models and query languages including transformations of the hierarchical data to RDF.
+1. For representation of your data in hierarchical data formats, first create one or more hierarchical diagrams corresponding to the conceptual one, showing how your data will be structured into hierarchies. Each hierarchical diagram will use directed associations, showing the nesting relation, and will have a root class with no incoming associations. It might be necessary to split the data into multiple hierarchies to avoid some redundancies and to cover every possibility your conceptual model offers.
+2. For each hierarchical model create a corresponding XML Schema, enforcing proper datatypes.
+3. Represent the data in XML files valid against the created XML Schemas. Utilize the `xml:lang` attribute to denote the natural language of text values.
+4. Create a set of non-trivial XPath queries to query the XML data.
+5. Create a non-trivial XSLT transformation producing HTML representation of a reasonable subset of your data.
+6. Create XSLT transformations producing RDF Turtle representation of your data. This is called a "lifting transformation" - lifting the data to a semantically more precise representation. Validate the resulting file.
+7. For each hierarchical model create a corresponding JSON Schema, enforcing proper datatypes.
+8. Represent the data in JSON files valid against the created JSON Schemas.
+9. Create a JSON-LD context mapping the JSON representations to RDF. This might require changing or amending the JSON representation and the JSON Schemas. Use the [JSON-LD playground](https://json-ld.org/playground/) to view the RDF N-Quads representation. Use the [Apache Jena](https://jena.apache.org/documentation/io/) `riot` command-line tool transform the result into RDF Turtle.
+10. Create a set of non-trivial `jq` queries to query the JSON data.
