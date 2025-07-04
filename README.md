@@ -38,3 +38,12 @@ Create data schemas, data samples and queries using hierarchical data models and
 8. Represent the data in JSON files valid against the created JSON Schemas.
 9. Create a JSON-LD context mapping the JSON representations to RDF. This might require changing or amending the JSON representation and the JSON Schemas. Use the [JSON-LD playground](https://json-ld.org/playground/) to view the RDF N-Quads representation. Use the [Apache Jena](https://jena.apache.org/documentation/io/) `riot` command-line tool transform the result into RDF Turtle.
 10. Create a set of non-trivial `jq` queries to query the JSON data.
+
+
+## Homework 4 assignment
+### What 
+Create data schemas and data samples using the relational data data model and CSV, including transformations of the relational data to RDF. 
+1. Based on your conceptual model, create a relational model showing how your data will be split into tables, what will be the primary keys and what foreign keys will be there.
+2. Create a corresponding CSV on the Web Table group descriptor, including proper data types, languages, and primary and foreign keys.
+3. Represent the data in CSV files valid against the created CSV on the Web descriptor.
+4. Enhance the CSV on the Web descriptor with virtual columns, and `aboutUrl`, `propertyUrl` and `valueUrl` annotations. The resulting RDF data representation should be identical to the ones from Homeworks 2 and 3.
