@@ -1,5 +1,5 @@
 # [NPRG036 - Data Formats](https://jakub.klímek.com/nprg036.html)
-## Homework 1 assignment
+## 1 assignment
 ### What 
 Choose a domain/topic for your homework. Create a conceptual model of that domain using UML Class Diagrams and a structured textual description (see e.g. this [data specification](https://ofn.gov.cz/%C3%BA%C5%99edn%C3%AD-desky/2021-07-20/)) of what is represented in the domain model. The consecutive homework parts will then be governed by this conceptual model. Quantitative requirements:
 1. 5 to 8 classes
@@ -8,7 +8,7 @@ Choose a domain/topic for your homework. Create a conceptual model of that domai
 ### How 
 Use a tool that allows you to draw UML Class Diagrams and export them, ideally as SVG, PNG if SVG not possible. For example, [diagrams.net](https://www.diagrams.net/), [PlantUML](https://plantuml.com/) or [LucidChart](https://www.lucidchart.com/pages/). Beware that the free version of LucidChart does not support "copy as new" functionality. The homework is to be turned in via the study system by a group leader.
 
-## Homework 2 assignment
+## 2 assignment
 ### What 
 Create data samples and queries using graph data models and query languages.
 1. For representation of data in RDF, you will need to cover the conceptual model with classes and properties either from [existing vocabularies](https://lov.linkeddata.es/dataset/lov/), or by defining new ones using [RDF Schema](https://docs.google.com/presentation/d/1SwDgvaTJvUBY_5_EOG3V_ajJsIZadzFNNnJgYqa1Qcw/edit#slide=id.gba51ba2639_1_671). For the newly defined classes and properties use the `@prefix ex: <http://example.org/vocabulary/> .` prefix and attach a human readable label to each one of them. For new properties specify domain and range.
@@ -25,7 +25,7 @@ Create data samples and queries using graph data models and query languages.
 4. At least 4 non-trivial SPARQL queries.
 5. At least 4 non-trivial Cypher queries.
 
-## Homework 3 assignment
+## 3 assignment
 ### What 
 Create data schemas, data samples and queries using hierarchical data models and query languages including transformations of the hierarchical data to RDF.
 1. For representation of your data in hierarchical data formats, first create one or more hierarchical diagrams corresponding to the conceptual one, showing how your data will be structured into hierarchies. Each hierarchical diagram will use directed associations, showing the nesting relation, and will have a root class with no incoming associations. It might be necessary to split the data into multiple hierarchies to avoid some redundancies and to cover every possibility your conceptual model offers.
@@ -40,7 +40,7 @@ Create data schemas, data samples and queries using hierarchical data models and
 10. Create a set of non-trivial `jq` queries to query the JSON data.
 
 
-## Homework 4 assignment
+## 4 assignment
 ### What 
 Create data schemas and data samples using the relational data data model and CSV, including transformations of the relational data to RDF. 
 1. Based on your conceptual model, create a relational model showing how your data will be split into tables, what will be the primary keys and what foreign keys will be there.
